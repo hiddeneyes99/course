@@ -809,3 +809,833 @@ bas. tumhara Linux terminal ready hai.
 ```
 
 ---
+---
+
+## 📌 Topic 4.3 — Terminal Ki Pehli Class — Package, Repository, aur Update
+
+---
+
+### pehle ek baat clear karte hain
+
+ab tak tumne yeh seekha —
+
+- Linux kya hota hai (4.1)
+- Termux phone pe kaise kaam karta hai (4.2)
+
+ab **actually terminal use karna shuru karte hain.**
+
+aur yahan ek important cheez batana chahta hoon —
+
+> **yeh chapter Termux aur Kali Linux — dono ke liye ek saath hai.**
+
+kyun? kyunki dono Linux ke upar based hain. dono mein bahut si cheezein common hain — same logic, same concepts, sirf kuch jagah commands thodi alag hoti hain.
+
+toh yahan ek explanation — dono ka kaam ho jaayega.
+
+**ab se hum aise chalenge:**
+
+jab bhi koi command sikhayenge — tumhe clearly batayenge:
+- 📱 **Termux mein:** yeh command use hogi
+- 💻 **Kali Linux mein:** yeh command use hogi
+
+aur jab dono mein same command ho — toh ek baar likhi — dono ke liye valid.
+
+**future mein:** ek alag chapter sirf Termux ke liye hoga — aur ek sirf Kali Linux ke liye. wahan deeper jaayenge. yeh chapter foundation hai — jo cheezein dono mein common hain — woh yahan sikhenge.
+
+ab shuru karte hain — terminal ki pehli asli class se.
+
+---
+
+### terminal mein pehla kaam kya hota hai?
+
+jab tum koi nayi machine setup karte ho — chahe Termux ho ya Kali Linux — **pehla kaam hota hai update aur package management.**
+
+yeh samjhne ke liye pehle ek cheez clearly samajhni padegi —
+
+> **Package kya hota hai?**
+
+---
+
+### Package kya hota hai?
+
+seedha example se samjho —
+
+socho tumhare paas ek naya phone hai. isme default mein WhatsApp nahi hai. tum Play Store pe jaate ho — WhatsApp dhundhte ho — install karte ho.
+
+**yahi process Linux mein bhi hoti hai — lekin terminal se.**
+
+Linux mein **har software, har tool, har program ek "package" hota hai.**
+
+Nmap install karna hai? woh ek package hai.
+Python install karna hai? woh ek package hai.
+Wireshark chahiye? woh ek package hai.
+
+```
+Package = ek bundled software — code + files + dependencies sab ek saath
+```
+
+**lekin ek aur cheez samajhni hai — "dependency" kya hoti hai?**
+
+---
+
+### Dependency kya hoti hai?
+
+maan lo tum ek dukaan pe cake order karte ho.
+
+cake banana hai toh:
+- maida chahiye
+- eggs chahiye
+- butter chahiye
+- sugar chahiye
+
+yeh sab **ingredients** hain. cake in sab pe depend karta hai.
+
+agar ingredients nahi hain — cake nahi banega.
+
+exactly aisa hi software mein hota hai —
+
+jab tum koi tool install karte ho — maan lo **Nmap** — toh Nmap kuch cheezoon pe depend karta hai. kuch libraries chahiye usse. kuch helper programs chahiye.
+
+```
+Nmap install karo
+→ pehle uski dependencies install hongi automatically
+→ phir Nmap install hoga
+```
+
+**acchi baat yeh hai** — Linux ka package manager yeh sab khud karta hai. tumhe alag alag cheezein manually install nahi karni. ek command — aur woh khud dependency dhundhega aur install karega.
+
+> **Package Manager = tumhara automatic assistant — jo software aur uski saari zarooratein khud sambhaal leta hai.**
+
+---
+
+### Package Manager kya hota hai?
+
+Play Store ka kaam kya hai?
+- apps dhundho
+- ek tap mein install karo
+- update available hai toh update karo
+- uninstall karo
+
+**Linux ka Package Manager exactly yahi karta hai — terminal se.**
+
+lekin yahan ek interesting cheez hai —
+
+**Termux aur Kali Linux dono alag package managers use karte hain.**
+
+| | 📱 Termux | 💻 Kali Linux |
+|---|---|---|
+| **Package Manager** | `pkg` | `apt` |
+| **Full Name** | Package Manager (Termux's own) | Advanced Package Tool |
+| **Command style** | `pkg install [naam]` | `apt install [naam]` |
+| **Backend** | APT ke upar hi bana hai | Direct APT |
+
+**ek important baat —**
+
+`pkg` actually `apt` ka hi ek wrapper hai — matlab andar se woh bhi `apt` use karta hai. lekin Termux ke liye simplify kiya gaya hai.
+
+isliye dono mein bahut similarity hai — aur dono ka logic bilkul same hai.
+
+---
+
+### Repository kya hoti hai?
+
+ab ek aur concept — jise samjhe bina package manager adha samajh aata hai.
+
+socho —
+
+Play Store ek **bada warehouse** hai jahan laakhon apps hain. tum app ka naam type karo — woh warehouse mein jaata hai — app dhundhta hai — tumhare phone pe laata hai.
+
+Linux mein isi warehouse ko **Repository** kehte hain.
+
+```
+Repository = ek bada online storage jahan hazaron packages hain
+             Package Manager wahan jaata hai — package dhundhta hai — tumhare system pe install karta hai
+```
+
+📱 **Termux ki apni repository hai** — Termux ke liye specifically maintained packages.
+
+💻 **Kali Linux ki apni repository hai** — Kali ke liye specifically curated packages — including 600+ hacking tools.
+
+```
+Tumhara Terminal
+     ↓
+Package Manager (pkg / apt)
+     ↓
+Repository (online server)
+     ↓
+Package download + install
+```
+
+yahi pura system hai. ab commands seekhte hain.
+
+---
+
+### Pehla Command — Update karna
+
+yeh **sabse pehla command** hota hai jo har Linux user — beginner se expert tak — kisi bhi system pe chalata hai.
+
+lekin pehle samjho — **"update" ka matlab kya hai?**
+
+---
+
+#### Update vs Upgrade — yeh fark bahut log confuse karte hain
+
+**Update** ka matlab —
+
+> "jaao repository mein dekho — kya kya nayi cheezein available hain — ek list banao"
+
+bas. **koi cheez install nahi hoti.** sirf system ko pata chalta hai ki konse packages ke nayi versions aa gayi hain.
+
+bilkul waise jaise Play Store kholta ho — apps ki list refresh hoti hai — pata chalta hai kitni updates hain — lekin abhi kuch download nahi hua.
+
+**Upgrade** ka matlab —
+
+> "jo list banai thi update mein — ab woh saari nayi versions actually install karo"
+
+yeh actual download + installation karta hai.
+
+```
+Update  = list refresh karo (kya available hai)
+Upgrade = woh list dekh ke actually install karo
+```
+
+ab commands —
+
+---
+
+#### 📱 Termux mein — Update karna
+
+```bash
+pkg update
+```
+
+yeh command kya karta hai:
+1. Termux ki repository se contact karta hai
+2. available packages ki latest list laata hai
+3. tumhare system ko batata hai — "yeh yeh cheezein update ho sakti hain"
+
+**jab chalao toh kuch aisa dikhega:**
+
+```
+Get:1 https://packages-cf.termux.dev/apt/termux-main stable InRelease
+Get:2 https://packages-cf.termux.dev/apt/termux-main stable/main aarch64 Packages
+Fetched 3,421 kB in 4s (855 kB/s)
+Reading package lists... Done
+```
+
+iska matlab — repository se list aa gayi. koi installation nahi hui abhi.
+
+---
+
+#### 💻 Kali Linux mein — Update karna
+
+```bash
+sudo apt update
+```
+
+ya purane style mein:
+
+```bash
+sudo apt-get update
+```
+
+**`sudo` kya hai?**
+
+`sudo` = **Super User Do** — yani "yeh kaam root (admin) ki permission se karo."
+
+Kali Linux mein system-level kaam karne ke liye permission chahiye — isliye `sudo` lagate hain aage.
+
+Termux mein `sudo` nahi lagata — kyunki Termux already tumhare user space mein chal raha hai — extra permission ki zarurat nahi hoti.
+
+| | 📱 Termux | 💻 Kali Linux |
+|---|---|---|
+| **Update command** | `pkg update` | `sudo apt update` |
+| **sudo ki zarurat** | ❌ Nahi | ✅ Haan |
+| **Reason** | Termux apne space mein hai | Kali system-level access chahiye |
+
+**Kali mein update chalane ke baad kuch aisa dikhega:**
+
+```
+Hit:1 http://kali.download/kali kali-rolling InRelease
+Get:2 http://kali.download/kali kali-rolling/main amd64 Packages [19.9 MB]
+Fetched 19.9 MB in 12s (1,659 kB/s)
+Reading package lists... Done
+```
+
+---
+
+### Upgrade karna — actually install karo
+
+ab update ke baad — **upgrade** —
+
+#### 📱 Termux mein:
+
+```bash
+pkg upgrade
+```
+
+#### 💻 Kali Linux mein:
+
+```bash
+sudo apt upgrade
+```
+
+dono mein system poochega — "kya sach mein install karein?" — `Y` dabao aur Enter — installation shuru ho jaayegi.
+
+```
+Do you want to continue? [Y/n]  Y
+```
+
+---
+
+### Update + Upgrade — ek saath
+
+ek smart shortcut — dono ek hi baar mein —
+
+#### 📱 Termux:
+
+```bash
+pkg update && pkg upgrade
+```
+
+#### 💻 Kali Linux:
+
+```bash
+sudo apt update && sudo apt upgrade
+```
+
+`&&` ka matlab — "pehli command successfully complete ho — tab doosri chalao."
+
+---
+
+### Package Install Karna
+
+ab ek specific tool install karna seekhte hain —
+
+maan lo **`curl`** install karna hai — yeh ek tool hai jo URLs se data fetch karta hai —
+
+#### 📱 Termux mein:
+
+```bash
+pkg install curl
+```
+
+#### 💻 Kali Linux mein:
+
+```bash
+sudo apt install curl
+```
+
+system poochega `Y/n` — `Y` dabao — install ho jaayega.
+
+**ek aur example — `git` install karna:**
+
+```
+📱 Termux:     pkg install git
+💻 Kali Linux: sudo apt install git
+```
+
+**`python` install karna:**
+
+```
+📱 Termux:     pkg install python
+💻 Kali Linux: sudo apt install python3
+```
+
+pattern dekho — **logic same hai, command thodi different hai.**
+
+---
+
+### Package Remove Karna
+
+koi tool remove karna ho —
+
+#### 📱 Termux:
+
+```bash
+pkg uninstall [package-naam]
+```
+
+#### 💻 Kali Linux:
+
+```bash
+sudo apt remove [package-naam]
+```
+
+---
+
+### Package Search Karna — repository mein
+
+agar tum jaanna chahte ho ki koi package available hai ya nahi —
+
+#### 📱 Termux:
+
+```bash
+pkg search [naam]
+
+# Example:
+pkg search nmap
+```
+
+#### 💻 Kali Linux:
+
+```bash
+apt search [naam]
+
+# Example:
+apt search nmap
+```
+
+---
+
+### Installed Packages ki List Dekhna
+
+#### 📱 Termux:
+
+```bash
+pkg list-installed
+```
+
+#### 💻 Kali Linux:
+
+```bash
+apt list --installed
+```
+
+---
+
+### Quick Summary Table — Dono Ke Liye
+
+| Kaam | 📱 Termux | 💻 Kali Linux |
+|---|---|---|
+| Repository update | `pkg update` | `sudo apt update` |
+| Sab upgrade karo | `pkg upgrade` | `sudo apt upgrade` |
+| Update + Upgrade ek saath | `pkg update && pkg upgrade` | `sudo apt update && sudo apt upgrade` |
+| Package install karo | `pkg install [naam]` | `sudo apt install [naam]` |
+| Package remove karo | `pkg uninstall [naam]` | `sudo apt remove [naam]` |
+| Package search karo | `pkg search [naam]` | `apt search [naam]` |
+| Installed list dekho | `pkg list-installed` | `apt list --installed` |
+
+---
+
+### Ek Baar Poora Flow Samjho
+
+naye system pe pehla kaam —
+
+**Step 1:** Pehle repository refresh karo — nayi list aane do
+```
+📱 pkg update
+💻 sudo apt update
+```
+
+**Step 2:** Purane packages update karo
+```
+📱 pkg upgrade
+💻 sudo apt upgrade
+```
+
+**Step 3:** Jo chahiye woh install karo
+```
+📱 pkg install [tool-naam]
+💻 sudo apt install [tool-naam]
+```
+
+yeh teen steps — kisi bhi Linux system pe pehla din aise hi start hota hai. beginner se professional — sab yahi karte hain.
+
+---
+
+### `apt` aur `apt-get` mein kya fark hai?
+
+Kali Linux mein tumne dekha hoga — kuch jagah `apt` likhte hain, kuch jagah `apt-get`.
+
+yeh dono similar hain — lekin ek chhota sa fark hai:
+
+| | `apt-get` | `apt` |
+|---|---|---|
+| **Kab aaya** | Pehle se hai — purana | Naya — 2014 ke baad |
+| **Output** | Plain text — minimal | Better progress bar — user friendly |
+| **Scripts mein** | Better — stable output | Interactive ke liye better |
+| **Kya use karein** | Dono kaam karte hain | `apt` zyada modern hai |
+
+```bash
+sudo apt-get update    # works — purana tarika
+sudo apt update        # same kaam, thoda better output
+```
+
+beginner ke liye — **`apt` use karo** — zyada clean output milega.
+
+advanced scripts mein `apt-get` ko prefer karte hain — lekin abhi woh stage nahi hai.
+
+---
+
+### Ek Important Cheez — Internet Chahiye
+
+package manager kaam karta hai — **repository se download karke.**
+
+iska matlab — **internet connection zaroori hai** jab bhi:
+- `update` karo
+- `upgrade` karo
+- koi nayi cheez `install` karo
+
+agar internet nahi hai — yeh commands fail hongi. normal baat hai — offline mein kuch install nahi ho sakta.
+
+---
+
+### Common Mistakes — Jo Sab Karte Hain Pehli Baar
+
+**Mistake 1: Update kiye bina seedha install karna**
+
+```bash
+pkg install nmap   # bina update kiye — purani list se purana package mil sakta hai
+```
+
+**hamesha pehle update karo.**
+
+**Mistake 2: Kali mein `sudo` bhool jaana**
+
+```bash
+apt install nmap        # ❌ — permission denied aayega
+sudo apt install nmap   # ✅ — sahi tarika
+```
+
+**Mistake 3: Installation ke beech mein terminal band karna**
+
+package install ho raha ho — tab terminal band mat karo. aadhaa install hoga — system mein issues aa sakte hain. pura complete hone do.
+
+**Mistake 4: `Y` dabane ki jagah seedha Enter dabana**
+
+jab `[Y/n]` aaye — `Y` type karo phir Enter dabao. seedha Enter bhi usually `Y` maana jaata hai — lekin clearly `Y` type karna better habit hai.
+
+---
+
+### Tumhara First Day Terminal Pe — Exact Sequence
+
+**📱 Agar Termux use kar rahe ho:**
+
+```bash
+pkg update
+```
+→ list refresh hogi — wait karo
+
+```bash
+pkg upgrade
+```
+→ `Y` dabao — updates install hongi — wait karo
+
+```bash
+pkg install git
+```
+→ git install karo — test ke liye
+
+```bash
+git --version
+```
+→ version dikhega — matlab successfully install hua ✅
+
+---
+
+**💻 Agar Kali Linux use kar rahe ho:**
+
+```bash
+sudo apt update
+```
+→ password maangega — apna password daalo — Enter
+
+```bash
+sudo apt upgrade
+```
+→ `Y` dabao — hone do
+
+```bash
+sudo apt install git
+```
+→ git install karo
+
+```bash
+git --version
+```
+→ version confirm karo ✅
+
+---
+
+### ek line mein
+
+> **Package Manager = Linux ka Play Store. `pkg` Termux ka hai, `apt` Kali Linux ka. Pehle update — phir install — yeh order hamesha yaad rakho.**
+
+---
+
+## 🧠 MCQ Set — Topic 4.3
+
+---
+
+**Q1.** Linux mein "Package" kya hota hai?
+
+- A) ek folder jisme commands hote hain — manually copy karo
+- B) ek bundled software — code, files aur dependencies ek saath — install karne ke liye ready
+- C) internet connection ka naam — Linux mein network ko package kehte hain
+- D) ek type ka command — jo sirf root user use kar sakta hai
+
+✅ **Sahi Jawab: B**
+> Package = ek complete software bundle. Nmap, Python, Git — sab packages hain. code ke saath uski zarooratein (dependencies) bhi bundled hoti hain. ek command se install ho jaata hai.
+
+---
+
+**Q2.** "Dependency" ka matlab kya hai software mein?
+
+- A) jab ek software dusre software pe depend karta hai — uske bina kaam nahi karta
+- B) jab internet slow hoti hai — packages slowly download hote hain
+- C) root permission ki zarurat — bina dependency ke install nahi ho sakta
+- D) package ka size — bade packages zyada dependent hote hain
+
+✅ **Sahi Jawab: A**
+> Dependency = prerequisite. Tool X kaam karne ke liye Library Y chahiye — Y dependency hai. package manager automatically dependencies dhundh ke install karta hai — tumhe manually karna nahi padta.
+
+---
+
+**Q3.** Termux mein package manager konsa hai?
+
+- A) `apt` — Advanced Package Tool
+- B) `yum` — Yellowdog Updater Modified
+- C) `pkg` — Termux ka apna package manager
+- D) `brew` — Homebrew
+
+✅ **Sahi Jawab: C**
+> Termux `pkg` use karta hai — jo actually andar se `apt` ka hi wrapper hai lekin Termux ke liye simplify kiya gaya. Kali Linux mein direct `apt` use hota hai.
+
+---
+
+**Q4.** `pkg update` kya karta hai?
+
+- A) sare packages update (install) kar deta hai — latest version
+- B) Termux app ko update karta hai — nayi version download karta hai
+- C) repository se available packages ki latest list refresh karta hai — koi installation nahi hoti
+- D) purane packages delete karta hai — space free karta hai
+
+✅ **Sahi Jawab: C**
+> `pkg update` sirf **list refresh karta hai** — "kya kya available hai" yeh pata karta hai. actual installation `pkg upgrade` karta hai. yeh fark bahut important hai.
+
+---
+
+**Q5.** Kali Linux mein `sudo apt update` mein `sudo` kyun lagana padta hai?
+
+- A) `sudo` internet connection ke liye chahiye — bina iske repository accessible nahi
+- B) `sudo` Termux aur Kali Linux mein alag kaam karta hai — confusion se bachne ke liye
+- C) system-level operations ke liye root/admin permission chahiye — `sudo` woh permission deta hai
+- D) `sudo` sirf update command ke saath kaam karta hai — install mein nahi chahiye
+
+✅ **Sahi Jawab: C**
+> `sudo` = Super User Do — root privileges se command chalao. Kali Linux mein system modifications ke liye root permission chahiye. Termux mein yeh zarurat nahi kyunki woh already user space mein kaam karta hai.
+
+---
+
+**Q6.** "Repository" kya hoti hai?
+
+- A) ek local folder jahan tumhare installed packages save hote hain
+- B) ek online storage jahan packages available hote hain — package manager wahan se download karta hai
+- C) terminal ka history — sare purane commands store hote hain
+- D) Linux ka configuration file — settings save rehti hain
+
+✅ **Sahi Jawab: B**
+> Repository = Play Store jaisa online warehouse. Package manager repository se connect karta hai — package dhundhta hai — tumhare system pe install karta hai. Termux ki alag repository, Kali ki alag.
+
+---
+
+**Q7.** `pkg update && pkg upgrade` mein `&&` ka kya matlab hai?
+
+- A) dono commands simultaneously chalao — parallel execution
+- B) ya toh pehla chalao ya doosra — koi bhi ek
+- C) pehli command successfully complete ho tab hi doosri chalao
+- D) dono commands ko ek hi command mein combine karo — faster execution
+
+✅ **Sahi Jawab: C**
+> `&&` = "aur tab" — pehli command success ho (error na aaye) tab hi doosri execute ho. agar `pkg update` fail ho — `pkg upgrade` nahi chalega. yeh bahut useful pattern hai.
+
+---
+
+**Q8.** Kali Linux mein `nmap` install karna ho toh sahi command kya hai?
+
+- A) `pkg install nmap`
+- B) `nmap install kali`
+- C) `install sudo nmap`
+- D) `sudo apt install nmap`
+
+✅ **Sahi Jawab: D**
+> Kali Linux mein `sudo apt install [package-naam]` pattern use hota hai. `sudo` pehle, phir `apt`, phir `install`, phir package ka naam. `pkg` sirf Termux mein use hota hai.
+
+---
+
+**Q9.** `apt` aur `apt-get` mein kya fark hai?
+
+- A) `apt-get` Termux ke liye hai — `apt` Kali ke liye
+- B) `apt` nayi hai, zyada user-friendly output deti hai — `apt-get` purani hai, scripts mein stable
+- C) `apt` sirf update karta hai — `apt-get` sirf install karta hai
+- D) dono bilkul alag tools hain — different packages install karte hain
+
+✅ **Sahi Jawab: B**
+> `apt` = newer, better progress bar, interactive ke liye. `apt-get` = older, minimal output, scripts mein prefer karte hain stable behavior ke liye. beginners ke liye `apt` better hai.
+
+---
+
+**Q10.** Package install karte waqt `[Y/n]` aata hai — kya matlab hai?
+
+- A) Year (Y) ya No (n) — license agreement accept karo
+- B) Yes install karo (Y) ya cancel karo (n) — user ki confirmation chahiye system ko
+- C) Yellow mode (Y) ya Normal mode (n) — download speed change hoti hai
+- D) yeh sirf Kali mein aata hai — Termux mein nahi
+
+✅ **Sahi Jawab: B**
+> System confirm karta hai — "kya sach mein install karoon? space lagegi." `Y` + Enter = haan karo. `n` + Enter = cancel. Enter akela bhi usually `Y` maana jaata hai — lekin clearly `Y` type karna better habit hai.
+
+---
+
+**Q11.** Update kiye bina seedha install kyun nahi karna chahiye?
+
+- A) bina update ke installation fail ho jaati hai — error aata hai hamesha
+- B) purani list se purana ya wrong version install ho sakta hai — update se latest list milti hai
+- C) bina update ke internet use zyada hoti hai — slow hota hai
+- D) update aur install same kaam karte hain — dono ek saath nahi chalate
+
+✅ **Sahi Jawab: B**
+> bina `update` ke package manager ke paas purani list hoti hai. latest packages nahi milenge. pehle `update` — phir `install` — yeh correct sequence hai.
+
+---
+
+**Q12.** Termux mein `git` install karne ke baad check kaise karein ki sahi install hua?
+
+- A) `pkg check git` — package manager confirm karega
+- B) `git --version` — agar version number aaya toh install hua
+- C) `ls git` — installed files dikhenge
+- D) `apt verify git` — verification command
+
+✅ **Sahi Jawab: B**
+> `[tool-naam] --version` — yeh standard way hai check karne ka. agar tool installed hai — version number print hoga. agar nahi — "command not found" aayega. yeh trick almost sabse kaam karta hai.
+
+---
+
+**Q13.** Termux mein koi package search karna ho — available hai ya nahi — command kya hogi?
+
+- A) `pkg find [naam]`
+- B) `apt search [naam]`
+- C) `pkg search [naam]`
+- D) `search pkg [naam]`
+
+✅ **Sahi Jawab: C**
+> Termux mein `pkg search [naam]` — repository mein matching packages dhundhta hai. Kali Linux mein same kaam `apt search [naam]` karta hai. pattern same — tool alag.
+
+---
+
+**Q14.** Package install ke waqt terminal beech mein band kar diya — kya ho sakta hai?
+
+- A) installation automatically resume hogi jab dobara khologe
+- B) koi problem nahi — package later install ho jaayega
+- C) package partially install ho sakta hai — system mein issues aa sakte hain
+- D) Termux automatically undo kar deta hai — safe hai
+
+✅ **Sahi Jawab: C**
+> beech mein terminal band karna dangerous hai installation ke dauran. package half installed rehta hai — commands kaam nahi karti — system unstable ho sakta hai. **hamesha complete hone do.**
+
+---
+
+**Q15.** Yeh chapter Termux aur Kali Linux dono ko ek saath kyun cover kar raha hai?
+
+- A) dono same application hain — sirf naam alag hai
+- B) dono Linux ke upar based hain — concepts same hain — sirf commands thodi jagah alag hain
+- C) Termux actually Kali Linux ka mobile version hai
+- D) dono ke liye alag alag chapters banane mein time lagta — isliye combine kiya
+
+✅ **Sahi Jawab: B**
+> Termux aur Kali Linux dono Linux kernel pe based hain — isliye fundamentals same hain. package management ka logic, repository ka concept, commands ka pattern — sab same. sirf `pkg` vs `apt` aur `sudo` ka fark hai. ek explanation — dono ka kaam.
+
+---
+
+## 🎯 Task — Topic 4.3 — Pehla Real Command Chalao
+
+**task naam: "apna system update karo aur pehla package install karo"**
+
+---
+
+### 📱 Agar Termux use kar rahe ho:
+
+**Step 1 — Repository update karo:**
+```bash
+pkg update
+```
+list aayegi — wait karo poori aane do.
+
+**Step 2 — Upgrade karo:**
+```bash
+pkg upgrade
+```
+`Y` dabao — Enter — sab install hone do. patience rakho.
+
+**Step 3 — Pehla tool install karo:**
+```bash
+pkg install curl
+```
+`Y` dabao — install hone do.
+
+**Step 4 — Verify karo:**
+```bash
+curl --version
+```
+agar version number aaya — successfully install hua. 🎉
+
+**Step 5 — Ek aur try karo:**
+```bash
+pkg install git
+git --version
+```
+
+---
+
+### 💻 Agar Kali Linux use kar rahe ho:
+
+**Step 1 — Repository update karo:**
+```bash
+sudo apt update
+```
+password maangega — type karo (screen pe nahi dikhega — normal hai) — Enter.
+
+**Step 2 — Upgrade karo:**
+```bash
+sudo apt upgrade
+```
+`Y` dabao — hone do.
+
+**Step 3 — Tool install karo:**
+```bash
+sudo apt install curl
+```
+
+**Step 4 — Verify karo:**
+```bash
+curl --version
+```
+
+**Step 5 — Ek aur:**
+```bash
+sudo apt install git
+git --version
+```
+
+---
+
+**Observe karo:**
+- terminal mein text scroll hua — system kaam kar raha tha
+- download speed dikhta hai — real time mein
+- version confirm hua — tumne pehla tool successfully install kiya
+
+**Yaad rakho:**
+- `pkg` = Termux
+- `apt` = Kali Linux
+- `sudo` = Kali mein permission ke liye — Termux mein nahi chahiye
+- pehle update — phir install — yeh order mat todna
+
+```
+════════════════════════════════════════════════════════
+   ✅  TOPIC 4.3 COMPLETE — PACKAGE MANAGER & UPDATE
+   ⬇️  Neeche hai Topic 4.4
+════════════════════════════════════════════════════════
+```
+
+---
