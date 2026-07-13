@@ -9,6 +9,7 @@
 |---|---|---|
 | 4.1 | Linux Kya Hai — Windows Se Kyun Alag Hai | [➜ Jao](#-topic-41--linux-kya-hai--windows-se-kyun-alag-hai) |
 | 4.2 | Termux — Android Pe Linux — Mobile Hacker Ka Setup | [➜ Jao](#-topic-42--termux--android-pe-linux--mobile-hacker-ka-setup) |
+| 4.3 | Terminal Ki Pehli Class — Package, Repository, aur Update | [➜ Jao](#-topic-43--terminal-ki-pehli-class--package-repository-aur-update) |
 
 ---
 ---
@@ -1634,7 +1635,7 @@ git --version
 ```
 ════════════════════════════════════════════════════════
    ✅  TOPIC 4.3 COMPLETE — PACKAGE MANAGER & UPDATE
-   ⬇️  Neeche hai Topic 4.4
+   🎉  CHAPTER 4 COMPLETE — LINUX & COMMAND LINE
 ════════════════════════════════════════════════════════
 ```
 
