@@ -4176,16 +4176,6 @@ ab woh sab practical hoga. terminal se network ko dekho, samjho, explore karo.
 
 ### `ip` — Network Interface Information
 
-> 🔁 **Chapter 3 yaad karo — Topic 3.2 aur 3.3**
->
-> Chapter 3 mein humne padha tha — **IP Address = har device ka ghar ka pata.** jaise courier deliver karne ke liye address chahiye — waise internet pe data bhejne ke liye IP address chahiye.
->
-> humne yeh bhi seekha tha ki **do types ke IP hote hain** — **Public IP** (poori duniya mein unique — internet pe tumhara asli pata) aur **Private IP** (ghar ke network ke andar ka address — `192.168.1.x` range wale).
->
-> aur ek aur cheez — **MAC Address = hardware ki asli pehchaan.** factory mein hi chip pe likha hota hai — software se change nahi hota (by default). IP = ghar ka address, MAC = ghar ke andar exact kamre ka darwaza.
->
-> ab `ip addr` command run karoge — wahi cheez terminal mein dikhegi. apna Private IP aur apna MAC address — dono ek saath. theory se screen pe aa gayi.
-
 **modern Linux mein `ip` command preferred hai:**
 
 ```bash
@@ -4214,15 +4204,6 @@ dekho kya mila:
 - `08:00:27:ab:cd:ef` = MAC address
 
 **routing table dekho:**
-
-> 🔁 **Chapter 3 yaad karo — Topic 3.8**
->
-> Chapter 3 mein humne **Router** padha tha — "Data Kahan Jaaye?" wala topic. router ka kaam tha **alag alag networks ke beech data route karna.** tumhara ghar ka router local network (`192.168.1.x`) ko internet se connect karta hai.
->
-> humne padha tha: jab tumhara phone YouTube se video mangata hai — request pehle **ghar ke router** tak jaati hai — phir router ISP tak bhejta hai — phir YouTube server tak.
->
-> `ip route` exactly wahi dikhata hai — tumhara **default gateway** — woh router jahan se tumhara internet ka traffic jaata hai. woh `192.168.1.1` jo dikhe — wahi tumhara router hai.
-
 ```bash
 ip route
 ```
@@ -4251,14 +4232,6 @@ sudo apt install net-tools
 ---
 
 ### `ping` — Kya Woh Machine Online Hai?
-
-> 🔁 **Chapter 3 yaad karo — Topic 3.9 aur 3.4**
->
-> Chapter 3 mein humne **Packets** padhe the — "Data Toot Ke Kaise Bheji Jaati Hai" wala. humne seekha tha ki data ek saath nahi jaata — chhoti chhoti units mein toot ke jaata hai jise **packets** kehte hain. har packet mein header hota hai — source IP, destination IP, protocol, aur actual content.
->
-> aur **Protocols** mein humne **ICMP** ka naam suna tha — woh ping ka hi protocol hai. `ping` ek ICMP packet bhejta hai target ko — aur reply aane ka intezaar karta hai. reply aayi = machine online hai. nahi aayi = ya toh off hai ya firewall block kar raha hai.
->
-> yahi woh cheez hai jo Chapter 3 mein "packets ka safar" ke roop mein padhi thi — ab terminal pe dekh sakte ho ki packet gaya, reply aaya, kitna time laga.
 
 ```bash
 ping google.com
@@ -4295,14 +4268,6 @@ loopback — tumhara machine khud reply karega — network stack sahi kaam kar r
 ---
 
 ### `netstat` — Network Connections Dekho
-
-> 🔁 **Chapter 3 yaad karo — Topic 3.5 aur 3.4**
->
-> Chapter 3 mein humne **Ports** padhe the — "Ek Ghar Ke Alag Alag Darwaze" wala. humne seekha tha ki IP address = ghar ka address, lekin **port = ghar ka alag alag darwaza.** SSH port 22 pe, HTTP port 80 pe, HTTPS port 443 pe — har service ek alag darwaze pe baithti hai.
->
-> aur **Protocols** mein **TCP aur UDP** padha tha — TCP = reliable delivery (registered post jaisa), UDP = fast lekin no guarantee. humne **port scanning** ka bhi zikr kiya tha — hacker target pe kaunse ports open hain — yeh jaanta hai.
->
-> `netstat -tulpn` exactly wahi karta hai — **tumhare apne machine pe kaunse ports open hain, kaunsa program chal raha hai, TCP hai ya UDP.** jo theory mein port scanning tha — wahi ab apni machine pe practically dekh rahe ho.
 
 ```bash
 netstat -tulpn
@@ -4348,14 +4313,6 @@ tcp    LISTEN  0.0.0.0:80         users:(("apache2",pid=5678))
 ---
 
 ### `curl` — URL Se Data Fetch Karo
-
-> 🔁 **Chapter 3 yaad karo — Topic 3.7**
->
-> Chapter 3 mein humne **HTTP vs HTTPS** padha tha — "Web Request Ka Safar" wala. humne seekha tha ki jab tum browser mein `google.com` type karte ho — browser server ko request bhejta hai aur server HTML page wapas bhejta hai. yeh communication **HTTP** ya **HTTPS** se hoti hai.
->
-> humne padha tha: **HTTP = plain text — port 80** — beech mein koi sun le toh sab kuch padh sakta hai. **HTTPS = encrypted — port 443** — TLS encryption se safe. aur poora "web request ka safar" step by step padha tha — DNS query, TCP connection, TLS handshake, HTTP GET request, response.
->
-> `curl` exactly wahi kaam karta hai — **terminal se HTTP/HTTPS request maarna.** browser ke bajaaye tum khud server ko request bhej rahe ho — aur raw response dekh rahe ho. `curl -I` se sirf headers dikhte hain — server ka type, response code — yeh sab security assessment mein kaam aata hai.
 
 ```bash
 curl https://example.com
@@ -4453,14 +4410,6 @@ similar info — zyada detailed.
 
 ### `traceroute` — Data Ka Raasta Dekho
 
-> 🔁 **Chapter 3 yaad karo — Topic 3.9 aur 3.8**
->
-> Chapter 3 mein humne **Packets** mein padha tha — "alag alag packets alag alag routes le sakte hain — jo path available ho." aur **Router** topic mein padha tha ki data ek router se doosre router tak relay hota jaata hai — ISP → doosre ISP → destination server tak.
->
-> hum tab sirf samajhe the ki "packets multiple hops lete hain." lekin ab `traceroute` se woh **visually dekh sakte ho** — tumhara packet pehle ghar ke router pe gaya (`192.168.1.1`), phir ISP gateway pe, phir agla router, phir agla — aur finally Google tak. har hop ka time bhi dikhta hai milliseconds mein.
->
-> jo Chapter 3 mein "packets ka safar" ek diagram tha — woh ab real data ke saath terminal pe zinda ho gaya.
-
 ```bash
 traceroute google.com
 ```
@@ -4501,14 +4450,6 @@ hostname -I
 
 ### `/etc/hosts` — Local DNS
 
-> 🔁 **Chapter 3 yaad karo — Topic 3.6**
->
-> Chapter 3 mein humne **DNS Cache Poisoning** padha tha — attacker DNS cache mein **galat IP daalta hai** — tum `google.com` type karo aur attacker ki fake site pe land karo.
->
-> `/etc/hosts` file exactly wahi kaam karti hai — lekin **locally, apni machine pe.** yahan tum kisi bhi domain ke liye manually IP define kar sakte ho — aur **DNS se pehle** yahan check hota hai. matlab agar `/etc/hosts` mein `google.com 127.0.0.1` likh diya — tumhara apna browser bhi Google nahi khol payega.
->
-> ethical hackers aur pentesters isko controlled testing ke liye use karte hain — fake domains locally redirect karna. aur attackers jab machine compromise kar lete hain — `/etc/hosts` modify karke DNS poisoning ka same effect achieve karte hain — **bina DNS server ko touch kiye.**
-
 ```bash
 cat /etc/hosts
 ```
@@ -4524,18 +4465,6 @@ yahan locally domain names define kar sakte ho — koi bhi domain kisi bhi IP pe
 ---
 
 ### `/etc/resolv.conf` — DNS Server Config
-
-> 🔁 **Chapter 3 yaad karo — Topic 3.6**
->
-> Chapter 3 mein humne padha tha ki **DNS server kahan hota hai** — tumhara ISP ka apna DNS server hota hai by default. lekin tum change kar sakte ho. humne table dekha tha:
->
-> | DNS Service | IP | Provider |
-> |---|---|---|
-> | Google DNS | `8.8.8.8` | Google |
-> | Cloudflare | `1.1.1.1` | Cloudflare |
-> | OpenDNS | `208.67.222.222` | Cisco |
->
-> `/etc/resolv.conf` wahi file hai jahan tumhara Linux system store karta hai — **"domain resolve karne ke liye kaunsa DNS server use karo."** `cat /etc/resolv.conf` karo aur dekho — wahi `8.8.8.8` ya `1.1.1.1` milega jo Chapter 3 mein table mein tha. theory file ban ke disk pe rakhi hai.
 
 ```bash
 cat /etc/resolv.conf
