@@ -4367,6 +4367,30 @@ wget -c https://example.com/bigfile.zip
 
 ### `host` aur `nslookup` — DNS Queries
 
+---
+
+> 🔁 **Ruko — Chapter 3 yaad karo**
+>
+> yeh section samajhne se pehle ek second ruko.
+>
+> Chapter 3 mein humne **DNS** padha tha — Topic 3.6. yaad hai? "Internet Ka Phone Book" wala?
+>
+> wahan humne seekha tha —
+>
+> - browser `google.com` samajhta hai. lekin internet **sirf IP addresses** samajhta hai.
+> - toh jab tum `google.com` type karte ho — pehle ek **DNS server** se poochha jaata hai: _"is naam ka IP kya hai?"_
+> - DNS server jawab deta hai: `142.250.195.78` — phir browser wahan jaata hai.
+> - yeh sab **milliseconds** mein hota hai — tum notice bhi nahi karte.
+> - DNS ka port hota hai **53**.
+> - aur humne yeh bhi padha tha ki hacker **DNS Poisoning** karke galat IP daalta hai — tum `google.com` type karo aur pohncho attacker ki fake site pe.
+> - aur **DNS Enumeration** se hacker kisi bhi site ke subdomains, servers, services — sab DNS se dhundh leta hai.
+>
+> ab yahan `host` aur `nslookup` commands exactly wahi kaam karte hain — **terminal se DNS query maarna.** browser ke bajaaye tum khud pooch rahe ho DNS server se — "bhai, is domain ka IP kya hai?" — aur seedha jawab aata hai.
+>
+> yeh commands basic lagti hain — lekin aage jab hum **Reconnaissance** (target ki information gather karna) seekhenge — tab yahi commands kaam aayengi pehle step mein. foundation abhi ban raha hai.
+
+---
+
 **Domain ka IP pata karo:**
 ```bash
 host google.com
