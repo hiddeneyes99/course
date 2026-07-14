@@ -6059,7 +6059,7 @@ output kuch aisa aayega:
 `Ctrl + Z` se pause kiya hua job ab wapas chalu karna hai, par background mein (terminal free rahe):
 
 ```bash
-bg 1
+bg %1
 ```
 
 job number `1` background mein resume ho jaayega — status "Stopped" se "Running" ho jaayega.
@@ -6071,7 +6071,7 @@ job number `1` background mein resume ho jaayega — status "Stopped" se "Runnin
 agar background mein chal rahe kisi job ko tum wapas seedha apne saamne (foreground mein) lana chahte ho — jaise usko rokna ho ya interact karna ho:
 
 ```bash
-fg 1
+fg %1
 ```
 
 job number `1` wapas foreground mein aa jaayega — ab terminal us par busy ho jaayega, jaise woh normal command ho.
@@ -6094,7 +6094,7 @@ jobs
 # output: [1]+  Stopped    ping google.com
 
 # Step 4: ise background mein resume karo — terminal free rahe
-bg 1
+bg %1
 # output: [1]+  ping google.com &     (ab "Running" hai, background mein)
 
 # Step 5: terminal free hai — koi doosra kaam karo
@@ -6102,7 +6102,7 @@ ls
 whoami
 
 # Step 6: jab wapas ping dekhni ho, foreground mein lao
-fg 1
+fg %1
 # ab terminal wapas ping pe busy ho gaya
 
 # Step 7: rokna hai toh
@@ -6410,11 +6410,11 @@ jobs
 pgrep ping
 
 # 6. foreground mein lao
-fg 1
+fg %1
 # Ctrl+Z se pause karo
 
 # 7. wapas background mein
-bg 1
+bg %1
 
 # 8. kill karo
 pkill ping
@@ -6458,154 +6458,170 @@ manually dhundhna = ghanton ka kaam. terminal commands = seconds.
 
 ### `find` — Sabse Powerful Search Tool
 
+**pehle real life se samjho — `find` kaam kaise karta hai**
+
+socho tumhe ek badi library mein ek kitaab dhundhni hai. `find` ek aise worker jaisa hai jo **har ek shelf, har ek row** khud jaake check karta hai — kitaab milegi zaroor (chahe kal hi rakhi gayi ho), par thoda time lagta hai kyunki poori library ghoomta hai.
+
+**basic syntax:**
 ```bash
-find [kahan] [kya dhundho] [kya karo]
+find [kahan dhundhna hai] [kya dhundhna hai]
 ```
 
-**naam se dhundho:**
+sirf do cheezein batani hoti hain — **kahan** dhundhna hai (koi folder), aur **kis condition se** dhundhna hai (naam, size, type, vagera).
+
+**Example 1 — naam se dhundho**
 ```bash
 find /home -name "passwords.txt"
 ```
+`/home` folder ke andar (aur uske andar ke sare sub-folders mein bhi) `passwords.txt` naam ki file dhundho.
 
-**extension se:**
+**Example 2 — extension se dhundho**
 ```bash
 find / -name "*.conf" 2>/dev/null
 ```
-sari `.conf` files — `2>/dev/null` = permission errors suppress.
+`/` = poore system mein dhundho. `*.conf` = jis file ka naam kuch bhi ho, bas `.conf` pe khatam ho. `*` ka matlab "kuch bhi" hota hai — wildcard kehte hain isse.
 
-**type se — sirf files:**
+`2>/dev/null` yahan isliye lagaya hai kyunki poore system mein search karte waqt kai folders mein permission nahi milegi — woh error messages hide kar diye, taaki screen saaf rahe (pichle topic mein `2>/dev/null` detail mein seekha tha).
+
+**Example 3 — sirf files ya sirf folders dhundho**
 ```bash
 find /etc -type f
 ```
-`-type f` = files. `-type d` = directories.
+`-type f` = sirf files dikhao (folders nahi). `-type d` likhoge toh sirf directories (folders) dikhega.
 
-**size ke hisaab se:**
+**Example 4 — size ke hisaab se**
 ```bash
 find / -size +100M 2>/dev/null
 ```
-100 MB se badi files.
+`+100M` = 100 MB se badi files. (`+` = "isse zyada", `M` = megabytes)
 
-**permissions se:**
-```bash
-find / -perm -4000 2>/dev/null
-```
-SUID bit set wali files — privilege escalation ke liye important.
-
-**recently modified:**
+**Example 5 — kitne din pehle badli thi**
 ```bash
 find /var -mtime -1 2>/dev/null
 ```
-`-mtime -1` = pichle 1 din mein modify hua.
+`-mtime -1` = jo file pichle 1 din ke andar modify hui ho. `mtime` = "modify time". agar koi hacker recently kisi file mein chhed-chhaad kare, toh yeh command pakadne mein kaam aati hai.
 
-**find karke kuch karo:**
+**Example 6 — dhundho aur turant kuch karo bhi**
 ```bash
 find /tmp -name "*.txt" -exec cat {} \;
 ```
-har `.txt` file ko `cat` karo — `{}` = found file ka path. `\;` = command end.
+yeh ek chhota sa "mini-program" hai — todo:
+- `find /tmp -name "*.txt"` → `/tmp` mein sari `.txt` files dhundho
+- `-exec` → "jo bhi mile, uspe yeh command chalao"
+- `cat {}` → `{}` ka matlab hai "jo file abhi milne wali hai, uska naam yahan daal do". toh har milti hui file pe `cat` chalega
+- `\;` → bas yeh batata hai ki command yahin khatam hoti hai (ek fixed syntax hai, hamesha end mein lagta hai)
+
+matlab: `/tmp` mein jitni bhi `.txt` files hain, sabka content ek ek karke print kar do.
+
+**privilege escalation wala use (thoda advanced, abhi sirf jaan lo)**
+```bash
+find / -perm -4000 2>/dev/null
+```
+kuch files pe ek special permission hoti hai jise **SUID** kehte hain — jo file ko chalane wale ko temporarily "root jaisi power" de deti hai. hackers is command se aisi files dhundhte hain — kyunki agar koi galat SUID file mil jaaye, toh usse system pe zyada access mil sakta hai. abhi bas itna yaad rakho — permissions wale topic mein isko detail se samjhenge.
 
 ---
 
 ### `locate` — Fast Search (Database Based)
 
+`find` poori library ghoomta hai — isliye thoda slow hota hai. `locate` alag tarike se kaam karta hai:
+
+> socho library mein ek **catalog register** rakha hai jisme sari kitaabon ke naam pehle se likhe hain. tumhe kitaab dhundhni hai? seedha register mein dekho — turant mil jaayegi. ghoomna nahi padta.
+
 ```bash
 locate passwd
 ```
+turant result de dega — kyunki `locate` pehle se bani hui ek database mein dekhta hai, poore system mein khud ghoomta nahi.
 
-`locate` ek pre-built database se search karta hai — bahut fast.
+**limitation:** yeh catalog (database) hamesha turant update nahi hota — agar abhi-abhi koi nayi file banayi hai, `locate` use nahi dikhayega jab tak database update na ho.
 
-**limitation:** database regularly update hoti hai — naye files turant nahi milenge.
-
-**database update karo:**
+**database ko manually update karo:**
 ```bash
 sudo updatedb
 ```
 
+**yaad rakhne ka tarika:** naya/recent file dhundhna hai ya sure hona hai ki miss na ho → `find` use karo. bas jaldi se koi common file dhundhni hai → `locate` use karo.
+
 ---
 
-### `which` — Command Kahan Hai?
+### `which`, `whereis`, `type` — Command Kahan Hai? (teeno alag-alag detail dete hain)
 
+teeno ek jaisa sawal jawab dete hain — "yeh command hai kahan?" — bas alag level ki detail ke saath. asaan example se farak dekho:
+
+**`which` — sirf woh location batata hai jo actually chalti hai**
 ```bash
 which python3
 ```
-
 output:
 ```
 /usr/bin/python3
 ```
+matlab jab tum `python3` type karte ho, yeh file chalti hai. bas itna hi batata hai — ek jagah, jo sabse zaroori hai.
 
-command kaun si directory mein install hai — pata karo.
-
-**example:**
-```bash
-which nmap
-which wireshark
-which metasploit
-```
-
----
-
-### `whereis` — Command Ke Sare Locations
-
+**`whereis` — us command se juda sab kuch batata hai**
 ```bash
 whereis python3
 ```
-
 output:
 ```
 python3: /usr/bin/python3 /usr/lib/python3 /usr/share/man/man1/python3.1.gz
 ```
+sirf program hi nahi — uski **source files** aur **manual (help) page** ki location bhi de deta hai. `which` se zyada detail.
 
-`which` se zyada detail — binary, source, man page — sab locations.
-
----
-
-### `grep -r` — Content Mein Search Karo
-
-```bash
-grep -r "password" /etc/
-```
-
-`/etc/` mein sari files mein "password" word dhundho — recursive.
-
-**common searches:**
-```bash
-grep -r "passwd" /etc/ 2>/dev/null
-grep -r "secret" /var/www/ 2>/dev/null
-grep -ri "api_key" /home/ 2>/dev/null
-```
-
----
-
-### `find` + `grep` — Powerful Combo
-
-```bash
-find /var/www -name "*.php" -exec grep -l "password" {} \;
-```
-
-PHP files dhundho — jo `password` contain karti hain — unke naam print karo.
-
----
-
-### `type` — Command Ka Type Pata Karo
-
+**`type` — batata hai command *kis kism* ki cheez hai**
 ```bash
 type ls
 type cd
 type python3
 ```
-
 output:
 ```
 ls is aliased to `ls --color=auto`
 cd is a shell builtin
 python3 is /usr/bin/python3
 ```
-
-alias hai? builtin hai? external program hai?
+har command ek jaisi nahi hoti — kuch **alias** hoti hain (shortcut), kuch **built-in** hoti hain (terminal ke andar hi bani hoti hain, jaise `cd`), kuch **external program** hoti hain (jaise `python3`, jinki apni file hoti hai disk pe). `type` yeh batata hai ki tum jo command chala rahe ho, woh in teeno mein se kaunsi hai.
 
 ---
 
-### `stat` — File Ki Detailed Info
+### `grep -r` — File Ke Andar Ka Content Search Karo
+
+abhi tak humne **file dhundhna** seekha — naam se, type se, size se. par kabhi kabhi file ka naam nahi pata hota, sirf itna pata hota hai ki **kisi file ke andar** ek particular word hai.
+
+isके लिए `grep -r` use hota hai:
+
+```bash
+grep -r "password" /etc/
+```
+
+`-r` = "recursive" — matlab `/etc/` folder ke andar, aur uske har sub-folder ke andar bhi jaake dekho — har file ke content mein "password" word dhundho.
+
+**common real examples:**
+```bash
+grep -r "passwd" /etc/ 2>/dev/null
+grep -r "secret" /var/www/ 2>/dev/null
+grep -ri "api_key" /home/ 2>/dev/null
+```
+(`-i` = case-ignore, yaani "API_KEY", "api_key", "Api_Key" — sab match honge)
+
+**farak yaad rakho:** `find` file ko uske **naam/size/type** se dhundhta hai. `grep -r` file ke **andar ke content** mein word dhundhta hai.
+
+---
+
+### `find` + `grep` — Dono Ko Jodo
+
+```bash
+find /var/www -name "*.php" -exec grep -l "password" {} \;
+```
+
+step by step:
+1. `find /var/www -name "*.php"` → sari `.php` files dhundho
+2. `-exec grep -l "password" {}` → har mili hui file ke andar "password" word dhundho, aur `-l` ka matlab hai sirf **file ka naam** print karo (poora content nahi)
+
+result: un sari PHP files ke naam, jinke andar "password" word likha hai.
+
+---
+
+### `stat` — File Ki Poori Detail
 
 ```bash
 stat file.txt
@@ -6622,13 +6638,18 @@ Modify: 2024-01-15 10:30:00.000
 Change: 2024-01-15 10:30:00.000
 ```
 
-timestamps — file kab access hua, kab modify hua — forensics mein important.
+teen alag timestamps hote hain, in teeno mein farak samjho:
+- **Access** = file aakhri baar kab *padhi/kholi* gayi
+- **Modify** = file ke andar ka content kab last badla
+- **Change** = file ki koi bhi property (jaise permissions) kab last badli
+
+forensics mein (yaani jab pata karna ho kisi ne file ke saath kya kiya) yeh teeno timestamps bahut kaam aate hain.
 
 ---
 
 ### ek line mein
 
-> **`find` = complex search — naam, type, size, permissions. `locate` = fast database search. `which` = command kahan. `grep -r` = content mein search. `stat` = file ki poori detail.**
+> **`find` = poore system mein condition-based search (naam, type, size, time). `locate` = pehle se bani database se fast search. `which`/`whereis`/`type` = command kahan hai aur kaisi hai. `grep -r` = file content ke andar search. `stat` = file ki poori detail, timestamps ke saath.**
 
 ---
 
