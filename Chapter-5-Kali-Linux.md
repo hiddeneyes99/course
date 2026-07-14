@@ -6473,51 +6473,80 @@ sirf do cheezein batani hoti hain — **kahan** dhundhna hai (koi folder), aur *
 ```bash
 find /home -name "passwords.txt"
 ```
-`/home` folder ke andar (aur uske andar ke sare sub-folders mein bhi) `passwords.txt` naam ki file dhundho.
+ise ek ek piece todke padho — har part ka apna kaam hai:
+- `find` — command ka naam, batata hai "main search karne wala hoon"
+- `/home` — **kahan dhundhna hai.** yeh woh folder hai jahan se search shuru hogi — `/home` aur uske andar jitne bhi sub-folders hain, sabme dekhega
+- `-name` — ek **flag** (option) hai jo batata hai "main file ka **naam** match karke dhundhunga" (size se nahi, type se nahi — sirf naam se)
+- `"passwords.txt"` — woh exact naam jo dhundhna hai. quotes (`" "`) mein isliye likha kyunki agar naam mein space ya special character ho toh confusion na ho — habit ke taur pe hamesha quotes mein likhna safe hai
+
+poora matlab: `/home` folder (aur uske andar ke sare sub-folders) mein `passwords.txt` naam ki file dhundho.
 
 **Example 2 — extension se dhundho**
 ```bash
 find / -name "*.conf" 2>/dev/null
 ```
-`/` = poore system mein dhundho. `*.conf` = jis file ka naam kuch bhi ho, bas `.conf` pe khatam ho. `*` ka matlab "kuch bhi" hota hai — wildcard kehte hain isse.
+- `find` — search command
+- `/` — yeh Linux ka **root folder** hai, matlab poora system. `/home` ki jagah `/` likhne ka matlab hai "har jagah dhundho, sirf ek folder mein nahi"
+- `-name "*.conf"` — naam se dhundho, jaha naam `*.conf` pattern se match kare. `*` (star) ek **wildcard** hai jiska matlab hai "yahan kuch bhi ho sakta hai, koi bhi text". toh `*.conf` ka matlab — naam kuch bhi ho, bas `.conf` pe khatam hona chahiye
+- `2>/dev/null` — yeh humne pichle topic (5.9) mein detail se seekha tha. `2` = error output (stderr), `>` = redirect karo, `/dev/null` = black hole jahan cheez gayab ho jaati hai. poore system mein search karte waqt kai folders mein bina permission ke andar nahi ja paoge — woh "Permission denied" wali error messages yahan chhupa di, taaki screen saaf rahe aur sirf real results dikhein
 
-`2>/dev/null` yahan isliye lagaya hai kyunki poore system mein search karte waqt kai folders mein permission nahi milegi — woh error messages hide kar diye, taaki screen saaf rahe (pichle topic mein `2>/dev/null` detail mein seekha tha).
+poora matlab: poore system mein woh sari files dhundho jinka naam `.conf` pe khatam hota hai, aur permission errors mat dikhao.
 
 **Example 3 — sirf files ya sirf folders dhundho**
 ```bash
 find /etc -type f
 ```
-`-type f` = sirf files dikhao (folders nahi). `-type d` likhoge toh sirf directories (folders) dikhega.
+- `find /etc` — `/etc` folder ke andar dhundho
+- `-type` — flag jo batata hai "main **type** (kism) ke hisaab se filter karunga"
+- `f` — `-type` ke saath diya gaya value, `f` = "file". agar `f` ki jagah `d` likhते (`-type d`), toh sirf directories (folders) milte
+
+poora matlab: `/etc` ke andar sirf files dikhao — beech mein aane wale folders ko list mein mat gino.
 
 **Example 4 — size ke hisaab se**
 ```bash
 find / -size +100M 2>/dev/null
 ```
-`+100M` = 100 MB se badi files. (`+` = "isse zyada", `M` = megabytes)
+- `find /` — poore system mein dhundho
+- `-size` — flag jo batata hai "main file ke **size** se filter karunga"
+- `+100M` — yeh condition hai: `+` ka matlab "isse zyada" (agar `-` hota toh "isse kam"), `100` number hai, `M` ka matlab "megabytes". toh `+100M` = 100 MB se badi
+- `2>/dev/null` — permission error messages hide karo (upar samjhaya)
+
+poora matlab: poore system mein 100 MB se badi files dhundho, aur error messages mat dikhao.
 
 **Example 5 — kitne din pehle badli thi**
 ```bash
 find /var -mtime -1 2>/dev/null
 ```
-`-mtime -1` = jo file pichle 1 din ke andar modify hui ho. `mtime` = "modify time". agar koi hacker recently kisi file mein chhed-chhaad kare, toh yeh command pakadne mein kaam aati hai.
+- `find /var` — `/var` folder ke andar dhundho
+- `-mtime` — flag, matlab "modify time" — file ka content kab last baar badla tha, us hisaab se filter karo
+- `-1` — condition: yahan `-` ka matlab "isse kam" (yaani pichle 1 din ke **andar**). agar `+1` likhte toh matlab hota "1 din se **zyada** purana"
+- `2>/dev/null` — permission errors hide karo
+
+poora matlab: `/var` mein aisi files dhundho jo pichle 1 din ke andar modify hui hon. agar koi hacker abhi-abhi kisi file mein chhed-chhaad kare, toh yeh command usse pakadne mein kaam aati hai.
 
 **Example 6 — dhundho aur turant kuch karo bhi**
 ```bash
 find /tmp -name "*.txt" -exec cat {} \;
 ```
-yeh ek chhota sa "mini-program" hai — todo:
-- `find /tmp -name "*.txt"` → `/tmp` mein sari `.txt` files dhundho
-- `-exec` → "jo bhi mile, uspe yeh command chalao"
-- `cat {}` → `{}` ka matlab hai "jo file abhi milne wali hai, uska naam yahan daal do". toh har milti hui file pe `cat` chalega
-- `\;` → bas yeh batata hai ki command yahin khatam hoti hai (ek fixed syntax hai, hamesha end mein lagta hai)
+yeh command lambi lag rahi hai — isliye har piece alag se dekho:
+- `find /tmp -name "*.txt"` — yeh humne upar seekh liya: `/tmp` folder mein woh sari files dhundho jinka naam `.txt` pe khatam hota hai
+- `-exec` — naya flag, matlab "jo bhi file mile, uspe **yeh command chalao**" — matlab search + action, dono ek saath
+- `cat` — woh command jo har mili hui file pe chalani hai (`cat` file ka content print karta hai)
+- `{}` — yeh ek **placeholder** hai, iska matlab hai "jo bhi file abhi mili hai, uska poora naam/path yahan automatically daal do". toh agar `notes.txt` mili, toh yeh `cat notes.txt` ban jaayega
+- `\;` — is command ka **end marker**. `-exec` ke saath command kahan khatam ho rahi hai, yeh batane ke liye hamesha `\;` lagana padta hai — yeh ek fixed rule hai, isko bas yaad rakhna hai, cheez samajhne wali nahi hai
 
-matlab: `/tmp` mein jitni bhi `.txt` files hain, sabka content ek ek karke print kar do.
+poora matlab: `/tmp` mein jitni bhi `.txt` files hain, un sabka content ek ek karke print kar do.
 
 **privilege escalation wala use (thoda advanced, abhi sirf jaan lo)**
 ```bash
 find / -perm -4000 2>/dev/null
 ```
-kuch files pe ek special permission hoti hai jise **SUID** kehte hain — jo file ko chalane wale ko temporarily "root jaisi power" de deti hai. hackers is command se aisi files dhundhte hain — kyunki agar koi galat SUID file mil jaaye, toh usse system pe zyada access mil sakta hai. abhi bas itna yaad rakho — permissions wale topic mein isko detail se samjhenge.
+- `find /` — poore system mein dhundho
+- `-perm` — flag, matlab "permission ke hisaab se filter karo"
+- `-4000` — yeh ek special number hai jo ek particular permission ko represent karta hai, jise **SUID bit** kehte hain
+- `2>/dev/null` — permission errors hide karo
+
+**SUID kya hai, simple mein:** normally jab tum koi program chalate ho, woh tumhari hi power (permissions) se chalta hai. par kuch files pe SUID naam ki special setting hoti hai — jo us program ko chalane wale ko **temporarily file-owner jaisi power** de deti hai (agar file root ki hai, toh tumhe thodi der ke liye root jaisi power mil jaati hai). hackers is command se aisi files dhundhte hain — kyunki agar koi galti se aisi file mil jaaye jo root ki hai, usse system pe zyada access mil sakta hai. abhi bas itna yaad rakho — permissions wale topic mein isko poora detail se samjhenge.
 
 ---
 
@@ -6587,13 +6616,17 @@ har command ek jaisi nahi hoti — kuch **alias** hoti hain (shortcut), kuch **b
 
 abhi tak humne **file dhundhna** seekha — naam se, type se, size se. par kabhi kabhi file ka naam nahi pata hota, sirf itna pata hota hai ki **kisi file ke andar** ek particular word hai.
 
-isके लिए `grep -r` use hota hai:
+is kaam ke liye `grep -r` use hota hai:
 
 ```bash
 grep -r "password" /etc/
 ```
+- `grep` — command jo kisi text/content mein ek word ya phrase dhundhta hai (yeh humne pipe wale topic mein bhi dekha tha)
+- `-r` — flag, matlab "recursive". akele `grep` sirf ek file ke andar dekhta hai — `-r` lagane se yeh us folder ke andar, aur uske har sub-folder ke andar bhi jaake dekhta hai
+- `"password"` — woh word/text jo dhundhna hai
+- `/etc/` — kis folder mein (aur uske sub-folders mein) dhundhna hai
 
-`-r` = "recursive" — matlab `/etc/` folder ke andar, aur uske har sub-folder ke andar bhi jaake dekho — har file ke content mein "password" word dhundho.
+poora matlab: `/etc/` folder ke andar, aur uske har sub-folder mein, har file ke content mein "password" word dhundho.
 
 **common real examples:**
 ```bash
@@ -6601,23 +6634,33 @@ grep -r "passwd" /etc/ 2>/dev/null
 grep -r "secret" /var/www/ 2>/dev/null
 grep -ri "api_key" /home/ 2>/dev/null
 ```
-(`-i` = case-ignore, yaani "API_KEY", "api_key", "Api_Key" — sab match honge)
+teesri line mein ek naya flag hai — `-i` (`grep -ri`). `-i` = "ignore case", matlab bade-chote letters ka farak mat karo. isliye "API_KEY", "api_key", "Api_Key" — teeno match ho jaayenge, jabki bina `-i` ke sirf exact wahi likhawat match hoti jo tumne di thi.
 
-**farak yaad rakho:** `find` file ko uske **naam/size/type** se dhundhta hai. `grep -r` file ke **andar ke content** mein word dhundhta hai.
+`2>/dev/null` yahan bhi wahi kaam kar raha hai jo pehle seekha — permission wali error messages ko chhupa raha hai.
+
+**farak yaad rakho:** `find` file ko uske **naam/size/type** se dhundhta hai — content ke andar nahi jhaakta. `grep -r` file ke **andar ke content** mein word dhundhta hai — naam se koi matlab nahi.
 
 ---
 
 ### `find` + `grep` — Dono Ko Jodo
 
+kabhi kabhi ek saath dono chahiye hote hain — pehle sahi **files** chuno, phir un files ke **andar content** dhundho. iske liye `find` ke `-exec` ke saath `grep` ko jod dete hain:
+
 ```bash
 find /var/www -name "*.php" -exec grep -l "password" {} \;
 ```
 
-step by step:
-1. `find /var/www -name "*.php"` → sari `.php` files dhundho
-2. `-exec grep -l "password" {}` → har mili hui file ke andar "password" word dhundho, aur `-l` ka matlab hai sirf **file ka naam** print karo (poora content nahi)
+isko do halon mein todo:
 
-result: un sari PHP files ke naam, jinke andar "password" word likha hai.
+**pehla hissa — `find` se files chuno:**
+- `find /var/www -name "*.php"` — humne upar seekha hai: `/var/www` folder mein woh sari files dhundho jinka naam `.php` pe khatam hota hai
+
+**doosra hissa — har mili hui file pe `grep` chalao:**
+- `-exec` — jo bhi `.php` file mile, uspe yeh command chalao
+- `grep -l "password" {}` — `grep` se "password" word dhundho. `-l` ek naya flag hai — matlab sirf **file ka naam** print karo, poora matching content nahi (agar `-l` na hota, toh grep matching line bhi dikhata). `{}` = jo file abhi mili hai, uska naam yahan aa jaayega
+- `\;` — command ka end marker (upar `find` ke `-exec` example mein samjhaya tha)
+
+poora matlab: `/var/www` mein saari `.php` files ke naam print karo — par sirf unki, jinke andar "password" word likha hai.
 
 ---
 
