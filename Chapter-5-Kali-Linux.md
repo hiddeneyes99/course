@@ -168,12 +168,12 @@ Kali ek professional tool hai. professional ki tarah use karo.
 
 **Q1.** Kali Linux kisne banaya?
 
-- A) Google — Android ke liye bana tha, hackers ne baad mein adopt kiya
-- B) Offensive Security — BackTrack Linux ki jagah 2013 mein release kiya
+- A) Offensive Security — BackTrack Linux ki jagah 2013 mein release kiya
+- B) Google — Android ke liye bana tha, hackers ne baad mein adopt kiya
 - C) Linus Torvalds — Linux kernel ke saath hi bundled security tools include kiye
 - D) MIT ke researchers — open source security research project ke tahat
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: A**
 > Offensive Security ek penetration testing company hai. BackTrack Linux ki limitations ke baad unhone 2013 mein Kali Linux build kiya — scratch se, Debian ke upar.
 
 ---
@@ -193,23 +193,23 @@ Kali ek professional tool hai. professional ki tarah use karo.
 **Q3.** Kali Linux ka "rolling release" model ka matlab kya hai?
 
 - A) har saal ek nayi major version aati hai jise fresh install karna padta hai
-- B) updates continuously aate rehte hain — koi fixed version nahi, system hamesha latest rehta hai
+- B) ek hi version hoti hai jo roll over nahi hoti — stable rakhne ke liye
 - C) Kali free mein roll out hota hai — koi payment nahi kabhi
-- D) ek hi version hoti hai jo roll over nahi hoti — stable rakhne ke liye
+- D) updates continuously aate rehte hain — koi fixed version nahi, system hamesha latest rehta hai
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: D**
 > rolling release = har hafte naye updates. `apt update && apt upgrade` se system hamesha current rehta hai. koi major version jump nahi karna padta.
 
 ---
 
 **Q4.** 2019 ke baad Kali Linux mein kya important change aaya users ke liye?
 
-- A) GUI hata diya — sirf terminal mode reh gaya
+- A) default user root se badle normal user `kali` pe — better security practice ke liye
 - B) paid subscription shuru ho gaya — tools ke liye license chahiye
-- C) default user root se badle normal user `kali` pe — better security practice ke liye
+- C) GUI hata diya — sirf terminal mode reh gaya
 - D) Windows support band kar di — sirf bare metal pe chalega
 
-✅ **Sahi Jawab: C**
+✅ **Sahi Jawab: A**
 > pehle Kali seedha root se start hota tha — risky. 2019 ke baad default user `kali` hai — normal privileges ke saath. root tab use karo jab actually zaroori ho.
 
 ---
@@ -230,10 +230,10 @@ Kali ek professional tool hai. professional ki tarah use karo.
 
 - A) dono alag companies ke alag products hain — koi connection nahi
 - B) BackTrack, Kali ka updated modern version hai — 2020 mein release hua
-- C) Kali, BackTrack ka successor hai — same creators ne BackTrack ki limitations ke baad Kali rebuild kiya
-- D) BackTrack aur Kali same OS hain — sirf naam alag hai different regions ke liye
+- C) BackTrack aur Kali same OS hain — sirf naam alag hai different regions ke liye
+- D) Kali, BackTrack ka successor hai — same creators ne BackTrack ki limitations ke baad Kali rebuild kiya
 
-✅ **Sahi Jawab: C**
+✅ **Sahi Jawab: D**
 > BackTrack → Kali. same creators (Offensive Security), nayi architecture, Debian base, better maintenance. BackTrack officially 2013 mein retire ho gaya.
 
 ---
@@ -252,12 +252,12 @@ Kali ek professional tool hai. professional ki tarah use karo.
 
 **Q8.** Kali Linux mein pre-installed tools kahan se aate hain?
 
-- A) Kali ki team khud har tool likhti hai — sab in-house developed hain
+- A) open source security tools hain jo Kali ki team package karke include karti hai
 - B) Microsoft aur Google ke certified security tools hain
-- C) open source security tools hain jo Kali ki team package karke include karti hai
+- C) Kali ki team khud har tool likhti hai — sab in-house developed hain
 - D) paid commercial tools hain jo Offensive Security license karke include karti hai
 
-✅ **Sahi Jawab: C**
+✅ **Sahi Jawab: A**
 > Kali mein mostly open source community ke banaye tools hain — Nmap, Metasploit, Wireshark, etc. Kali team inhe package format mein organize karke include karti hai.
 
 ---
@@ -265,11 +265,11 @@ Kali ek professional tool hai. professional ki tarah use karo.
 **Q9.** daily driver laptop pe sirf Kali Linux rakhna kyun sahi nahi?
 
 - A) Kali mein browser nahi hota — internet use nahi ho sakta
-- B) Kali ek specialist OS hai — daily tasks ke liye nahi banaya gaya, security testing ke liye banaya gaya
+- B) Kali mein file save nahi hoti — sab data reboot pe erase hota hai
 - C) Kali ke saath warranty void ho jaati hai laptop ki
-- D) Kali mein file save nahi hoti — sab data reboot pe erase hota hai
+- D) Kali ek specialist OS hai — daily tasks ke liye nahi banaya gaya, security testing ke liye banaya gaya
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: D**
 > Kali = specialist tool. ek surgeon apne scalpel se roti nahi kaatta. normal use ke liye Ubuntu ya koi aur distro better hai. Kali alag rakho — VM ya dedicated machine pe.
 
 ---
@@ -300,12 +300,12 @@ Kali ek professional tool hai. professional ki tarah use karo.
 
 **Q12.** Kali Linux ka Debian pe based hone ka kya fayda hai?
 
-- A) Debian ke sare games aur multimedia apps Kali pe automatically available hain
-- B) Debian ki stability, vast package repository, aur long-term support Kali ko reliable banate hain
+- A) Debian ki stability, vast package repository, aur long-term support Kali ko reliable banate hain
+- B) Debian ke sare games aur multimedia apps Kali pe automatically available hain
 - C) Debian ke users automatically Kali use karna jaante hain — extra learning nahi
 - D) Debian ka brand name Kali ko credibility deta hai marketplace mein
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: A**
 > Debian = proven, stable foundation. decades se servers pe chal raha hai. Kali is stable base ke upar bana — isliye Kali bhi solid hai. Debian ka `apt` package manager bhi use hota hai.
 
 ---
@@ -325,11 +325,11 @@ Kali ek professional tool hai. professional ki tarah use karo.
 **Q14.** Kali Linux ka update kaise karte hain?
 
 - A) Kali ki website pe jaao — manual download karo — reinstall karo
-- B) `sudo apt update && sudo apt upgrade` — Kali rolling release hai, yeh command se hamesha latest rahega
+- B) `kali-update` — specific command hai Kali ke liye
 - C) Offensive Security ka subscription lena padta hai — tab automatic updates milte hain
-- D) `kali-update` — specific command hai Kali ke liye
+- D) `sudo apt update && sudo apt upgrade` — Kali rolling release hai, yeh command se hamesha latest rahega
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: D**
 > rolling release = `apt update && apt upgrade`. chapter 4.3 mein yeh seekha tha. Kali mein same command. hamesha latest rahega bina reinstall ke.
 
 ---
@@ -1139,23 +1139,23 @@ Kali ka default wallpaper ek dragon hai — Kali Linux ka logo. XFCE aur GNOME m
 **Q2.** Kali ke terminal prompt mein `[~]` ka matlab kya hai?
 
 - A) root directory — `/` pe ho
-- B) home directory — current user ka home folder
+- B) system directory — `/etc` pe ho
 - C) temp directory — `/tmp` pe ho
-- D) system directory — `/etc` pe ho
+- D) home directory — current user ka home folder
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: D**
 > `~` = tilde = home directory shortcut. `kali` user ke liye `~` matlab `/home/kali`. jab bhi `~` dekho — home folder pe ho.
 
 ---
 
 **Q3.** Kali ke Applications menu mein categories numbered (01, 02, 03...) kyun hain?
 
-- A) tools ka alphabetical order maintain karne ke liye — numbers sort karte hain
-- B) ethical hacking ka workflow represent karta hai — information gathering pehle, exploitation baad mein
+- A) ethical hacking ka workflow represent karta hai — information gathering pehle, exploitation baad mein
+- B) tools ka alphabetical order maintain karne ke liye — numbers sort karte hain
 - C) Offensive Security ka internal tool numbering system hai — support ke liye
 - D) numbers difficulty level batate hain — 01 easy, 12 hardest
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: A**
 > categories ka order = hacking workflow. 01 Information Gathering se shuru, phir Vulnerability Analysis, phir Exploitation — yeh actual penetration testing process hai. soch ke design kiya gaya hai.
 
 ---
@@ -1175,24 +1175,1212 @@ Kali ka default wallpaper ek dragon hai — Kali Linux ka logo. XFCE aur GNOME m
 **Q5.** Kali terminal prompt `┌──(kali㉿kali)-[~]` mein `㉿` ke dono taraf kya hai?
 
 - A) left = machine name, right = username
-- B) left = username, right = hostname (machine name)
+- B) left = OS version, right = kernel version
 - C) left = directory, right = user permissions
-- D) left = OS version, right = kernel version
+- D) left = username, right = hostname (machine name)
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: D**
 > format hai `username㉿hostname`. `kali㉿kali` matlab username=kali, hostname=kali. agar tum hostname change karo — right wala badlega.
 
 ---
 
 **Q6.** Kali mein `$` prompt ka matlab kya hai?
 
-- A) dollar sign = paid features available hain
-- B) normal user mode — root nahi ho — regular user ke saath kaam kar rahe ho
+- A) normal user mode — root nahi ho — regular user ke saath kaam kar rahe ho
+- B) dollar sign = paid features available hain
 - C) script mode — normal command mode nahi
 - D) error state — kuch galat tha pichli command mein
 
+✅ **Sahi Jawab: A**
+> `# Chapter 5 — Kali Linux — Hacker Ka Asli Ghar
+### By TWH (Afsar Ali) | Technical White Hat
+
+---
+
+## 📚 Table of Contents
+
+| # | Topic | Jump |
+|---|---|---|
+| 5.1 | Kali Linux Kya Hai — Poori Kahani | [➜ Jao](#-topic-51--kali-linux-kya-hai--poori-kahani) |
+| 5.2 | Kali Linux Kaise Laayein — Installation Methods | [➜ Jao](#-topic-52--kali-linux-kaise-laayein--installation-methods) |
+| 5.3 | VirtualBox Pe Kali Install Karna — Step by Step | [➜ Jao](#-topic-53--virtualbox-pe-kali-install-karna--step-by-step) |
+| 5.4 | Kali Ka Desktop — Pehli Baar Seedha Dekho | [➜ Jao](#-topic-54--kali-ka-desktop--pehli-baar-seedha-dekho) |
+| 5.5 | Terminal Navigation — File System Mein Chalna | [➜ Jao](#-topic-55--terminal-navigation--file-system-mein-chalna) |
+| 5.6 | Files Dekhna aur Edit Karna | [➜ Jao](#-topic-56--files-dekhna-aur-edit-karna) |
+| 5.7 | Users aur Permissions — Kaun Kya Kar Sakta Hai | [➜ Jao](#-topic-57--users-aur-permissions--kaun-kya-kar-sakta-hai) |
+| 5.8 | Networking Commands — Network Ko Terminal Se Dekhna | [➜ Jao](#-topic-58--networking-commands--network-ko-terminal-se-dekhna) |
+| 5.9 | Piping aur Redirection — Commands Ko Milao | [➜ Jao](#-topic-59--piping-aur-redirection--commands-ko-milao) |
+| 5.10 | Process Management — System Pe Kya Chal Raha Hai | [➜ Jao](#-topic-510--process-management--system-pe-kya-chal-raha-hai) |
+| 5.11 | File Search — Kuch Bhi Dhundho | [➜ Jao](#-topic-511--file-search--kuch-bhi-dhundho) |
+| 5.12 | Bash Scripting Basics — Terminal Ko Automatic Karo | [➜ Jao](#-topic-512--bash-scripting-basics--terminal-ko-automatic-karo) |
+
+---
+---
+
+chapter 4 mein tumne Linux ka background samjha — kya hai, kyun hai, Termux kya hai, aur package manager kaise kaam karta hai.
+
+ab ek baat seedhi —
+
+chapter 4 ek foundation tha. ek introduction tha. ek trailer tha.
+
+**chapter 5 asli film hai.**
+
+kali linux — yeh woh jagah hai jahan ethical hacker actually rehta hai. yahan kaam karta hai. yahan sochta hai. yahan tools chalata hai. aur isliye isko sirf install karke chhod dena kafi nahi — **isko samajhna padega.**
+
+is chapter mein hum kali linux ko bilkul andar se sikhenge. installation se lekar bash scripting tak. koi bhi cheez nahi chhodenge. aur jab yeh chapter khatam hoga — tumhare liye kali linux ek nayi jagah nahi rahegi. **tumhara ghar lagegi.**
+
+chalo shuru karte hain.
+
+---
+---
+
+## 📌 Topic 5.1 — Kali Linux Kya Hai — Poori Kahani
+
+---
+
+### chapter 4 mein ek cheez boli thi
+
+chapter 4 mein humne briefly mention kiya tha — Kali Linux ek distro hai jo ethical hackers ke liye banaya gaya hai. 600+ hacking tools pre-installed hain.
+
+ab woh ek line kaafi nahi hai. Kali ko actually samajhna hai — kahaan se aaya, kisne banaya, kyun, versions kya hain, aur officially use karna kaisa lagta hai.
+
+---
+
+### Kali Linux ki kahani
+
+saal tha **2013.**
+
+ek company thi — **Offensive Security** — jo penetration testing aur security research karne wale professionals ki thi.
+
+us waqt ek aur distro tha — **BackTrack Linux.** yeh bhi ethical hacking ke liye tha — lekin problems bahut thi. architecture purana tha. maintenance mushkil tha. packages properly organized nahi the.
+
+Offensive Security ne decide kiya — **BackTrack ko completely rebuild karte hain. scratch se.**
+
+result? **Kali Linux** — March 2013 mein pehli baar release hua.
+
+> **Kali Linux = Offensive Security ka banaya hua, Debian pe based, ethical hacking aur penetration testing ke liye specially designed Linux distribution.**
+
+---
+
+### Debian kya hai — aur Kali uske upar kyun bana?
+
+Debian ek bahut stable aur trusted Linux distro hai. decades se chal raha hai. companies use karte hain servers ke liye.
+
+Kali Linux, Debian ke upar bana hai — matlab Kali ki neev (foundation) Debian ka stable system hai. uske upar Offensive Security ne apna structure rakha — security tools, custom configurations, hacking-specific environment.
+
+ek analogy —
+
+> socho Debian ek strong, reliable imarat ki neev hai. Kali Linux ne us neev ke upar apna ghar banaya — apni zaroorat ke hisaab se. neev strong hai isliye ghar bhi strong hai.
+
+---
+
+### Offensive Security kaun hai?
+
+Offensive Security = woh company jo Kali banati hai aur **OSCP (Offensive Security Certified Professional)** certification deti hai.
+
+OSCP duniya ki sabse respected ethical hacking certification mein se ek hai. Offensive Security real professionals ke liye banaya gaya hai.
+
+Kali Linux free hai — lekin company ke paas expertise genuine hai. inhe ethical hacking mein seriously liya jaata hai globally.
+
+---
+
+### Kali mein kya hota hai pre-installed?
+
+jab tum Kali install karte ho — pehle se hi yeh cheezein hoti hain:
+
+| Category | Examples |
+|---|---|
+| Network Scanning | Nmap, Masscan |
+| Web Testing | Burp Suite, Nikto, SQLmap |
+| Password Tools | John the Ripper, Hashcat, Hydra |
+| Wireless | Aircrack-ng, Kismet |
+| Exploitation | Metasploit Framework |
+| Forensics | Autopsy, Volatility |
+| Reverse Engineering | Ghidra, Radare2 |
+| Sniffing | Wireshark, tcpdump |
+
+yeh sirf examples hain — 600+ tools hain total. **lekin yeh sab aage ke chapters mein cover honge.** is chapter mein sirf Kali Linux itself sikhenge — OS ko, environment ko, commands ko.
+
+---
+
+### Kali Linux ke versions
+
+Kali **rolling release** model follow karta hai — matlab koi fixed "Kali 2.0" ya "Kali 3.0" nahi hota jaise Windows mein hota hai.
+
+har hafte naye updates aate hain. package manager se update karo — latest mil jaata hai. system hamesha updated rehta hai.
+
+lekin **major versions** hote hain — jo design ya features ke liye important hote hain:
+
+| Version | Kab | Kya Naya |
+|---|---|---|
+| Kali 2013 | March 2013 | BackTrack se replace hua, Debian base |
+| Kali 2019 | 2019 | Default user root se badle non-root pe |
+| Kali 2020 | 2020 | XFCE default desktop, Win-KeX aaya (WSL ke liye) |
+| Kali 2022+ | 2022+ | Purple team tools, cloud integrations |
+
+**ek important change — 2019 mein:**
+
+pehle Kali mein default user `root` tha — matlab seedha admin access. dangerous tha. 2019 ke baad default user normal user hai — `kali` naam ka. root access tabhi lena chahiye jab zaroori ho.
+
+---
+
+### Kali Kaafi Alag Distro Hai — Why?
+
+zyada tar distros **general purpose** hote hain. matlab — office kaam, gaming, browsing, development — sab ek hi distro mein.
+
+Kali **specifically security testing ke liye** hai. isme bahut cheezein hain jo normal use mein zaroori nahi — lekin security professional ke liye daily tool hain.
+
+isliye —
+
+> **agar tumhara daily driver laptop sirf Kali pe ho — yeh sahi nahi. Kali ek specialist tool hai — ek specialist environment ke liye.**
+
+normal use ke liye Ubuntu ya koi aur distro rakho. Kali alag rakho — virtual machine mein ya dedicated machine pe.
+
+---
+
+### Kali Linux aur Law — ek zaroori baat
+
+Kali install karna legal hai. **Kali ka kisi ke system ke against use karna — bina permission ke — illegal hai.**
+
+tool neutral hota hai. use karna aur misuse karna alag hai.
+
+> **ek licensed gun rakhna aur kisi pe chalana — dono alag cheezein hain.**
+
+Kali ek professional tool hai. professional ki tarah use karo.
+
+---
+
+### ek line mein
+
+> **Kali Linux = Offensive Security ka banaya hua, Debian pe based, 600+ security tools ke saath aane wala, ethical hackers ka dedicated OS.**
+
+---
+
+## 🧠 MCQ Set — Topic 5.1
+
+---
+
+**Q1.** Kali Linux kisne banaya?
+
+- A) Offensive Security — BackTrack Linux ki jagah 2013 mein release kiya
+- B) Google — Android ke liye bana tha, hackers ne baad mein adopt kiya
+- C) Linus Torvalds — Linux kernel ke saath hi bundled security tools include kiye
+- D) MIT ke researchers — open source security research project ke tahat
+
+✅ **Sahi Jawab: A**
+> Offensive Security ek penetration testing company hai. BackTrack Linux ki limitations ke baad unhone 2013 mein Kali Linux build kiya — scratch se, Debian ke upar.
+
+---
+
+**Q2.** Kali Linux kis Linux distribution pe based hai?
+
+- A) Ubuntu — sabse popular Linux base hai isliye choose kiya gaya
+- B) Arch Linux — cutting edge packages ke liye
+- C) Debian — stable, reliable, aur long-term support ke liye
+- D) Fedora — Red Hat ka enterprise-grade base
+
+✅ **Sahi Jawab: C**
+> Kali = Debian pe based. Debian ki stability aur vast package repository pe Offensive Security ne apna security-focused layer rakha.
+
+---
+
+**Q3.** Kali Linux ka "rolling release" model ka matlab kya hai?
+
+- A) har saal ek nayi major version aati hai jise fresh install karna padta hai
+- B) ek hi version hoti hai jo roll over nahi hoti — stable rakhne ke liye
+- C) Kali free mein roll out hota hai — koi payment nahi kabhi
+- D) updates continuously aate rehte hain — koi fixed version nahi, system hamesha latest rehta hai
+
+✅ **Sahi Jawab: D**
+> rolling release = har hafte naye updates. `apt update && apt upgrade` se system hamesha current rehta hai. koi major version jump nahi karna padta.
+
+---
+
+**Q4.** 2019 ke baad Kali Linux mein kya important change aaya users ke liye?
+
+- A) default user root se badle normal user `kali` pe — better security practice ke liye
+- B) paid subscription shuru ho gaya — tools ke liye license chahiye
+- C) GUI hata diya — sirf terminal mode reh gaya
+- D) Windows support band kar di — sirf bare metal pe chalega
+
+✅ **Sahi Jawab: A**
+> pehle Kali seedha root se start hota tha — risky. 2019 ke baad default user `kali` hai — normal privileges ke saath. root tab use karo jab actually zaroori ho.
+
+---
+
+**Q5.** Kali Linux kyun specifically banaya gaya — general purpose distro kyun nahi?
+
+- A) kyunki general distros mein terminal nahi hota
+- B) kyunki security testing ke liye specialized tools, configurations, aur environment chahiye — jo general distros mein nahi hoti
+- C) kyunki Kali sirf ARM processors pe chalta hai — jo security hardware use karte hain
+- D) kyunki Offensive Security ko ek paid product banana tha — differentiation ke liye
+
 ✅ **Sahi Jawab: B**
-> `$` = normal user. `#` = root user. hamesha `$` dekhna chahiye normal kaam mein — `#` tab aye jab specifically root access karo `sudo su` se. yeh important hai — security ke liye.
+> Kali mein 600+ pre-installed tools, security-specific configurations, aur penetration testing ke liye optimized environment hai. yeh sab general distros setup mein nahi hote.
+
+---
+
+**Q6.** Kali Linux aur BackTrack Linux mein kya rishta hai?
+
+- A) dono alag companies ke alag products hain — koi connection nahi
+- B) BackTrack, Kali ka updated modern version hai — 2020 mein release hua
+- C) BackTrack aur Kali same OS hain — sirf naam alag hai different regions ke liye
+- D) Kali, BackTrack ka successor hai — same creators ne BackTrack ki limitations ke baad Kali rebuild kiya
+
+✅ **Sahi Jawab: D**
+> BackTrack → Kali. same creators (Offensive Security), nayi architecture, Debian base, better maintenance. BackTrack officially 2013 mein retire ho gaya.
+
+---
+
+**Q7.** Kali Linux download aur use karna legally kaisa hai?
+
+- A) illegal — penetration testing tools rakhna India mein banned hai
+- B) legal — Kali rakhna allowed hai, lekin bina permission kisi ka system attack karna illegal hai
+- C) legal sirf agar tum certified ethical hacker ho — bina certification ke illegal
+- D) gray area — laws alag alag deshon mein clear nahi hain Kali ke liye specifically
+
+✅ **Sahi Jawab: B**
+> Kali download karna, install karna, seekhna — legal hai. tool ko kisi ke system ke against bina permission use karna — illegal. tool neutral hota hai, intent matter karta hai.
+
+---
+
+**Q8.** Kali Linux mein pre-installed tools kahan se aate hain?
+
+- A) open source security tools hain jo Kali ki team package karke include karti hai
+- B) Microsoft aur Google ke certified security tools hain
+- C) Kali ki team khud har tool likhti hai — sab in-house developed hain
+- D) paid commercial tools hain jo Offensive Security license karke include karti hai
+
+✅ **Sahi Jawab: A**
+> Kali mein mostly open source community ke banaye tools hain — Nmap, Metasploit, Wireshark, etc. Kali team inhe package format mein organize karke include karti hai.
+
+---
+
+**Q9.** daily driver laptop pe sirf Kali Linux rakhna kyun sahi nahi?
+
+- A) Kali mein browser nahi hota — internet use nahi ho sakta
+- B) Kali mein file save nahi hoti — sab data reboot pe erase hota hai
+- C) Kali ke saath warranty void ho jaati hai laptop ki
+- D) Kali ek specialist OS hai — daily tasks ke liye nahi banaya gaya, security testing ke liye banaya gaya
+
+✅ **Sahi Jawab: D**
+> Kali = specialist tool. ek surgeon apne scalpel se roti nahi kaatta. normal use ke liye Ubuntu ya koi aur distro better hai. Kali alag rakho — VM ya dedicated machine pe.
+
+---
+
+**Q10.** OSCP certification kaun deta hai?
+
+- A) CompTIA — Security+ aur CEH bhi inhi ka hai
+- B) EC-Council — Certified Ethical Hacker ka issuer
+- C) Offensive Security — Kali Linux ka creator
+- D) ISC2 — CISSP aur CCSP ke liye jaane jaate hain
+
+✅ **Sahi Jawab: C**
+> Offensive Security = Kali banata hai + OSCP certification deta hai. OSCP duniya ki sabse respected penetration testing certifications mein se ek hai — practical, hands-on exam.
+
+---
+
+**Q11.** Kali Linux mein kitne tools approximately pre-installed aate hain?
+
+- A) 10-20 — sirf most essential tools
+- B) 100-150 — common penetration testing tools
+- C) 600+ — har category ke liye tools hain
+- D) 2000+ — poori security community ke sare tools bundled hain
+
+✅ **Sahi Jawab: C**
+> Kali mein 600+ tools hain — network scanning se lekar forensics tak, web testing se lekar wireless attacks tak. har security domain covered hai.
+
+---
+
+**Q12.** Kali Linux ka Debian pe based hone ka kya fayda hai?
+
+- A) Debian ki stability, vast package repository, aur long-term support Kali ko reliable banate hain
+- B) Debian ke sare games aur multimedia apps Kali pe automatically available hain
+- C) Debian ke users automatically Kali use karna jaante hain — extra learning nahi
+- D) Debian ka brand name Kali ko credibility deta hai marketplace mein
+
+✅ **Sahi Jawab: A**
+> Debian = proven, stable foundation. decades se servers pe chal raha hai. Kali is stable base ke upar bana — isliye Kali bhi solid hai. Debian ka `apt` package manager bhi use hota hai.
+
+---
+
+**Q13.** Kali Linux mein "Kali" naam kahan se aaya?
+
+- A) founder Kali naam ke developer ke naam pe rakha gaya
+- B) "Kali" Hindu goddess Kali se inspired hai — destruction aur power ka symbol — jo Kali Linux ke purpose ko represent karta hai
+- C) "K" for Kernel, "A" for Advanced, "L" for Linux, "I" for Interface — acronym hai
+- D) BackTrack ka next version "K series" se shuru hona tha — pehla letter K tha
+
+✅ **Sahi Jawab: B**
+> Kali Linux ka naam Hindu goddess Kali se inspired hai — jo destruction, transformation aur power ka symbol hai. penetration testing ka nature bhi aisa hi hai — systematically todna taaki better banana ja sake.
+
+---
+
+**Q14.** Kali Linux ka update kaise karte hain?
+
+- A) Kali ki website pe jaao — manual download karo — reinstall karo
+- B) `kali-update` — specific command hai Kali ke liye
+- C) Offensive Security ka subscription lena padta hai — tab automatic updates milte hain
+- D) `sudo apt update && sudo apt upgrade` — Kali rolling release hai, yeh command se hamesha latest rahega
+
+✅ **Sahi Jawab: D**
+> rolling release = `apt update && apt upgrade`. chapter 4.3 mein yeh seekha tha. Kali mein same command. hamesha latest rahega bina reinstall ke.
+
+---
+
+**Q15.** Kali Linux kab officially BackTrack ko replace kiya?
+
+- A) 2010 — BackTrack 5 release ke saath hi Kali ka development shuru hua
+- B) 2013 — March 2013 mein pehla official release
+- C) 2015 — 2 saal development ke baad stable version aaya
+- D) 2019 — jab root to non-root default change hua
+
+✅ **Sahi Jawab: B**
+> March 2013 — Kali Linux 1.0. BackTrack officially retire. Offensive Security ne completely rebuild kiya — Debian base pe, better architecture ke saath.
+
+---
+
+## 🎯 Task — Topic 5.1 — Kali Linux Ko Explore Karo Bina Install Kiye
+
+**task naam: "Kali se pehli mulaqat"**
+
+Kali install karne se pehle — online dekho kya hota hai andar.
+
+**Step 1 — Kali ki official website dekho:**
+```
+https://www.kali.org
+```
+homepage pe download options dekhoge — kitne flavors mein milta hai note karo.
+
+**Step 2 — Tools ki list dekho:**
+```
+https://www.kali.org/tools/
+```
+categories dekhoge — web, wireless, forensics, etc. scroll karo — feel karo kitna kuch hai.
+
+**Step 3 — Offensive Security ke baare mein:**
+```
+https://www.offensive-security.com
+```
+yeh woh company hai jo Kali banati hai aur OSCP deti hai.
+
+**Socho:**
+- kitni categories mein tools hain?
+- koi tool ka naam aise tha jo pehle suna ho?
+- yeh sab sirf ek OS mein hota hai — yeh realize karo
+
+```
+════════════════════════════════════════════════════════
+   ✅  TOPIC 5.1 COMPLETE — KALI LINUX KI KAHANI
+   ⬇️  Neeche hai Topic 5.2
+════════════════════════════════════════════════════════
+```
+
+---
+---
+
+## 📌 Topic 5.2 — Kali Linux Kaise Laayein — Installation Methods
+
+---
+
+### ek sawaal pehle
+
+Kali install karna hai — lekin kaise?
+
+bahut log yahan confused hote hain. "kya main apna laptop format karun?" — nahi! yeh sab se badi galti hogi.
+
+Kali install karne ke **kai tarike hain.** har ek ke apne fayde aur use case hain. pehle samjho — phir decide karo.
+
+---
+
+### Method 1 — Virtual Machine (VM) — Sabse Recommended Beginners Ke Liye
+
+**Virtual Machine kya hoti hai?**
+
+socho tumhare ghar ke andar ek aur chhota sa ghar bana do — plastic ka, fake — lekin sab kuch functionally real. kitchen hai, bathroom hai, rooms hain — lekin asli ghar ke andar.
+
+**yahi virtual machine hai — ek computer ke andar ek aur fake computer.**
+
+tumhara asli computer = **Host**
+virtual machine ke andar ka computer = **Guest**
+
+```
+Tumhara Laptop (Windows/Mac) ← Host
+     └── VirtualBox Software
+           └── Kali Linux VM ← Guest
+```
+
+**kyun best hai beginners ke liye:**
+
+- ✅ kuch bhi galat hua — VM delete karo, naya banao — host (tumhara laptop) safe
+- ✅ ek hi time pe Windows bhi chala sako, Kali bhi chala sako
+- ✅ snapshot le sakte ho — galat command chali — undo karo jaise time machine
+- ✅ laptop format nahi karna
+- ❌ performance thodi slow hogi kyunki resources share hote hain
+
+**VM software options:**
+
+| Software | Price | Recommended For |
+|---|---|---|
+| **VirtualBox** | Free | Beginners — Windows/Mac/Linux pe |
+| **VMware Workstation Player** | Free (basic) | Slightly better performance |
+| **VMware Fusion** | Paid (Mac) | Mac users ke liye |
+| **UTM** | Free | M1/M2 Mac ke liye |
+
+---
+
+### Method 2 — Live Boot — Bina Install Kiye Chalao
+
+**kya hota hai:**
+
+ek USB drive pe Kali daalo. computer ko us USB se boot karo. Kali chalu ho jaata hai — bilkul asli system ki tarah — **lekin hard disk pe kuch bhi save nahi hoga.** computer band karo — sab wapas.
+
+**use case:**
+
+- quick test karna hai
+- install nahi karna
+- kisi aur ke computer pe temporarily use karna
+
+**limitation:**
+- har baar fresh start — settings, files sab jaati hain
+- thoda slow hota hai USB se
+
+---
+
+### Method 3 — Dual Boot — Dono OS ek hi laptop pe
+
+**kya hota hai:**
+
+laptop ki hard disk ko do parts mein divide karo (partition). ek mein Windows, doosre mein Kali. laptop start karte waqt choose karo — kaunsa OS chalana hai.
+
+```
+Hard Disk
+├── Partition 1 → Windows (100 GB)
+└── Partition 2 → Kali Linux (80 GB)
+
+Boot pe:
+Choose OS: [Windows] [Kali Linux]
+```
+
+**fayde:**
+- ✅ full performance — resources share nahi
+- ✅ dono OS available
+
+**nuqsaan:**
+- ❌ risky — partition galat hua toh data jaata hai
+- ❌ ek waqt mein sirf ek OS chalega
+- ❌ beginners ke liye setup complex hai
+
+> **beginners ke liye dual boot recommend nahi karta — VM se shuru karo.**
+
+---
+
+### Method 4 — WSL2 (Windows Subsystem for Linux)
+
+Windows 10/11 mein ek feature hai — **WSL2** — jo Windows ke andar directly Linux run karne deta hai.
+
+```
+Windows 11
+└── WSL2
+    └── Kali Linux (terminal based)
+```
+
+**kaise enable karein:**
+
+PowerShell mein admin se:
+```
+wsl --install -d kali-linux
+```
+
+restart ke baad Kali terminal mil jaata hai.
+
+**limitation:**
+- sirf terminal milta hai — GUI nahi (advanced setup se GUI bhi ho sakta hai lekin complex hai)
+- tools ka subset hi kaam karta hai
+- networking limitations hain
+
+**use case:** quick commands, lightweight usage — full Kali nahi.
+
+---
+
+### Method 5 — Bare Metal Install — Dedicated Machine
+
+Kali ko directly ek dedicated laptop ya PC pe install karo — koi aur OS nahi.
+
+**perfect for:**
+- jab dedicated hacking machine ho
+- maximum performance chahiye
+- advanced professionals ke liye
+
+**beginners ke liye:** nahi — pehle VM se seekho, phir jab comfortable ho toh dedicated machine consider karo.
+
+---
+
+### Method 6 — Kali Linux on Android (NetHunter)
+
+Offensive Security ka ek project hai — **Kali NetHunter** — jo rooted Android phones pe Kali run karne deta hai.
+
+mobile ethical hacking ke liye — advanced use case. abhi yahan jaana zaroori nahi.
+
+---
+
+### Kali ke Flavors — Download Karte Waqt Kaun Sa Lein?
+
+Kali download karo toh kai options milenge:
+
+| Flavor | Kya Hai | Kiske Liye |
+|---|---|---|
+| **Kali Linux Installer** | Full install — hard disk pe | Bare metal ya VM |
+| **Kali Linux Live** | USB se chalao bina install kiye | Live boot |
+| **Kali Linux Virtual Machine** | Pre-built VM file (`.ova`) | VirtualBox/VMware ke liye — sabse easy |
+| **Kali Linux WSL** | Windows Store se | WSL users ke liye |
+| **Kali Linux NetHunter** | Android ke liye | Mobile hackers |
+
+**beginners ke liye best choice:**
+
+> **"Kali Linux Virtual Machine" — pre-built `.ova` file download karo — VirtualBox mein import karo — 10 minute mein ready.**
+
+yahi hum next topic mein karenge.
+
+---
+
+### Desktop Environments — XFCE, GNOME, KDE?
+
+Kali Linux download karte waqt ek aur choice hoti hai — **Desktop Environment:**
+
+| DE | How It Looks | Resource Usage |
+|---|---|---|
+| **XFCE** (default) | Lightweight, fast, simple | Low — purane hardware pe bhi chalta hai |
+| **GNOME** | Modern, polished | High — zyada RAM chahiye |
+| **KDE Plasma** | Feature rich, customizable | Medium-High |
+
+**Kali ka default = XFCE** — beginners ke liye yahi best hai. fast hai, light hai, kaam karta hai.
+
+---
+
+### ek line mein
+
+> **Beginners ke liye: VM mein Kali. Pre-built `.ova` file download karo — VirtualBox mein import karo — ek ghante mein ready. Laptop safe, Kali full power mein.**
+
+---
+
+## 🎯 Task — Topic 5.2 — VirtualBox Download Karo
+
+**task naam: "Kali ke liye ghar tayaar karo"**
+
+abhi Kali install nahi karenge — pehle sirf VirtualBox ready karo.
+
+**Step 1 — VirtualBox download karo:**
+```
+https://www.virtualbox.org/wiki/Downloads
+```
+apne OS ke hisaab se download karo — Windows, Mac, ya Linux.
+
+**Step 2 — Install karo:**
+- downloaded installer run karo
+- "Next, Next, Install" — default settings theek hain
+- install complete hone do
+
+**Step 3 — VirtualBox open karo:**
+pehli baar khulega — yeh screen dikhegi:
+```
+Oracle VirtualBox Manager
+[New] [Settings] [Start]
+```
+
+koi VM nahi hai abhi — blank list hogi. normal hai.
+
+**Step 4 — Note karo:**
+Kali ki website pe jaao:
+```
+https://www.kali.org/get-kali/
+```
+"Virtual Machines" section dekho — `.ova` file ka size note karo. download time estimate karo apni speed se.
+
+**next topic mein: actual Kali install karenge.**
+
+```
+════════════════════════════════════════════════════════
+   ✅  TOPIC 5.2 COMPLETE — INSTALLATION METHODS
+   ⬇️  Neeche hai Topic 5.3
+════════════════════════════════════════════════════════
+```
+
+---
+---
+
+## 📌 Topic 5.3 — VirtualBox Pe Kali Install Karna — Step by Step
+
+---
+
+### ab asli kaam
+
+theory ho gayi. ab Kali actually install karte hain.
+
+yeh topic ek complete step-by-step guide hai. ek ek step follow karo — kuch skip mat karna.
+
+---
+
+### Jo Chahiye
+
+- **VirtualBox** installed (topic 5.2 mein install kiya)
+- **Kali Linux Pre-built VM** — `.ova` file
+- **Minimum RAM:** 4GB (8GB recommended)
+- **Disk Space:** 20-30GB free
+- **Internet:** download ke liye
+
+---
+
+### Step 1 — Kali VM File Download Karo
+
+browser mein jaao:
+```
+https://www.kali.org/get-kali/#kali-virtual-machines
+```
+
+"VirtualBox" option pe click karo — `.ova` file download hogi.
+
+file size approximately **3-4 GB** hoti hai. internet speed ke hisaab se 15-60 minute lag sakte hain.
+
+download ke baad — `.ova` file ready hai. kuch install nahi kiya abhi — sirf download hua.
+
+---
+
+### Step 2 — VirtualBox Mein Import Karo
+
+VirtualBox open karo.
+
+menu se: **File → Import Appliance**
+
+```
+File → Import Appliance → [.ova file select karo] → Next
+```
+
+settings page dikhega — yeh default values theek hain:
+
+| Setting | Default Value | Recommendation |
+|---|---|---|
+| RAM | 2048 MB (2GB) | 4096 MB (4GB) rakho agar RAM available hai |
+| CPU | 1 | 2 rakho agar CPU cores hain |
+| Disk | 80 GB | as is |
+
+**RAM adjust karo:** slider pe 4096 MB set karo agar possible hai.
+
+phir: **Import** — 5-10 minute lagenge.
+
+---
+
+### Step 3 — Pehli Baar Start Karo
+
+import complete hua — VM list mein "Kali Linux" dikhega.
+
+**Start** button dabao.
+
+ek nayi window khulegi — Kali boot hoga. pehli baar thoda time lagega — 1-2 minute.
+
+login screen aayega.
+
+---
+
+### Step 4 — Login Karo
+
+Kali ka default username aur password:
+
+```
+Username: kali
+Password: kali
+```
+
+yeh dono type karo — Enter — Kali ka desktop khulega.
+
+---
+
+### Step 5 — Desktop Dekho
+
+XFCE desktop dikhega — taskbar upar ya neeche hoga, application menu hoga.
+
+**pehle kaam — Guest Additions install karo** (VirtualBox specific step):
+
+terminal kholo (taskbar mein terminal icon ya right click → terminal)
+
+```bash
+sudo apt update
+sudo apt install -y virtualbox-guest-x11
+sudo reboot
+```
+
+**yeh teen commands ek ek karke samjho:**
+
+**`sudo apt update`**
+
+```
+sudo        → "superuser do" — root ki permission se chalao yeh command
+              (tumhara normal user account sensitive system changes nahi kar sakta —
+               sudo woh permission temporarily deta hai)
+
+apt         → Kali ka package manager — software install/remove/update karta hai
+              (poora naam: Advanced Package Tool)
+
+update      → repositories se nayi package list fetch karo
+              matlab: internet pe check karo — koi naya software version aaya kya?
+              (kuch install nahi hota — sirf list refresh hoti hai)
+```
+
+> yeh command pehle hamesha chalanki chahiye — warna outdated list se kaam hota hai.
+
+---
+
+**`sudo apt install -y virtualbox-guest-x11`**
+
+```
+sudo                    → root permission se chalao
+apt                     → package manager
+install                 → yeh software install karo
+-y                      → "yes" automatically assume karo
+                          (bina iske apt puchega "kya install karein? [Y/n]" — 
+                           tumhe manually Y dabaana padega — '-y' woh step skip karta hai)
+virtualbox-guest-x11    → package ka naam — yeh hai VirtualBox Guest Additions
+                          jo Kali ko sahi size mein dikhata hai, clipboard share karta hai,
+                          aur drag-drop enable karta hai
+```
+
+---
+
+**`sudo reboot`**
+
+```
+sudo     → root permission
+reboot   → system restart karo — Guest Additions install ke baad effect aane ke liye
+```
+
+reboot ke baad — Kali full screen mein chalega, clipboard share hoga, drag-drop kaam karega.
+
+---
+
+### Step 6 — Password Change Karo
+
+default password "kali" jagah jagah pata hai — badal lo:
+
+```bash
+passwd
+```
+
+**`passwd` ka matlab:**
+
+```
+passwd   → "password" ka short form
+           yeh command current user ka password change karta hai
+           koi argument nahi chahiye — seedha chalao — interactive prompt aata hai
+```
+
+```
+Current password: kali           ← purana password verify karega
+New password: [apna naya password]
+Retype new password: [dobara]    ← confirm karne ke liye
+```
+
+**strong password rakho** — numbers, symbols, uppercase — mix karo.
+
+---
+
+### Step 7 — Update Karo
+
+naya system — pehla kaam update:
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+**yeh ek line mein kai kaam ho rahe hain — poora breakdown:**
+
+```
+sudo          → root permission se chalao
+apt           → package manager
+update        → repositories se nayi list fetch karo (koi install nahi — sirf list)
+
+&&            → "AND operator" — matlab:
+                "pehli command SUCCESS ho — tab aur sirf tab doosri chalao"
+                agar 'update' fail ho gaya — 'upgrade' nahi chalega
+                yeh safety mechanism hai
+
+sudo          → phir root permission
+apt           → phir package manager
+upgrade       → jo nayi versions update ne fetch ki thi — unhe actually install karo
+                yahan actual download aur install hota hai
+-y            → sab upgrade prompts pe automatically "yes" — manually nahi dabaana
+```
+
+> **`update` vs `upgrade` ka fark:**
+> `update` = sirf list refresh karo — "kya available hai" check karo
+> `upgrade` = actually install karo — jo available hai woh download aur update karo
+> dono zaruri hain — ek ke bina doosra adhoora hai
+
+yeh thoda time le sakta hai — pehli baar zyada updates hoti hain. chal jaane do.
+
+---
+
+### Step 8 — Snapshot Lo
+
+sab kuch sahi chal raha hai — ab ek snapshot lo. fresh clean state ka.
+
+VirtualBox mein:
+```
+Machine → Take Snapshot → naam: "Fresh Install - Clean"
+```
+
+ab agar kuch bhi galat ho — is snapshot pe wapas aa sakte ho.
+
+---
+
+### Common Problems aur Solutions
+
+**Problem: VM start nahi ho raha — "VT-x is disabled"**
+
+solution: BIOS mein jaao — Virtualization enable karo.
+- restart karo, F2/Del/F10 dabao boot pe (manufacturer ke hisaab se alag)
+- BIOS mein "Intel Virtualization Technology" ya "AMD-V" dhundho — Enable karo
+- save karke exit karo
+
+**Problem: Screen bahut chhoti hai**
+
+solution: Guest Additions install karo (Step 5 mein bataya). phir View → Auto-resize Guest Display.
+
+**Problem: Internet nahi chal raha VM mein**
+
+VirtualBox mein VM settings → Network → Adapter 1:
+- Attached to: **NAT** select karo — internet kaam karega
+
+**Problem: Login ke baad kuch nahi dikhta / black screen**
+
+solution: VM restart karo. agar phir bhi — VirtualBox → Display → Video Memory 128 MB karo.
+
+---
+
+### Kali VM Ready — Ab Se Yahi Tumhara Lab Hai
+
+Kali installed hai. Updated hai. Snapshot hua hai.
+
+ab se jab bhi koi topic sikhoge — is Kali VM mein karoge. yahi tumhara safe lab hai — kuch bhi try karo — host laptop safe rahega.
+
+---
+
+## 🎯 Task — Topic 5.3 — Kali Install Karo
+
+**task naam: "apna hacking lab ready karo"**
+
+**Step 1:** `https://www.kali.org/get-kali/#kali-virtual-machines` se `.ova` download karo.
+
+**Step 2:** VirtualBox open karo → File → Import Appliance → `.ova` select karo → RAM 4096 MB set karo → Import.
+
+**Step 3:** Start karo → `kali` / `kali` se login karo.
+
+**Step 4:** terminal kholo, run karo:
+```bash
+sudo apt update
+sudo apt install -y virtualbox-guest-x11
+sudo reboot
+```
+
+**Step 5:** reboot ke baad:
+```bash
+passwd
+```
+password badlo.
+
+**Step 6:**
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+update complete hone do.
+
+**Step 7:** VirtualBox → Machine → Take Snapshot → naam: "Clean Install"
+
+**Verify karo:**
+```bash
+uname -a
+```
+Kali ka version aur kernel dikhega. Kali ready hai. 🎉
+
+```
+════════════════════════════════════════════════════════
+   ✅  TOPIC 5.3 COMPLETE — KALI INSTALL READY
+   ⬇️  Neeche hai Topic 5.4
+════════════════════════════════════════════════════════
+```
+
+---
+---
+
+## 📌 Topic 5.4 — Kali Ka Desktop — Pehli Baar Seedha Dekho
+
+---
+
+### pehli baar khologe toh overwhelm hoga — normal hai
+
+Kali ka desktop khula. ek bahut kuch dikh raha hai. taskbar, icons, menu — aur tum soch rahe ho "yeh sab kya hai?"
+
+normal hai. har kisi ke saath aise hi hua.
+
+ab hum ek ek cheez seedha samjhenge. koi panic nahi.
+
+---
+
+### XFCE Desktop — Kali Ka Default Interface
+
+Kali mein XFCE desktop environment hota hai. yeh Windows ya Android jaisa nahi lagta — alag hai. lekin kuch minutes mein comfortable ho jaoge.
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  [Applications ▼]  [Places ▼]  [System ▼]          🔋🕐 │  ← Top Panel
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│                                                         │
+│              (Desktop Area)                             │
+│                                                         │
+│                                                         │
+├─────────────────────────────────────────────────────────┤
+│  [🖥️ Terminal] [🌐 Browser]  ...          [Workspaces]  │  ← Bottom Panel (ya top pe)
+└─────────────────────────────────────────────────────────┘
+```
+
+---
+
+### Top Panel — Kya Hai Kya?
+
+**Applications menu:**
+yahan sare installed programs hain — categories mein:
+
+```
+Applications
+├── 01 - Information Gathering    ← network/target info tools
+├── 02 - Vulnerability Analysis   ← vulnerability scanners
+├── 03 - Web Application Analysis ← web hacking tools
+├── 04 - Database Assessment      ← database tools
+├── 05 - Password Attacks         ← password tools
+├── 06 - Wireless Attacks         ← WiFi tools
+├── 07 - Reverse Engineering      ← RE tools
+├── 08 - Exploitation Tools       ← exploit tools
+├── 09 - Sniffing & Spoofing      ← traffic tools
+├── 10 - Post Exploitation        ← after getting in
+├── 11 - Forensics                ← digital forensics
+├── 12 - Reporting Tools          ← report banane ke liye
+└── Usual Apps                    ← browser, file manager, etc.
+```
+
+yeh categories — ethical hacking ka workflow hai. pehle information gather karo, phir vulnerabilities dhundho, phir exploit karo. numbers order mein hain.
+
+**Places menu:**
+- Home, Desktop, Downloads — file system navigate karne ke liye
+
+**System menu:**
+- Settings, Log Out, Shut Down
+
+---
+
+### Terminal — Sabse Important Application
+
+Kali mein terminal **sabse zyada use hone wali cheez** hai.
+
+terminal kholne ke teen tarike:
+
+1. **Keyboard shortcut:** `Ctrl + Alt + T`
+2. **Taskbar pe terminal icon:** click karo
+3. **Right click** desktop pe → Open Terminal
+
+terminal khulne par yeh dikhega:
+
+```
+┌──(kali㉿kali)-[~]
+└─$
+```
+
+yeh Kali ka prompt hai. breakdown:
+
+```
+┌──(kali㉿kali)-[~]
+       │    │    │
+       │    │    └── [~] = current location (~ = home directory)
+       │    └────── kali = machine name (hostname)
+       └─────────── kali = current username
+└─$               = command type karne ki jagah
+```
+
+---
+
+### File Manager — Thunar
+
+Kali mein File Manager ka naam **Thunar** hai.
+
+kholne ke liye: Places → Home Folder
+
+ya terminal mein:
+```bash
+thunar
+```
+
+yahan files aur folders Windows Explorer jaisi dikhti hain. lekin hum mostly terminal se kaam karenge — GUI sirf reference ke liye.
+
+---
+
+### Text Editor — Mousepad
+
+simple text files khol ke dekhne ke liye Kali mein **Mousepad** editor hai.
+
+kholne ke liye: Applications → Accessories → Mousepad
+
+ya terminal se:
+```bash
+mousepad filename.txt
+```
+
+---
+
+### Web Browser — Firefox ESR
+
+Kali mein default browser **Firefox ESR** aata hai.
+
+ESR = Extended Support Release — stable version.
+
+browser se kali.org, documentation, aur web-based tools access kar sakte ho.
+
+---
+
+### Workspaces — Kali Ki Super Power
+
+XFCE mein ek feature hai — **Multiple Workspaces.**
+
+socho multiple virtual desktops — ek pe terminal chal raha hai, ek pe browser, ek pe file manager — sab alag screens pe.
+
+```
+Workspace 1 → Terminal chala raha hai
+Workspace 2 → Browser aur notes
+Workspace 3 → Koi tool chal raha hai
+```
+
+switch karna: `Ctrl + F1`, `Ctrl + F2`, `Ctrl + F3` — ya taskbar mein workspace switcher.
+
+professional log yeh use karte hain — work organized rehta hai.
+
+---
+
+### Right Click — Desktop Pe
+
+desktop pe right click karo — menu aayega:
+
+```
+Open Terminal Here
+Create Folder
+Create Document
+...
+```
+
+"Open Terminal Here" — bahut useful hai. jis folder mein ho — wahan se seedha terminal khulega.
+
+---
+
+### System Settings
+
+Applications → Settings → Settings Manager — yahan sab kuch customize kar sakte ho:
+- display resolution
+- keyboard shortcuts
+- mouse settings
+- appearance / themes
+
+---
+
+### Kali Ka Wallpaper — Woh Dragon
+
+Kali ka default wallpaper ek dragon hai — Kali Linux ka logo. XFCE aur GNOME mein alag alag design hote hain lekin dragon icon consistent hai.
+
+---
+
+### Shortcut Keys — Yaad Rakho
+
+| Shortcut | Kaam |
+|---|---|
+| `Ctrl + Alt + T` | Terminal kholna |
+| `Ctrl + F1` / `F2` / `F3` | Workspace switch |
+| `Alt + F4` | Current window band karna |
+| `Alt + Tab` | Windows ke beech switch |
+| `Super` (Windows key) | Application launcher |
+| `Ctrl + C` | Running command rokna |
+| `Ctrl + L` | Terminal clear karna |
+
+---
+
+### ek line mein
+
+> **Kali ka desktop alag lagta hai — lekin simple hai. Terminal sabse important jagah hai. Baki GUI sirf support ke liye hai.**
+
+---
+
+## 🧠 MCQ Set — Topic 5.4
+
+---
+
+**Q1.** Kali mein terminal kholne ka keyboard shortcut kya hai?
+
+- A) `Ctrl + T`
+- B) `Alt + T`
+- C) `Ctrl + Alt + T`
+- D) `Super + Enter`
+
+✅ **Sahi Jawab: C**
+> `Ctrl + Alt + T` — yeh shortcut yaad rakho. Kali pe sabse zyada use hone wala shortcut hai — terminal kholna. har kaam yahan se shuru hota hai.
+
+---
+
+**Q2.** Kali ke terminal prompt mein `[~]` ka matlab kya hai?
+
+- A) root directory — `/` pe ho
+- B) system directory — `/etc` pe ho
+- C) temp directory — `/tmp` pe ho
+- D) home directory — current user ka home folder
+
+✅ **Sahi Jawab: D**
+> `~` = tilde = home directory shortcut. `kali` user ke liye `~` matlab `/home/kali`. jab bhi `~` dekho — home folder pe ho.
+
+---
+
+**Q3.** Kali ke Applications menu mein categories numbered (01, 02, 03...) kyun hain?
+
+- A) ethical hacking ka workflow represent karta hai — information gathering pehle, exploitation baad mein
+- B) tools ka alphabetical order maintain karne ke liye — numbers sort karte hain
+- C) Offensive Security ka internal tool numbering system hai — support ke liye
+- D) numbers difficulty level batate hain — 01 easy, 12 hardest
+
+✅ **Sahi Jawab: A**
+> categories ka order = hacking workflow. 01 Information Gathering se shuru, phir Vulnerability Analysis, phir Exploitation — yeh actual penetration testing process hai. soch ke design kiya gaya hai.
+
+---
+
+**Q4.** XFCE mein "Workspaces" kya hote hain?
+
+- A) alag alag user accounts — har workspace ek alag user ke liye
+- B) multiple virtual desktops — alag alag windows alag alag screens pe organized
+- C) VirtualBox ke andar alag environments — har workspace ek VM
+- D) saved terminal sessions — band hone pe automatically restore hote hain
+
+✅ **Sahi Jawab: B**
+> workspaces = virtual desktops. workspace 1 pe terminal, workspace 2 pe browser — switch karo `Ctrl+F1/F2`. professional Kali users always multiple workspaces use karte hain.
+
+---
+
+**Q5.** Kali terminal prompt `┌──(kali㉿kali)-[~]` mein `㉿` ke dono taraf kya hai?
+
+- A) left = machine name, right = username
+- B) left = OS version, right = kernel version
+- C) left = directory, right = user permissions
+- D) left = username, right = hostname (machine name)
+
+✅ **Sahi Jawab: D**
+> format hai `username㉿hostname`. `kali㉿kali` matlab username=kali, hostname=kali. agar tum hostname change karo — right wala badlega.
+
+---
+
+**Q6.** Kali mein `$` prompt ka matlab kya hai?
+
+ = normal user. `#` = root user. hamesha `$` dekhna chahiye normal kaam mein — `#` tab aye jab specifically root access karo `sudo su` se. yeh important hai — security ke liye.
 
 ---
 
@@ -1222,12 +2410,12 @@ Kali ka default wallpaper ek dragon hai — Kali Linux ka logo. XFCE aur GNOME m
 
 **Q9.** Kali mein default web browser kaunsa aata hai?
 
-- A) Chromium — Chrome ka open source version
-- B) Firefox ESR — Extended Support Release
+- A) Firefox ESR — Extended Support Release
+- B) Chromium — Chrome ka open source version
 - C) Tor Browser — anonymous browsing ke liye
 - D) Epiphany — GNOME ka default browser
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: A**
 > Firefox ESR = stable, long-term supported Firefox version. Kali mein default. additional security tools ke saath configure kiya gaya hota hai.
 
 ---
@@ -1248,22 +2436,22 @@ Kali ka default wallpaper ek dragon hai — Kali Linux ka logo. XFCE aur GNOME m
 
 - A) logout karta hai current session se
 - B) terminal ki history list dikhata hai
-- C) terminal screen clear karta hai — `clear` command jaisi
-- D) terminal window lock karta hai — password maangega
+- C) terminal window lock karta hai — password maangega
+- D) terminal screen clear karta hai — `clear` command jaisi
 
-✅ **Sahi Jawab: C**
+✅ **Sahi Jawab: D**
 > `Ctrl + L` = clear screen. `clear` command type karne ki jagah shortcut. terminal cluttered lage — `Ctrl + L` — clean screen.
 
 ---
 
 **Q12.** Kali ka XFCE desktop kyun choose kiya gaya default ke liye?
 
-- A) XFCE sabse modern aur attractive desktop hai Linux pe
-- B) XFCE lightweight hai — VM mein bhi smooth chalta hai, kam RAM use karta hai
+- A) XFCE lightweight hai — VM mein bhi smooth chalta hai, kam RAM use karta hai
+- B) XFCE sabse modern aur attractive desktop hai Linux pe
 - C) XFCE mein hacking tools ka better GUI integration hota hai doosron se
 - D) Offensive Security ne XFCE khud develop kiya — isliye default rakha
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: A**
 > XFCE = low resource usage. Kali VM mein chalta hai — RAM share hoti hai host ke saath. XFCE VM mein bhi smooth. GNOME heavy hota — VM mein lagta. practical choice.
 
 ---
@@ -1284,10 +2472,10 @@ Kali ka default wallpaper ek dragon hai — Kali Linux ka logo. XFCE aur GNOME m
 
 - A) `Ctrl + Tab` — next workspace pe jaao
 - B) `Alt + 1`, `Alt + 2` — workspace number
-- C) `Ctrl + F1`, `Ctrl + F2`, `Ctrl + F3` — workspace 1, 2, 3
-- D) `Super + Left`, `Super + Right` — previous/next workspace
+- C) `Super + Left`, `Super + Right` — previous/next workspace
+- D) `Ctrl + F1`, `Ctrl + F2`, `Ctrl + F3` — workspace 1, 2, 3
 
-✅ **Sahi Jawab: C**
+✅ **Sahi Jawab: D**
 > `Ctrl + F1` = workspace 1, `Ctrl + F2` = workspace 2, etc. XFCE default shortcut. customize bhi kar sakte ho Settings mein.
 
 ---
@@ -1681,12 +2869,12 @@ baar baar dabate raho — history mein jaate raho.
 
 **Q1.** `pwd` command ka kya kaam hai?
 
-- A) previous working directory dikhata hai — pichli location
-- B) present/current working directory dikhata hai — abhi kahaan ho
+- A) present/current working directory dikhata hai — abhi kahaan ho
+- B) previous working directory dikhata hai — pichli location
 - C) parent working directory dikhata hai — ek level upar
 - D) program working directory — running programs ki location
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: A**
 > pwd = Print Working Directory. current location dikhata hai. jab bhi confusion ho "main kahaan hun?" — `pwd` type karo.
 
 ---
@@ -1707,22 +2895,22 @@ baar baar dabate raho — history mein jaate raho.
 
 - A) computer ko restart karta hai — dot dot = shutdown signal
 - B) root directory pe jaata hai — `..` matlab `root`
-- C) ek level upar — parent directory pe jaata hai
-- D) pichli directory pe jaata hai — `cd -` jaisa
+- C) pichli directory pe jaata hai — `cd -` jaisa
+- D) ek level upar — parent directory pe jaata hai
 
-✅ **Sahi Jawab: C**
+✅ **Sahi Jawab: D**
 > `..` = parent directory. `/home/kali/Desktop` mein ho — `cd ..` → `/home/kali`. `cd ../..` → `/home`.
 
 ---
 
 **Q4.** Absolute path aur Relative path mein kya fark hai?
 
-- A) absolute = fast, relative = slow — performance difference
-- B) absolute `/` se shuru hota hai — kahan se bhi kaam karta hai. relative = current location se — context ke saath kaam karta hai
+- A) absolute `/` se shuru hota hai — kahan se bhi kaam karta hai. relative = current location se — context ke saath kaam karta hai
+- B) absolute = fast, relative = slow — performance difference
 - C) absolute = files ke liye, relative = folders ke liye
 - D) koi fark nahi — dono same result dete hain
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: A**
 > absolute = `/home/kali/Documents` — root se poora path — kahan se bhi reliable. relative = `Documents` — sirf tab jab `/home/kali` mein ho. dono use hote hain — context ke hisaab se.
 
 ---
@@ -1743,10 +2931,10 @@ baar baar dabate raho — history mein jaate raho.
 
 - A) Trash/Recycle Bin mein — wahaan se recover ho sakti hai
 - B) `/tmp` folder mein — automatically 24 ghante baad delete
-- C) permanently gone — koi Recycle Bin nahi Linux mein by default
-- D) `/lost+found` mein — system recovery ke liye rakha jaata hai
+- C) `/lost+found` mein — system recovery ke liye rakha jaata hai
+- D) permanently gone — koi Recycle Bin nahi Linux mein by default
 
-✅ **Sahi Jawab: C**
+✅ **Sahi Jawab: D**
 > Linux mein `rm` = permanent delete. Recycle Bin nahi. `rm -rf` toh aur bhi dangerous. hamesha pehle sochlo — file real mein delete karni hai? undo nahi hoga.
 
 ---
@@ -1765,12 +2953,12 @@ baar baar dabate raho — history mein jaate raho.
 
 **Q8.** Tab completion kyun use karni chahiye?
 
-- A) security ke liye — Tab se commands safe hoti hain, manually type karne mein risk
-- B) speed aur accuracy — terminal khud complete karta hai — typos nahi honge — faster work
+- A) speed aur accuracy — terminal khud complete karta hai — typos nahi honge — faster work
+- B) security ke liye — Tab se commands safe hoti hain, manually type karne mein risk
 - C) sirf long commands ke liye — short commands mein Tab kaam nahi karta
 - D) Tab sirf Kali Linux mein kaam karta hai — doosre terminals mein nahi
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: A**
 > Tab = sabse underrated feature. auto-complete karta hai — naam galat nahi hoga. `cd Doc[Tab]` → `cd Documents/`. speed 10x. hamesha use karo.
 
 ---
@@ -1790,23 +2978,23 @@ baar baar dabate raho — history mein jaate raho.
 **Q10.** `touch newfile.txt` kya karta hai?
 
 - A) file kholta hai editing ke liye — nano jaisa
-- B) file ka timestamp update karta hai — agar exist karti hai. nahi karti toh khali file banata hai
+- B) file ko temporarily lock karta hai — doosra user access nahi kar sakta
 - C) file ko read-only banata hai — permissions change karta hai
-- D) file ko temporarily lock karta hai — doosra user access nahi kar sakta
+- D) file ka timestamp update karta hai — agar exist karti hai. nahi karti toh khali file banata hai
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: D**
 > `touch` ke do kaam: 1) existing file ka timestamp update. 2) nahi hai toh khali file create. hackers often `touch` se placeholder files banate hain ya scripts mein timestamps set karte hain.
 
 ---
 
 **Q11.** `cd -` kya karta hai?
 
-- A) root directory pe jaata hai — `-` matlab beginning
+- A) pichli directory pe jaata hai — do locations ke beech toggle karo
 - B) home directory pe jaata hai — `cd ~` jaisa
-- C) pichli directory pe jaata hai — do locations ke beech toggle karo
+- C) root directory pe jaata hai — `-` matlab beginning
 - D) ek level upar jaata hai — `cd ..` jaisa
 
-✅ **Sahi Jawab: C**
+✅ **Sahi Jawab: A**
 > `cd -` = toggle. `/home/kali` pe tha → gaya `/tmp` pe → `cd -` → wapas `/home/kali`. aur `cd -` → wapas `/tmp`. do locations ke beech fast switch.
 
 ---
@@ -1826,11 +3014,11 @@ baar baar dabate raho — history mein jaate raho.
 **Q13.** `tree` command kya dikhata hai?
 
 - A) installed packages ki dependency tree — kaunsa package kise depend karta hai
-- B) system process tree — parent aur child processes
-- C) current directory ka visual folder/file structure — tree format mein
+- B) current directory ka visual folder/file structure — tree format mein
+- C) system process tree — parent aur child processes
 - D) network topology — connected devices ka map
 
-✅ **Sahi Jawab: C**
+✅ **Sahi Jawab: B**
 > `tree` = visual directory structure. branches mein files aur folders dikhata hai. quick overview ke liye excellent. agar installed nahi: `sudo apt install tree`.
 
 ---
@@ -1839,10 +3027,10 @@ baar baar dabate raho — history mein jaate raho.
 
 - A) executable programs — jo directly terminal se run karte hain
 - B) user files — personal documents, downloads
-- C) system configuration files — network, users, software settings
-- D) temporary files — reboot pe delete hote hain
+- C) temporary files — reboot pe delete hote hain
+- D) system configuration files — network, users, software settings
 
-✅ **Sahi Jawab: C**
+✅ **Sahi Jawab: D**
 > `/etc` = configuration. network settings, user database, software configs — sab `/etc` mein. hackers ke liye important folder — misconfigured files vulnerabilities hote hain. chapter 4 mein bhi briefly cover kiya tha.
 
 ---
@@ -2184,12 +3372,12 @@ dono files compare karega — jo alag hai woh dikhayega:
 
 **Q1.** badi file ka content padhna hai — sab ek baar mein nahi — kaunsa command?
 
-- A) `cat` — poori file ek saath
-- B) `less` — ek page ek baar, scroll, search support
+- A) `less` — ek page ek baar, scroll, search support
+- B) `cat` — poori file ek saath
 - C) `more` — old version hai, `less` se better
 - D) `read` — line by line automatically padhta hai
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: A**
 > `less` = badi files ke liye. space se page karo, `/` se search karo, `q` se exit. `cat` badi file pe sab ek baar dump kar deta hai — scrolling mushkil.
 
 ---
@@ -2197,11 +3385,11 @@ dono files compare karega — jo alag hai woh dikhayega:
 **Q2.** `tail -f logfile.txt` kya karta hai?
 
 - A) file ke tail (end) se shuru karke poori file padhta hai backwards
-- B) file ko real-time mein monitor karta hai — nayi lines automatically dikhti hain
-- C) file ko background mein run karta hai — foreground mein kuch aur karo
+- B) file ko background mein run karta hai — foreground mein kuch aur karo
+- C) file ko real-time mein monitor karta hai — nayi lines automatically dikhti hain
 - D) file ki last modified time dikhata hai
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: C**
 > `-f` = follow. file mein nayi content add hoti jaaye — terminal mein live dikhega. server logs monitor karne ke liye classic command. `Ctrl + C` se band karo.
 
 ---
@@ -2209,23 +3397,23 @@ dono files compare karega — jo alag hai woh dikhayega:
 **Q3.** `wc -l file.txt` kya return karta hai?
 
 - A) file mein words ki count
-- B) file mein lines ki count
-- C) file ka size bytes mein
-- D) file mein characters ki count
+- B) file ka size bytes mein
+- C) file mein characters ki count
+- D) file mein lines ki count
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: D**
 > `-l` = lines. `wc -w` = words. `wc -c` = characters/bytes. `wc` akela teenon batata hai ek saath.
 
 ---
 
 **Q4.** `file` command kyun use karte hain?
 
-- A) file create karne ke liye — `touch` se better hai
-- B) file ki actual type determine karne ke liye — extension pe nahi, actual content analyze karke
+- A) file ki actual type determine karne ke liye — extension pe nahi, actual content analyze karke
+- B) file create karne ke liye — `touch` se better hai
 - C) file ko open karne ke liye — default application se
 - D) file permissions check karne ke liye
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: A**
 > `file` command file ka actual type batata hai — extension nahi, content analyze karke. `.txt` extension wali file actually executable ho sakti hai. `file` pe trust karo, extension pe nahi.
 
 ---
@@ -2280,12 +3468,12 @@ dono files compare karega — jo alag hai woh dikhayega:
 
 **Q9.** `head -n 5 file.txt` kya dikhata hai?
 
-- A) file ki 5 se 10 wali lines
-- B) file ki pehli 5 lines
+- A) file ki pehli 5 lines
+- B) file ki 5 se 10 wali lines
 - C) file ki aakhri 5 lines
 - D) file ke pehle 5 words
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: A**
 > `head` = file ka beginning. `-n 5` = 5 lines. `head` without `-n` = pehli 10 lines (default). `tail` = file ka end.
 
 ---
@@ -2305,11 +3493,11 @@ dono files compare karega — jo alag hai woh dikhayega:
 **Q11.** `cat file1.txt file2.txt > combined.txt` kya karta hai?
 
 - A) file1 aur file2 delete karke combined.txt banata hai
-- B) file1 aur file2 ka content join karke combined.txt mein save karta hai
+- B) dono files compare karta hai — differences combined.txt mein save hote hain
 - C) file1 ya file2 — jo pehle mile — usse combined.txt mein copy karta hai
-- D) dono files compare karta hai — differences combined.txt mein save hote hain
+- D) file1 aur file2 ka content join karke combined.txt mein save karta hai
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: D**
 > `cat` = concatenate. do files ka content ek ke baad ek print hota hai. `>` se combined.txt mein redirect ho jaata hai. "cat" naam isliye — multiple files concatenate karta hai.
 
 ---
@@ -2340,12 +3528,12 @@ dono files compare karega — jo alag hai woh dikhayega:
 
 **Q14.** kisi unknown file ka type pata karna ho bina extension ke — best command?
 
-- A) `ls -l unknown_file` — permissions se type pata chalta hai
+- A) `file unknown_file` — actual file type analyze karke batata hai
 - B) `cat unknown_file` — content dekhke guess karo
-- C) `file unknown_file` — actual file type analyze karke batata hai
+- C) `ls -l unknown_file` — permissions se type pata chalta hai
 - D) `nano unknown_file` — editor mein dekho kya hai
 
-✅ **Sahi Jawab: C**
+✅ **Sahi Jawab: A**
 > `file` command = file type detective. extension ignore karta hai — actual content (magic bytes) analyze karta hai. ELF executable? JPEG? PDF? sab bata deta hai.
 
 ---
@@ -2764,10 +3952,10 @@ passwords hashed hote hain — plaintext nahi.
 
 - A) sirf read — `4` = r
 - B) read aur execute — `4+1 = 5`
-- C) read aur write — `4+2 = 6 = rw-`
-- D) poori permissions — `7 = rwx`
+- C) poori permissions — `7 = rwx`
+- D) read aur write — `4+2 = 6 = rw-`
 
-✅ **Sahi Jawab: C**
+✅ **Sahi Jawab: D**
 > `644` = owner:6, group:4, others:4. `6` = `rw-` = read+write. `4` = `r--` = sirf read. typical config file permissions — owner edit kar sakta hai, baaki padh sakte hain.
 
 ---
@@ -2788,10 +3976,10 @@ passwords hashed hote hain — plaintext nahi.
 
 - A) file corrupt ho jaati hai — 7 invalid permission value hai
 - B) file permanently locked ho jaati hai — remove nahi ho sakti
-- C) sab ke liye read, write, execute — koi bhi file modify, replace, ya malicious code execute kar sakta hai
-- D) sirf root ke liye dangerous — normal user ke liye theek hai
+- C) sirf root ke liye dangerous — normal user ke liye theek hai
+- D) sab ke liye read, write, execute — koi bhi file modify, replace, ya malicious code execute kar sakta hai
 
-✅ **Sahi Jawab: C**
+✅ **Sahi Jawab: D**
 > `777` = `rwxrwxrwx` = sab ke liye sab kuch. production server pe yeh = anyone can modify or execute. major security vulnerability. hamesha minimum required permissions do.
 
 ---
@@ -2811,23 +3999,23 @@ passwords hashed hote hain — plaintext nahi.
 **Q7.** `chmod u+x script.sh` ka matlab kya hai?
 
 - A) unknown users ko execute permission do
-- B) user (owner) ko execute permission add karo
+- B) update karo file — latest version se
 - C) un-executable banao — execute permission hata do
-- D) update karo file — latest version se
+- D) user (owner) ko execute permission add karo
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: D**
 > `u` = user/owner. `+` = add. `x` = execute. owner ko execute permission dedo. script run karna hai? pehle `chmod +x script.sh` — phir `./script.sh`.
 
 ---
 
 **Q8.** `id` command kya output deta hai?
 
-- A) current user ka government ID ya username
-- B) uid, gid, aur sare groups jisme current user hai
+- A) uid, gid, aur sare groups jisme current user hai
+- B) current user ka government ID ya username
 - C) installed packages ki count — system ID
 - D) network interface ka hardware ID (MAC address)
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: A**
 > `id` = complete identity. uid (user ID), gid (primary group ID), groups (sare groups). `sudo` group mein hona = sudo powers hain user ko.
 
 ---
@@ -3280,12 +4468,12 @@ nameserver 8.8.4.4
 
 **Q1.** `ip addr` command kya dikhata hai?
 
-- A) network pe connected sare devices ki IP list
-- B) machine ke network interfaces aur unke IP, MAC addresses
+- A) machine ke network interfaces aur unke IP, MAC addresses
+- B) network pe connected sare devices ki IP list
 - C) internet pe current connection ka status — upload/download speed
 - D) routing table — kahan se kahan data jaata hai
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: A**
 > `ip addr` (ya `ip a`) = local machine ke network interfaces. `eth0`, `lo`, `wlan0` — har ek ka IP, MAC, status dikhata hai.
 
 ---
@@ -3305,11 +4493,11 @@ nameserver 8.8.4.4
 **Q3.** `ping -c 4 192.168.1.1` kya karta hai?
 
 - A) continuously ping karta rehta hai — manual stop se ruko
-- B) sirf 4 ping packets bhejta hai phir automatically rok deta hai
+- B) port 4 pe ping karta hai — specific port test
 - C) 4 seconds ke liye ping karta hai — time based
-- D) port 4 pe ping karta hai — specific port test
+- D) sirf 4 ping packets bhejta hai phir automatically rok deta hai
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: D**
 > `-c 4` = count = 4 packets. bina `-c` ke ping indefinitely chalta hai Linux mein. `Ctrl + C` se band karo ya `-c` specify karo.
 
 ---
@@ -3328,12 +4516,12 @@ nameserver 8.8.4.4
 
 **Q5.** `curl -I https://example.com` kya dikhata hai?
 
-- A) website ka poora HTML content
-- B) sirf HTTP response headers — content body nahi
+- A) sirf HTTP response headers — content body nahi
+- B) website ka poora HTML content
 - C) site ki images download karta hai
 - D) site ka SSL certificate details
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: A**
 > `-I` = HEAD request. sirf headers aate hain — server type, response code, content-type, etc. full body nahi. reconnaissance mein useful — server kya chal raha hai pata karo bina full content download kiye.
 
 ---
@@ -3365,11 +4553,11 @@ nameserver 8.8.4.4
 **Q8.** `/etc/hosts` file mein entry add karne se kya hota hai?
 
 - A) permanently us host ke saath connection block ho jaata hai
-- B) us domain ke liye locally specific IP define ho jaati hai — DNS se pehle yahan check hota hai
+- B) firewall rule ban jaata hai — woh host se traffic allow/deny
 - C) system us host ko automatically ping karta hai connectivity ke liye
-- D) firewall rule ban jaata hai — woh host se traffic allow/deny
+- D) us domain ke liye locally specific IP define ho jaati hai — DNS se pehle yahan check hota hai
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: D**
 > `/etc/hosts` = local DNS override. `192.168.1.100 myserver.local` add karo — `myserver.local` seedha `192.168.1.100` pe jaayega bina DNS server ke. penetration testers aur developers dono use karte hain.
 
 ---
@@ -3400,12 +4588,12 @@ nameserver 8.8.4.4
 
 **Q11.** `ip route` ka output mein "default via 192.168.1.1" ka matlab?
 
-- A) `192.168.1.1` default DNS server hai
-- B) `192.168.1.1` default gateway hai — internet ka traffic yahan se jaata hai
+- A) `192.168.1.1` default gateway hai — internet ka traffic yahan se jaata hai
+- B) `192.168.1.1` default DNS server hai
 - C) `192.168.1.1` DHCP server hai — IPs wahan se milti hain
 - D) `192.168.1.1` blocked IP hai — traffic route nahi hoga wahan
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: A**
 > default route = gateway. tumhara machine jab internet pe jaata hai — sab kuch pehle `192.168.1.1` (router) pe jaata hai — woh aage bhejta hai. yahi default gateway hai.
 
 ---
@@ -3425,23 +4613,23 @@ nameserver 8.8.4.4
 **Q13.** `ifconfig` available nahi hai — kaise install karein?
 
 - A) `sudo apt install ifconfig`
-- B) `sudo apt install net-tools`
-- C) `sudo apt install network-manager`
-- D) `pip install ifconfig`
+- B) `sudo apt install network-manager`
+- C) `pip install ifconfig`
+- D) `sudo apt install net-tools`
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: D**
 > `ifconfig` `net-tools` package ka part hai. `sudo apt install net-tools` — phir `ifconfig` available. modern Kali mein `ip` command prefer karni chahiye — `net-tools` purana hai.
 
 ---
 
 **Q14.** ping se machine online confirm hona 100% reliable kyun nahi?
 
-- A) ping sirf localhost ke saath kaam karta hai — external machines ke liye accurate nahi
-- B) kuch servers/firewalls ICMP ping packets block karte hain — reply nahi aata matlab machine off nahi necessarily
+- A) kuch servers/firewalls ICMP ping packets block karte hain — reply nahi aata matlab machine off nahi necessarily
+- B) ping sirf localhost ke saath kaam karta hai — external machines ke liye accurate nahi
 - C) ping sirf IPv4 pe kaam karta hai — IPv6 machines detect nahi hoti
 - D) ping sirf Kali se kaam karta hai — Windows machines respond nahi karte
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: A**
 > many servers ICMP ko firewall se block karte hain — security ke liye. no ping reply ≠ machine offline. aur bhi methods hain — TCP SYN scan, HTTP request, etc.
 
 ---
@@ -3776,11 +4964,11 @@ output aur errors dono dustbin mein — kuch bhi terminal pe nahi dikhega. backg
 **Q1.** `ls /etc | grep "conf"` kya karta hai?
 
 - A) `/etc` mein "conf" naam ka folder banata hai
-- B) `/etc` ke contents list karta hai, phir sirf "conf" wali lines filter karta hai
+- B) `grep` command ko `/etc` directory ka configuration update karta hai
 - C) `/etc` mein "conf" word dhundh ke woh files delete karta hai
-- D) `grep` command ko `/etc` directory ka configuration update karta hai
+- D) `/etc` ke contents list karta hai, phir sirf "conf" wali lines filter karta hai
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: D**
 > `ls /etc` ka output pipe se `grep "conf"` ko gaya — sirf woh lines dikhi jisme "conf" tha. do commands mila ke useful filter bana.
 
 ---
@@ -3800,11 +4988,11 @@ output aur errors dono dustbin mein — kuch bhi terminal pe nahi dikhega. backg
 **Q3.** `/dev/null` kya hai?
 
 - A) ek real folder jahan deleted files temporarily jaati hain
-- B) default NULL device — kuch bhi bhejo, seedha discard — Linux ka dustbin
-- C) network null device — offline testing ke liye
+- B) network null device — offline testing ke liye
+- C) default NULL device — kuch bhi bhejo, seedha discard — Linux ka dustbin
 - D) debug device — errors wahan log hoti hain
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: C**
 > `/dev/null` = virtual device jo kuch bhi accept karta hai aur discard karta hai. `command > /dev/null` = output mujhe mat dikhao. scripts mein unnecessary output suppress karne ke liye.
 
 ---
@@ -3812,11 +5000,11 @@ output aur errors dono dustbin mein — kuch bhi terminal pe nahi dikhega. backg
 **Q4.** `2>&1` ka matlab kya hai?
 
 - A) stderr ko stdin ko redirect karo
-- B) stderr (2) ko stdout (1) ke saath merge karo — dono ek jagah jaate hain
+- B) command ko 2 baar run karo, output 1 file mein
 - C) 2 processes start karo 1 command se
-- D) command ko 2 baar run karo, output 1 file mein
+- D) stderr (2) ko stdout (1) ke saath merge karo — dono ek jagah jaate hain
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: D**
 > stderr (2) aur stdout (1) — dono alag streams hain. `2>&1` = "stderr ko waheen bhejo jahan stdout ja raha hai." `> output.txt 2>&1` = dono output.txt mein.
 
 ---
@@ -3847,12 +5035,12 @@ output aur errors dono dustbin mein — kuch bhi terminal pe nahi dikhega. backg
 
 **Q7.** `ping -c 4 google.com | tee results.txt` kya karta hai?
 
-- A) ping output sirf results.txt mein save karta hai — terminal pe nahi dikhta
-- B) ping output terminal pe bhi dikhata hai aur results.txt mein bhi save karta hai
+- A) ping output terminal pe bhi dikhata hai aur results.txt mein bhi save karta hai
+- B) ping output sirf results.txt mein save karta hai — terminal pe nahi dikhta
 - C) results.txt se ping command run karta hai
 - D) ping output ke 4 copies results.txt mein save karta hai
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: A**
 > `tee` = T junction. terminal pe bhi, file mein bhi — dono jagah. bina tee ke ya toh terminal dikhta ya file mein jaata. tee se dono simultaneously.
 
 ---
@@ -3860,11 +5048,11 @@ output aur errors dono dustbin mein — kuch bhi terminal pe nahi dikhega. backg
 **Q8.** `command 2>/dev/null` kyun use karte hain?
 
 - A) command ko debug mode mein chalane ke liye — detailed errors
-- B) errors ko suppress karne ke liye — terminal pe error messages nahi dikhne
-- C) command output ko double speed pe show karne ke liye
+- B) command output ko double speed pe show karne ke liye
+- C) errors ko suppress karne ke liye — terminal pe error messages nahi dikhne
 - D) command ko background mein chalane ke liye
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: C**
 > `2>/dev/null` = stderr dustbin mein bhejo. scripts mein jab errors expected hain aur show nahi karni — use karo. clean output milti hai. terminal cluttered nahi hota.
 
 ---
@@ -3884,11 +5072,11 @@ output aur errors dono dustbin mein — kuch bhi terminal pe nahi dikhega. backg
 **Q10.** `ps aux | grep "ssh" | grep -v "grep"` mein doosra `grep` kyun hai?
 
 - A) double filtering ke liye — accuracy improve karta hai
-- B) `grep "ssh"` command khud `ps` output mein dikhti hai — `grep -v "grep"` se woh hata do
-- C) SSH processes ko version se filter karna
-- D) extra security — duplicate results hata do
+- B) SSH processes ko version se filter karna
+- C) extra security — duplicate results hata do
+- D) `grep "ssh"` command khud `ps` output mein dikhti hai — `grep -v "grep"` se woh hata do
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: D**
 > `grep` command khud bhi process hai — `ps aux` mein dikhti hai "grep ssh" ke saath. `grep -v "grep"` = "grep" word wali lines hata do — sirf actual SSH processes bachti hain. common pattern.
 
 ---
@@ -3920,11 +5108,11 @@ output aur errors dono dustbin mein — kuch bhi terminal pe nahi dikhega. backg
 **Q13.** `ls -la /etc/ 2>/dev/null | grep "^-rw"` kya karta hai?
 
 - A) `/etc` mein sare directories list karta hai
-- B) errors suppress karta hai, sirf regular files (`-rw`) dikhata hai
-- C) `/etc` mein read-write permissions wali files dhundh ke delete karta hai
+- B) `/etc` mein read-write permissions wali files dhundh ke delete karta hai
+- C) errors suppress karta hai, sirf regular files (`-rw`) dikhata hai
 - D) `/etc` ka listing ek file mein save karta hai
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: C**
 > `2>/dev/null` = permission errors suppress. `grep "^-rw"` = sirf woh lines jo `-rw` se shuru hoon — regular files (not directories `d`, not links `l`). chained filtering.
 
 ---
@@ -3932,11 +5120,11 @@ output aur errors dono dustbin mein — kuch bhi terminal pe nahi dikhega. backg
 **Q14.** Pipe `|` ka flow kaunsa direction mein hai?
 
 - A) right se left — output pehle, input baad mein process hota hai
-- B) left se right — left command ka output right command ka input ban jaata hai
-- C) bidirectional — dono commands ek saath communicate karte hain
-- D) depends karta hai command pe — kuch left-to-right, kuch right-to-left
+- B) bidirectional — dono commands ek saath communicate karte hain
+- C) depends karta hai command pe — kuch left-to-right, kuch right-to-left
+- D) left se right — left command ka output right command ka input ban jaata hai
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: D**
 > `command1 | command2` — left (command1) ka stdout → right (command2) ka stdin. hamesha left se right. `ls | grep` = ls ka output grep ko milta hai.
 
 ---
@@ -4261,11 +5449,11 @@ du -sh /home/kali/* | sort -rh | head -10
 **Q1.** PID kya hota hai?
 
 - A) Packet ID — network ke har packet ka unique number
-- B) Process ID — har running program ka unique identifier
-- C) Port ID — open ports ke liye assigned number
+- B) Port ID — open ports ke liye assigned number
+- C) Process ID — har running program ka unique identifier
 - D) Permission ID — file access control ke liye
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: C**
 > PID = Process ID. har process ka ek unique number. `kill 1234` matlab PID 1234 wali process ko terminate karo. `ps aux` mein PID column hota hai.
 
 ---
@@ -4273,11 +5461,11 @@ du -sh /home/kali/* | sort -rh | head -10
 **Q2.** `ps aux` mein `a`, `u`, `x` ka kya matlab hai?
 
 - A) all, user-owned, exclusive
-- B) all users' processes, user-format (detailed), including detached processes
+- B) anonymous, user, extra verbose
 - C) active, urgent, extended format
-- D) anonymous, user, extra verbose
+- D) all users' processes, user-format (detailed), including detached processes
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: D**
 > `a` = sab users ke processes. `u` = user-friendly detailed format. `x` = terminal se attach nahi wale processes bhi. teeno milake = poori process list.
 
 ---
@@ -4285,11 +5473,11 @@ du -sh /home/kali/* | sort -rh | head -10
 **Q3.** `kill -9 PID` kab use karte hain?
 
 - A) hamesha — yeh safest aur cleanest way hai
-- B) jab process normal `kill` se terminate nahi ho rahi — last resort
-- C) sirf root processes ke liye — normal user processes ke liye -9 kaam nahi karta
+- B) sirf root processes ke liye — normal user processes ke liye -9 kaam nahi karta
+- C) jab process normal `kill` se terminate nahi ho rahi — last resort
 - D) jab process bahut zyada CPU use kar rahi ho — performance ke liye
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: C**
 > `kill` (SIGTERM) = process ko politely rokne ko kaho — cleanup kar sako. `-9` (SIGKILL) = instant forceful termination — koi cleanup nahi. pehle normal `kill` try karo — kaam na kare toh `-9`.
 
 ---
@@ -4309,11 +5497,11 @@ du -sh /home/kali/* | sort -rh | head -10
 **Q5.** Command ke baad `&` lagane se kya hota hai?
 
 - A) command ko verbose mode mein chalata hai — detailed output
-- B) command ko background mein chalata hai — terminal free rehta hai
+- B) command ko ek baar run karta hai phir automatic repeat — loop
 - C) command ko root permissions se chalata hai — `sudo` jaisa
-- D) command ko ek baar run karta hai phir automatic repeat — loop
+- D) command ko background mein chalata hai — terminal free rehta hai
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: D**
 > `command &` = background execution. terminal block nahi hota — aur kaam kar sakte ho. `jobs` se background jobs dekho, `fg` se foreground mein lao.
 
 ---
@@ -4321,11 +5509,11 @@ du -sh /home/kali/* | sort -rh | head -10
 **Q6.** `Ctrl + Z` terminal mein kya karta hai?
 
 - A) command undo karta hai — pichla kaam wapas
-- B) process ko pause karta hai — background mein suspended
-- C) terminal window close karta hai
+- B) terminal window close karta hai
+- C) process ko pause karta hai — background mein suspended
 - D) current command cancel karta hai — Ctrl+C jaisa
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: C**
 > `Ctrl + Z` = SIGTSTP = suspend. process ruk jaati hai — terminate nahi. phir `bg` se background mein resume, ya `fg` se foreground mein. `Ctrl + C` = terminate. `Ctrl + Z` = pause.
 
 ---
@@ -4333,11 +5521,11 @@ du -sh /home/kali/* | sort -rh | head -10
 **Q7.** `htop` ka `top` se kya fayda hai?
 
 - A) `htop` sirf root use kar sakta hai — better security
-- B) `htop` colorful, interactive, mouse support, easier to use — `top` plain aur older
-- C) `htop` zyada accurate CPU data deta hai — `top` approximate
-- D) `htop` network usage dikhata hai — `top` nahi deta
+- B) `htop` zyada accurate CPU data deta hai — `top` approximate
+- C) `htop` network usage dikhata hai — `top` nahi deta
+- D) `htop` colorful, interactive, mouse support, easier to use — `top` plain aur older
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: D**
 > `htop` = modern `top`. colored bars, mouse click se interaction, process tree, easier kill interface. default available nahi hota — `sudo apt install htop`.
 
 ---
@@ -4393,11 +5581,11 @@ du -sh /home/kali/* | sort -rh | head -10
 **Q12.** `pgrep ssh` kya karta hai?
 
 - A) SSH service ko restart karta hai
-- B) SSH ka PID dhundh ke print karta hai — bina poori process list ke
-- C) SSH connection test karta hai
+- B) SSH connection test karta hai
+- C) SSH ka PID dhundh ke print karta hai — bina poori process list ke
 - D) SSH ke processes grep se count karta hai
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: C**
 > `pgrep naam` = sirf PID print karta hai — naam se match karke. `ps aux | grep ssh | grep -v grep | awk '{print $2}'` ka shortcut. `kill $(pgrep nginx)` — one liner process kill.
 
 ---
@@ -4704,11 +5892,11 @@ timestamps — file kab access hua, kab modify hua — forensics mein important.
 **Q2.** `find / -perm -4000 2>/dev/null` kya dhundh raha hai?
 
 - A) 4000 bytes se badi files
-- B) SUID bit set wali files — yeh files owner ki permissions se run hoti hain
+- B) 4000 se zyada links wali files
 - C) sirf root ke readable files
-- D) 4000 se zyada links wali files
+- D) SUID bit set wali files — yeh files owner ki permissions se run hoti hain
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: D**
 > `-perm -4000` = SUID (Set User ID) bit. yeh files jab koi bhi run karta hai — file owner ki permissions se chalti hain. agar root-owned file pe SUID hai — privilege escalation possible. ethical hacking mein key finding.
 
 ---
@@ -4716,23 +5904,23 @@ timestamps — file kab access hua, kab modify hua — forensics mein important.
 **Q3.** `locate` aur `find` mein sabse bada fark kya hai?
 
 - A) `locate` sirf home directory mein, `find` poori system mein
-- B) `locate` pre-built database use karta hai (fast, lekin stale hो sakti). `find` real-time search karta hai (slow, lekin accurate)
-- C) `locate` files content search karta hai, `find` sirf naam se
+- B) `locate` files content search karta hai, `find` sirf naam se
+- C) `locate` pre-built database use karta hai (fast, lekin stale ho sakti). `find` real-time search karta hai (slow, lekin accurate)
 - D) `locate` root only, `find` all users
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: C**
 > `locate` = database. `find` = real-time. `locate` fast hai lekin agar file abhi create hui toh database mein nahi hogi — `updatedb` karo. `find` slow hai lekin hamesha current.
 
 ---
 
 **Q4.** `which python3` kya batata hai?
 
-- A) python3 installed hai ya nahi — yes/no
-- B) python3 ka executable file kis directory mein hai
+- A) python3 ka executable file kis directory mein hai
+- B) python3 installed hai ya nahi — yes/no
 - C) python3 ka version number
 - D) python3 se related sari files aur documentation
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: A**
 > `which` = command ka path. `/usr/bin/python3` = yahan python3 ka executable hai. agar multiple versions hain — `which` batata hai kaunsa default chal raha hai.
 
 ---
@@ -4740,11 +5928,11 @@ timestamps — file kab access hua, kab modify hua — forensics mein important.
 **Q5.** `find /home -type f -name "*.txt"` mein `-type f` kyun diya?
 
 - A) sirf fast files dhundho — `-type f` = fast
-- B) sirf regular files dhundho — directories, links nahi — `.txt` naam wale
+- B) `-type f` format option hai — human readable output ke liye
 - C) file type `.txt` confirm karo — extension verify
-- D) `-type f` format option hai — human readable output ke liye
+- D) sirf regular files dhundho — directories, links nahi — `.txt` naam wale
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: D**
 > `-type f` = regular files. bina iske directories ka naam bhi `.txt` ho sakta hai (unlikely lekin possible). `-type d` = directories. `-type l` = symbolic links.
 
 ---
@@ -4752,11 +5940,11 @@ timestamps — file kab access hua, kab modify hua — forensics mein important.
 **Q6.** `grep -ri "api_key" /var/www/` kya dhundh raha hai?
 
 - A) `/var/www/` mein ek file `api_key` naam se — case insensitive
-- B) `/var/www/` ki sari files mein "api_key" text — recursive, case insensitive
-- C) API key generate karta hai aur `/var/www/` mein save karta hai
+- B) API key generate karta hai aur `/var/www/` mein save karta hai
+- C) `/var/www/` ki sari files mein "api_key" text — recursive, case insensitive
 - D) `/var/www/` folder ki API permissions check karta hai
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: C**
 > `-r` = recursive. `-i` = case insensitive. `/var/www/` = web server files. web application files mein hard-coded API keys dhundh raha hai — common security issue.
 
 ---
@@ -4776,23 +5964,23 @@ timestamps — file kab access hua, kab modify hua — forensics mein important.
 **Q8.** `find /etc -name "passwd" -exec cat {} \;` mein `{}` kya represent karta hai?
 
 - A) empty string — placeholder
-- B) `find` se mili file ka path — `exec` command mein yahi insert hota hai
-- C) user input ke liye prompt
+- B) user input ke liye prompt
+- C) `find` se mili file ka path — `exec` command mein yahi insert hota hai
 - D) error output — failed finds ko collect karta hai
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: C**
 > `{}` = found file ka path. `find` jab ek file dhundhe — `{}` ki jagah woh path daalo — phir command run karo. `\;` = ek ek file ke liye. `-exec cat {} \;` = har found file ko `cat` karo.
 
 ---
 
 **Q9.** `stat` command kya information deta hai jo `ls -l` nahi deta?
 
-- A) file content — `ls -l` sirf naam deta hai
-- B) inode number, exact timestamps (access/modify/change), block count — detailed metadata
+- A) inode number, exact timestamps (access/modify/change), block count — detailed metadata
+- B) file content — `ls -l` sirf naam deta hai
 - C) file ka MD5 hash — integrity check ke liye
 - D) file ka owner history — pichle owners
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: A**
 > `stat` = detailed file metadata. inode, exact timestamps (nanosecond level), block count. forensics mein — file kab access hua, kab change hua — yeh sab `stat` se milta hai. `ls -l` basic info deta hai.
 
 ---
@@ -4800,11 +5988,11 @@ timestamps — file kab access hua, kab modify hua — forensics mein important.
 **Q10.** `locate passwd` kaam karne ke liye kya zaroori hai?
 
 - A) root access — `sudo locate passwd`
-- B) database updated honi chahiye — `sudo updatedb` se
+- B) network connection — online database use hoti hai
 - C) `find` package installed hona chahiye
-- D) network connection — online database use hoti hai
+- D) database updated honi chahiye — `sudo updatedb` se
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: D**
 > `locate` = database-based search. database update nahi hua = nayi files nahi milegi. `sudo updatedb` se database refresh karo — phir `locate` sahi kaam karega.
 
 ---
@@ -4835,12 +6023,12 @@ timestamps — file kab access hua, kab modify hua — forensics mein important.
 
 **Q13.** web application penetration testing mein `grep -r "password" /var/www/` kyun run karte hain?
 
-- A) web application password change karne ke liye
-- B) web files mein hard-coded passwords dhundhne ke liye — common developer mistake
+- A) web files mein hard-coded passwords dhundhne ke liye — common developer mistake
+- B) web application password change karne ke liye
 - C) web server ke firewall password check karne ke liye
 - D) `/var/www/` folder ka access password set karne ke liye
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: A**
 > developers kabhi kabhi credentials hard-code kar dete hain source files mein — laziness ya oversight se. `grep -r "password"` se yeh sensitive information dhundh sakte hain — real-world finding hai yeh.
 
 ---
@@ -4848,11 +6036,11 @@ timestamps — file kab access hua, kab modify hua — forensics mein important.
 **Q14.** `whereis nmap` aur `which nmap` mein kya fark hai?
 
 - A) koi fark nahi — sirf syntax alag
-- B) `which` sirf executable path. `whereis` binary + source + man page — sab locations
+- B) `whereis` nahi mila toh automatically install karta hai
 - C) `which` installed check karta hai, `whereis` path dhundh ta hai
-- D) `whereis` nahi mila toh automatically install karta hai
+- D) `which` sirf executable path. `whereis` binary + source + man page — sab locations
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: D**
 > `which nmap` = `/usr/bin/nmap` — sirf executable. `whereis nmap` = `nmap: /usr/bin/nmap /usr/share/man/man1/nmap.1.gz` — binary + documentation locations.
 
 ---
@@ -5273,11 +6461,11 @@ bash -x script.sh
 **Q1.** Bash script ki pehli line `#!/bin/bash` kyun likhte hain?
 
 - A) copyright notice — Bash Foundation ka license
-- B) shebang — system ko batata hai yeh script kis interpreter se chalao
+- B) import statement — bash library load karta hai
 - C) comment — ignored hota hai, sirf documentation ke liye
-- D) import statement — bash library load karta hai
+- D) shebang — system ko batata hai yeh script kis interpreter se chalao
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: D**
 > `#!` = shebang. `/bin/bash` = interpreter path. system execute karta hai toh pehle shebang padha — "bash se chalao yeh script." bina iske system nahi jaanta konsa interpreter use kare.
 
 ---
@@ -5285,11 +6473,11 @@ bash -x script.sh
 **Q2.** variable assign karte waqt `naam = "Afsar"` aur `naam="Afsar"` mein kya fark hai?
 
 - A) koi fark nahi — dono same hain
-- B) spaces ke saath `naam = "Afsar"` error dega — Bash mein assignment mein spaces nahi honge
-- C) spaces ke saath string store hoti hai — bina spaces ke integer store hota hai
+- B) spaces ke saath string store hoti hai — bina spaces ke integer store hota hai
+- C) spaces ke saath `naam = "Afsar"` error dega — Bash mein assignment mein spaces nahi honge
 - D) pehla global variable, doosra local variable
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: C**
 > Bash mein `=` ke aas paas koi space nahi hona chahiye. `naam = "Afsar"` = Bash `naam` ko command samjhega aur `=` aur `"Afsar"` arguments — error aayega. `naam="Afsar"` = correct.
 
 ---
@@ -5308,12 +6496,12 @@ bash -x script.sh
 
 **Q4.** Bash mein `-eq` kab use karte hain?
 
-- A) strings compare karne ke liye — "equal" strings
-- B) integers compare karne ke liye — numeric equality check
+- A) integers compare karne ke liye — numeric equality check
+- B) strings compare karne ke liye — "equal" strings
 - C) file existence check ke liye
 - D) regex pattern match ke liye
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: A**
 > `-eq` = numeric/integer comparison. strings ke liye `==` use karo (`[ "$str1" == "$str2" ]`). galat comparison = unexpected results. `[ 10 -eq 10 ]` = true. `[ "abc" == "abc" ]` = true.
 
 ---
@@ -5321,11 +6509,11 @@ bash -x script.sh
 **Q5.** `$#` Bash mein kya represent karta hai?
 
 - A) script ki total line count
-- B) script ko pass kiye gaye total arguments ki count
+- B) last command ka exit code
 - C) current process ID (PID)
-- D) last command ka exit code
+- D) script ko pass kiye gaye total arguments ki count
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: D**
 > `$#` = number of arguments. `$0` = script naam. `$1` = pehla arg. `$2` = doosra. `$@` = sare arguments. `./script.sh a b c` → `$# = 3`.
 
 ---
@@ -5345,11 +6533,11 @@ bash -x script.sh
 **Q7.** `$?` kya hota hai?
 
 - A) current user ka password
-- B) last executed command ka exit code — 0 = success, non-zero = failure
-- C) script ka pehla argument
+- B) script ka pehla argument
+- C) last executed command ka exit code — 0 = success, non-zero = failure
 - D) current directory ka path
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: C**
 > `$?` = exit status of last command. success = 0. failure = 1, 2, 127 (command not found), etc. `if [ $? -eq 0 ]` = agar pichli command successful thi. error handling ke liye essential.
 
 ---
@@ -5357,23 +6545,23 @@ bash -x script.sh
 **Q8.** `[ -f "/etc/passwd" ]` check kya karta hai?
 
 - A) `/etc/passwd` ka content `f` character se shuru hota hai
-- B) `/etc/passwd` ek regular file hai — exist karti hai
+- B) `/etc/passwd` empty file hai — `-f` = empty
 - C) `/etc/passwd` sirf root ke liye accessible hai
-- D) `/etc/passwd` empty file hai — `-f` = empty
+- D) `/etc/passwd` ek regular file hai — exist karti hai
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: D**
 > `-f` = file exist karta hai aur regular file hai (directory nahi). `-d` = directory. `-e` = exist karta hai (kuch bhi). condition mein file check karne ka standard way.
 
 ---
 
 **Q9.** function call karte waqt `greet "Afsar"` mein function ke andar `"Afsar"` kaise milega?
 
-- A) `$name` — parameter naam automatically set hota hai
-- B) `$1` — pehla positional argument
+- A) `$1` — pehla positional argument
+- B) `$name` — parameter naam automatically set hota hai
 - C) `$input` — default input variable naam
 - D) `$arg` — function argument variable
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: A**
 > functions mein bhi `$1`, `$2` etc. use hote hain — scripts ki tarah. `greet "Afsar"` call kiya — function ke andar `$1 = "Afsar"`. multiple arguments ke liye `$2`, `$3` etc.
 
 ---
@@ -5381,11 +6569,11 @@ bash -x script.sh
 **Q10.** `bash -x script.sh` kyun use karte hain?
 
 - A) script ko X11 (GUI) mode mein chalate hain
-- B) debug mode — har command print hoti hai execute hone se pehle — troubleshoot karne ke liye
-- C) script ko extra permissions de ke chalate hain
+- B) script ko extra permissions de ke chalate hain
+- C) debug mode — har command print hoti hai execute hone se pehle — troubleshoot karne ke liye
 - D) external mode — internet se script fetch karke chalate hain
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: C**
 > `-x` = xtrace = debug. har command `+` ke saath print hogi phir execute hogi. kahan script fail ho rahi hai — exactly dikhayi dega. script kaam nahi kar raha? `bash -x` se debug karo.
 
 ---
@@ -5393,11 +6581,11 @@ bash -x script.sh
 **Q11.** `count=$((count + 1))` syntax kya hai?
 
 - A) `$()` command substitution — `count + 1` command hai
-- B) `$(( ))` arithmetic expansion — integers ke calculations ke liye
+- B) array indexing — count ka index 1 pe value
 - C) string concatenation — "count" aur "1" join karo
-- D) array indexing — count ka index 1 pe value
+- D) `$(( ))` arithmetic expansion — integers ke calculations ke liye
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: D**
 > `$(( ))` = arithmetic expansion. andar math operations karo. `$((5 + 3))` = 8. `$((count + 1))` = count mein 1 add karo. Bash mein integers ke liye yahi use karo.
 
 ---
@@ -5409,7 +6597,7 @@ bash -x script.sh
 - C) exactly 5 iterations ke baad — count value irrelevant
 - D) manually `Ctrl + C` se hi rukta hai — infinite loop hai
 
-✅ **Sahi Jawab: B**
+✅ **Sahi Jawab: C**
 > `-le` = less than or equal. loop tab tak chalta hai jab condition true ho. `count = 6` hone pe `6 -le 5` = false — loop ruk jaata hai. `count` ko loop ke andar increment karna zaroori hai — warna infinite loop.
 
 ---
