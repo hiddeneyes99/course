@@ -5597,9 +5597,89 @@ output aur errors dono dustbin mein — kuch bhi terminal pe nahi dikhega. backg
 
 ---
 
+### `*` — Wildcard: Ek Saath Bahut Saari Files Select Karo
+
+---
+
+### pehle problem samjho
+
+socho tumhare ek folder mein 50 `.log` files hain — `error1.log`, `error2.log`, `backup_old.log`, ... aise hi bahut sari. tumhe yeh saari delete karni hain.
+
+kya karoge — har ek ka naam alag se type karoge?
+```bash
+rm error1.log
+rm error2.log
+rm backup_old.log
+... (47 aur baar)
+```
+50 baar likhna padega. bahut time waste.
+
+**`*` isi problem ka solution hai.**
+
+---
+
+### `*` ka matlab — "yahan kuch bhi ho sakta hai"
+
+`*` ek **wildcard** hai — matlab yeh kisi bhi text ki jagah use ho sakta hai, chahe woh text chhota ho, bada ho, ya khaali bhi ho.
+
+sabse badi baat — `*` sirf `grep` ya `find` tak limited nahi hai. yeh **lagbhag har command ke saath** kaam karta hai jahan file ka naam likhna hota hai — `ls`, `rm`, `mv`, `cp`, `cat`, sab jagah.
+
+---
+
+### examples se dekho
+
+**Example 1 — sirf `.txt` extension wali files dikhao**
+```bash
+ls *.txt
+```
+`*.txt` ka matlab — naam kuch bhi ho, bas `.txt` pe khatam hona chahiye. toh `notes.txt`, `report.txt`, `a.txt` — sab match karenge.
+
+**Example 2 — sabhi `.log` files ek saath delete karo**
+```bash
+rm *.log
+```
+current folder ki jitni bhi files `.log` pe khatam hoti hain — sab **ek command mein** delete ho jaayengi. jo pehle 50 lines mein hota tha — ab ek line mein.
+
+**Example 3 — sabhi `.jpg` files ek folder mein move karo**
+```bash
+mv *.jpg photos/
+```
+current folder ki saari `.jpg` files uthao aur `photos/` folder mein daal do.
+
+**Example 4 — `*` beech mein bhi use ho sakta hai, sirf end mein nahi**
+```bash
+cp report*.pdf backup/
+```
+yahan `*` beech mein hai — matlab "report" se shuru ho, phir kuch bhi ho (ya kuch na ho), phir `.pdf` pe khatam ho. toh `report.pdf`, `report_final.pdf`, `report2024.pdf` — sab match honge, aur sab `backup/` mein copy ho jaayenge.
+
+---
+
+### ⚠️ sabse important warning — `*` khatarnaak bhi ho sakta hai
+
+```bash
+rm *
+```
+
+akela `*` — koi extension nahi, kuch nahi — matlab **is folder ki sari (normal) files.** yeh command chalate hi, us folder ki har file **turant aur permanently** delete ho jaayegi. Linux mein "Recycle Bin" jaisa kuch nahi hota — ek baar `rm` chal gaya, wapas nahi aata.
+
+**isiliye rule:** jab bhi `*` ke saath `rm` ya `mv` use karo — pehle **bina `rm` ke** wahi pattern `ls` se check kar lo:
+```bash
+ls *.log       # pehle dekho kaunsi files match ho rahi hain
+rm *.log       # confirm hone ke baad hi delete karo
+```
+yeh habit hacking aur real system administration dono mein zaroori hai — ek galat wildcard poora kaam ka data uda sakta hai.
+
+---
+
+### ek line mein — `*` wildcard
+
+> **`*` = "kuch bhi" — koi bhi text match karega. `ls`, `rm`, `mv`, `cp` — har jagah kaam karta hai. jaldi hai, par khatarnaak bhi hai — `rm` ke saath use karne se pehle `ls` se check kar lo.**
+
+---
+
 ### ek line mein
 
-> **`|` = output ko agla command ko do. `>` = file mein save (overwrite). `>>` = append. `2>` = errors ko redirect. `grep` = filter. `sort` = sort. `uniq` = duplicates hata do.**
+> **`|` = output ko agla command ko do. `>` = file mein save (overwrite). `>>` = append. `2>` = errors ko redirect. `grep` = filter. `sort` = sort. `uniq` = duplicates hata do. `*` = wildcard, kuch bhi match karo.**
 
 ---
 
@@ -5784,6 +5864,42 @@ output aur errors dono dustbin mein — kuch bhi terminal pe nahi dikhega. backg
 
 ✅ **Sahi Jawab: A**
 > chain: `cat` (read) → `grep "Failed"` (filter) → `tail -20` (last 20) → `> recent_failures.txt` (save). real-world log analysis ka example — failed login attempts dhundho aur save karo.
+
+---
+
+**Q16.** `rm *.txt` chalane se kya hoga?
+
+- A) `.txt` extension wali sirf pehli file delete hogi
+- B) yeh command sari `.txt` files ko `.bak` extension mein rename kar degi
+- C) current folder ki saari `.txt` files delete ho jaayengi
+- D) yeh error dega, kyunki `*` sirf `find` command ke andar kaam karta hai
+
+✅ **Sahi Jawab: C**
+> `*` wildcard hai — "naam kuch bhi ho" ka matlab. isliye `.txt` pe khatam hone wali jitni bhi files hain, sab match ho jaayengi aur `rm` unhe delete kar dega.
+
+---
+
+**Q17.** current folder mein `rm *` chalane se kya hoga?
+
+- A) is folder ki (hidden files chhodkar) saari normal files ek saath delete ho jaayengi
+- B) sirf woh files delete hongi jinka naam sirf ek character ka ho
+- C) command fail ho jaayega kyunki akela `*` invalid syntax hai
+- D) sirf woh files delete hongi jo aaj hi banayi gayi hon
+
+✅ **Sahi Jawab: A**
+> akela `*` current folder ki har normal file ko match karta hai. isliye `rm *` chalana bahut khatarnaak hai — bina warning ke poora folder khaali ho sakta hai. hamesha pehle `ls` se pattern check karo.
+
+---
+
+**Q18.** `cp report*.pdf backup/` command kya karega?
+
+- A) sirf ek file jiska naam exactly `report*.pdf` ho, copy hogi
+- B) `backup/` folder ko delete karke naya bana dega
+- C) sirf `report.pdf` naam ki file copy hogi, aur koi nahi
+- D) "report" se shuru hone wali aur ".pdf" pe khatam hone wali jitni bhi files hain, sab `backup/` mein copy ho jaayengi
+
+✅ **Sahi Jawab: D**
+> `*` beech mein bhi kaam karta hai — "report" ke baad kuch bhi (ya kuch nahi) ho sakta hai, bas ".pdf" pe khatam hona chahiye. isliye `report.pdf`, `report_final.pdf`, `report2024.pdf` — sab match ho kar copy ho jaayengi.
 
 ---
 
