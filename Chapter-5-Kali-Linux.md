@@ -5495,40 +5495,161 @@ log file → error wali lines → aakhri 20.
 
 ### `sort` — Sort Karo
 
+sabse simple form:
+
 ```bash
 sort file.txt
 ```
-alphabetically sort karega.
+alphabetically (A→Z) sort karega — poori line ko text ki tarah compare karke.
 
 ```bash
 sort -n numbers.txt
 ```
-numerically sort.
+numerically sort — number ki tarah compare karke.
 
 ```bash
 sort -r file.txt
 ```
-reverse order.
+reverse order — Z→A, ya bade se chote.
+
+---
+
+### pehle samjho — `ls -la` ka output "columns" mein kyun bat rahe hain
+
+```bash
+ls -la
+```
+output kuch aisa aata hai:
+
+```
+-rw-r--r-- 1 kali kali  4096 Jul 14 10:30 file1.txt
+drwxr-xr-x 2 kali kali  2048 Jul 14 09:15 folder1
+-rw-r--r-- 1 kali kali   512 Jul 13 18:20 notes.txt
+```
+
+har line mein alag alag **fields (columns)** hote hain — space se alag. gino:
+
+| Column # | kya hai | Example |
+|---|---|---|
+| 1 | permissions | `-rw-r--r--` |
+| 2 | link count | `1` |
+| 3 | owner | `kali` |
+| 4 | group | `kali` |
+| 5 | **size (bytes mein)** | `4096` |
+| 6-8 | date/time | `Jul 14 10:30` |
+| 9 | file/folder ka naam | `file1.txt` |
+
+**column 5 = size.** yeh yaad rakho — aage yahi use hoga.
+
+---
+
+### `-k` aur `-n` — do alag flags, do alag kaam
 
 ```bash
 ls -la | sort -k5 -n
 ```
-`ls` output ko size (5th column) ke hisaab se numerically sort karo.
+
+isse ek saath samajhne ki koshish mat karo — do tukdon mein todo:
+
+**`-k5` — kis column pe sort karna hai, yeh batao**
+- `-k` = "key" — batao kis field/column pe sort karna hai
+- `5` = field number 5 (size wala column, upar table mein dekha)
+- agar `-k` na do, `sort` poori line ko column 1 se sort karega — pura text jaisa
+
+**`-n` — number ki tarah compare karo, text ki tarah nahi**
+- bina `-n` ke, `sort` character-by-character compare karta hai — isliye `"10"` ko `"2"` se **chota** samajh lega (kyunki `"1"` character `"2"` se pehle aata hai)
+- `-n` lagane se `sort` samajhta hai yeh numbers hain — 2 < 10 sahi tarike se
+
+**farak khud dekho:**
+```
+bina -n (text sort):       10, 2, 30, 4   →  10, 2, 30, 4     (galat — text jaise compare hua)
+-n ke saath (number sort): 10, 2, 30, 4   →  2, 4, 10, 30     (sahi — number jaise compare hua)
+```
+
+**toh poora command `ls -la | sort -k5 -n` ka matlab:**
+> `ls -la` chalao → column 5 (size) pe focus karo → use number ki tarah chote se bade order mein sort kar do
+
+result — sabse chhoti file sabse upar, sabse badi file sabse neeche.
+
+**bade se chote chahiye ho toh** `-r` (reverse) jod do:
+```bash
+ls -la | sort -k5 -n -r
+```
+
+### `sort` ke useful options — ek jagah
+
+| Flag | Kaam |
+|---|---|
+| `sort file.txt` | default — poori line, alphabetically |
+| `sort -n` | numeric sort |
+| `sort -r` | reverse (bade se chote / Z se A) |
+| `sort -k5` | column 5 pe sort karo (text ki tarah) |
+| `sort -k5 -n` | column 5 pe, number ki tarah sort karo |
+| `sort -t: -k1` | `-t:` delimiter batao (colon), phir column 1 pe sort karo — jaise `/etc/passwd` mein |
+| `sort -u` | sort karte hue duplicates bhi hata do (uniq jaisa, par built-in) |
 
 ---
 
 ### `uniq` — Duplicate Hatao
 
-```bash
-sort file.txt | uniq
+**sabse badi baat jo yahan miss ho jaati hai:**
+
+> `uniq` sirf **lagatar (adjacent) duplicate lines** ko hataata hai. poori file mein jahan kahin bhi duplicate ho, sab nahi pakadta.
+
+matlab isse pehle **sort karna zaroori hai** — tabhi saare same lines ek saath aayengi, aur `uniq` unhe pakad payega.
+
+**pehle dekho — bina sort kiye `uniq` fail ho jaata hai**
+
+file `names.txt`:
+```
+kali
+root
+kali
+daemon
+root
 ```
 
-pehle sort karo — phir duplicates hata do.
-
 ```bash
-sort file.txt | uniq -c
+uniq names.txt
 ```
-har unique line kitni baar aayi — count ke saath.
+output:
+```
+kali
+root
+kali
+daemon
+root
+```
+**kuch nahi hataya!** kyun? `kali` do jagah hai — par lagatar nahi hai, beech mein `root` aa gaya. `uniq` sirf padosi (adjacent) duplicate check karta hai, poori file mein scan nahi karta.
+
+**ab sort karke try karo:**
+```bash
+sort names.txt | uniq
+```
+pehle `sort` chalega:
+```
+daemon
+kali
+kali
+root
+root
+```
+ab same lines lagatar (adjacent) aa gayi — ab `uniq` inhe hata dega:
+```
+daemon
+kali
+root
+```
+✅ ab kaam hua — yahi wajah hai `sort` aur `uniq` hamesha saath use hote hain.
+
+### `uniq` ke useful flags
+
+| Flag | Kaam | Example (upar wali sorted file pe) |
+|---|---|---|
+| `uniq` | duplicates hatao | `daemon`, `kali`, `root` |
+| `uniq -c` | har unique line kitni baar aayi, count ke saath | `1 daemon`, `2 kali`, `2 root` |
+| `uniq -d` | sirf woh lines dikhao jo duplicate thi | `kali`, `root` |
+| `uniq -u` | sirf woh lines dikhao jo unique thi (kabhi duplicate nahi hui) | `daemon` |
 
 ---
 
