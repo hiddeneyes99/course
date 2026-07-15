@@ -1,0 +1,1 @@
+- [Large markdown file corruption via Edit tool](large-file-edit-corruption.md) — Edit tool on a big multi-section .md file can silently splice unrelated content mid-sentence; always grep-verify structure after edits, not just diff the intended change.
