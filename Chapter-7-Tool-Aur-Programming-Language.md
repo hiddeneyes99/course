@@ -174,37 +174,93 @@ computer khud sirf 0 aur 1 (binary) samajhta hai. lekin insaan ke liye seedha 0-
 
 ---
 
-### programming languages ke type — 2 tarah se samjho
+### Compiled vs Interpreted — ab isko poori tarah, deep mein samjho
 
-**1. Compiled vs Interpreted (code kaise chalta hai uske hisaab se)**
+yeh sabse important concept hai is chapter ka, isliye ismein time lagate hain aur poora andar tak samjhte hain.
 
-| Type | Kaise Kaam Karta Hai | Example Languages |
-|---|---|---|
-| **Compiled Language** | pura code pehle ek baar mein "compile" hota hai (translate hota hai machine language mein), phir chalta hai | C, C++ |
-| **Interpreted Language** | code line-by-line seedha chalaya jaata hai, bina pehle poora translate kiye | Python, JavaScript |
-
-**2. Level ke hisaab se (computer ke kitna paas ya door)**
-
-| Type | Matlab | Example |
-|---|---|---|
-| **Low-Level Language** | computer/hardware ke bahut paas, samajhna insaan ke liye mushkil | Assembly Language |
-| **High-Level Language** | insaan ke liye likhna/samajhna aasan, computer se thoda "door" | Python, JavaScript, C |
+pehle yaad karo — computer sirf **binary (0 aur 1)** samajhta hai. jab bhi tum koi code likhte ho (kisi bhi language mein), woh code aakhir mein binary mein hi convert hona padta hai, tabhi computer usko run kar payega. **yeh convert kaise aur kab hota hai** — usi se "compiled" aur "interpreted" ka farak nikalta hai.
 
 ---
 
-### hacking mein kaunsi languages sabse zyada kaam aati hain — chhota overview
+#### Compiled Language — kaam kaise karta hai, step by step
 
-aage wale tool-chapters mein yeh names baar-baar aayenge, isliye ek chhota overview abhi le lo:
+1. tum apna poora code likhte ho (poora program, ek se lekar aakhri line tak).
+2. phir ek special program use hota hai jise **"Compiler"** kehte hain.
+3. Compiler tumhare **poore code ko ek hi baar mein** padhta hai, aur usko seedha **machine language (binary)** mein convert kar deta hai — is convert hui file ko usually **".exe" ya binary file** kehte hain.
+4. jab bhi tumhe program chalana ho, ab seedha yeh already-converted file chalti hai — computer ko dobara translate karne ki zaroorat nahi padti.
 
-| Language | Kis Kaam Ke Liye Common Hai |
-|---|---|
-| **Python** | zyada tar hacking tools/scripts isi mein bante hain — automation, scanning tools |
-| **Bash** | Linux/Termux/Kali ke andar commands ko chain/automate karne ke liye (jo tumne Chapter 4-6 mein use kiya) |
-| **C** | bahut sare core tools (jaise Nmap ka kuch hissa) is mein bane hote hain — fast aur system ke bahut paas |
-| **JavaScript** | website/web-app hacking (jaise XSS) samajhne ke liye zaroori |
-| **SQL** | database se related attacks (jaise SQL Injection) samajhne ke liye zaroori |
+> socho jaise tumne ek poori kitaab (Hindi mein) pehle hi translate karwa kar English mein likh li — ab jab bhi padhni ho, seedha English wali kitaab utha lo, dobara translate karne ki zaroorat nahi.
 
-is stage pe yeh saari languages seekhna zaroori nahi hai — sirf itna samajhna hai ki **aage jo bhi tool aayega, uska kaam samajhne ke liye is table ka concept yaad rakhna hai.**
+**fayda:** ek baar compile ho jaane ke baad, program **bahut fast chalta hai** — kyunki translation ka kaam pehle hi ho gaya, chalne ke time koi extra kaam nahi karna padta.
+
+**nuksaan:** agar code mein 1 bhi line galat hui, toh **poora compile fail ho jaata hai** — jab tak error fix na karo, program chal hi nahi sakta. aur agar chhota sa change karna ho, toh dobara poora compile karna padta hai.
+
+**example languages:** **C, C++**
+
+**kahan use hota hai:** operating systems (jaise Linux kernel khud C mein bana hai), games, aur hacking mein woh tools jinko **bahut fast** chalna zaroori hai ya jo hardware ke bahut paas kaam karte hain (jaise exploits, low-level network tools).
+
+---
+
+#### Interpreted Language — kaam kaise karta hai, step by step
+
+1. tum apna code likhte ho.
+2. ek special program hota hai jise **"Interpreter"** kehte hain.
+3. Interpreter tumhare code ko **line-by-line** padhta hai — pehli line padho, usko turant binary mein convert karke chalao, phir doosri line, phir teesri — aise hi aakhir tak.
+4. koi alag se ".exe" file nahi banti — jab bhi chalana ho, interpreter code ko us waqt hi translate karke chalata hai.
+
+> socho jaise ek translator kisi ki speech **live** translate kar raha ho — speaker ek line bolta hai, translator turant uska matlab bata deta hai, phir agli line — ek baar mein poori speech translate karke rakhi nahi hoti.
+
+**fayda:** likhna aur test karna **bahut aasan aur fast** hai — code likho, seedha run karo, dekh lo kaam kar raha hai ya nahi. 1 line change karni ho toh poora dobara "compile" nahi karna padta, seedha phir se run kar do.
+
+**nuksaan:** chalne ki speed compiled language se **thodi slow** hoti hai — kyunki har baar chalte waqt translation bhi sath-sath ho rahi hoti hai.
+
+**example languages:** **Python, JavaScript, Bash/Shell**
+
+**kahan use hota hai:** zyada tar hacking scripts, automation tools, website ka interactive part, aur woh saari jagah jahan **jaldi likhna aur jaldi test karna** zaroori hota hai — isi liye zyada tar hacking tools Python mein milte hain.
+
+---
+
+#### ek table mein side-by-side
+
+| | Compiled Language | Interpreted Language |
+|---|---|---|
+| **kaam kaise karta hai** | poora code ek baar mein translate hota hai, phir chalta hai | code line-by-line, chalte waqt hi translate hota hai |
+| **speed (chalne ki)** | fast | thodi slow |
+| **likhna/test karna** | thoda slow — har change ke baad dobara compile | fast — likho aur seedha chalao |
+| **error mila toh** | poora program compile hi nahi hoga jab tak fix na ho | jahan tak sahi hai wahan tak chal jaata hai, jis line pe error hai wahi rukega |
+| **example** | C, C++ | Python, JavaScript, Bash |
+| **hacking mein use** | fast/low-level tools, exploits | scripts, automation, zyada tar tools |
+
+> **yaad rakhne ka tarika:** Compiled = "pehle poora translate, phir chalao" (kitaab translate karwa ke rakhna). Interpreted = "line bolo, turant translate karo" (live translator).
+
+---
+
+### programming languages kitni hoti hain — asli sankhya
+
+seedha jawab — **duniya mein programming languages sainkdo (hundreds) hain**, kayi toh sirf college projects ya research ke liye bani, jo kisi ne suna hi nahi hoga.
+
+lekin tension ki baat nahi — **roz-marra (daily) use hone wali, har jagah milne wali languages sirf 8-10 hi hain.** yehi woh languages hain jo tumhe websites mein, apps mein, tools mein, **har jagah dikhengi.** neeche wahi list hai.
+
+---
+
+### popular programming languages — kahan-kahan use hoti hain
+
+| Language | Compiled ya Interpreted | Kahan Use Hoti Hai |
+|---|---|---|
+| **Python** | Interpreted | hacking tools/scripts, automation, AI/Machine Learning, data science — **sabse zyada popular hacking ke liye** |
+| **JavaScript** | Interpreted | har website ka "interactive" part (buttons, forms, animations) — jahan bhi browser hai, wahan JavaScript hai |
+| **C** | Compiled | operating systems (Linux kernel khud C mein bana hai), hardware ke paas wale programs, fast tools |
+| **C++** | Compiled | games, heavy software, kuch antivirus/security tools |
+| **Java** | Compiled (thoda special — pehle bytecode mein compile hota hai, phir "JVM" naam ka interpreter chalata hai) | Android apps (zyada tar Android apps Java/Kotlin mein bane hain), bade enterprise (company) software |
+| **PHP** | Interpreted | bahut saari websites ke "backend" (server side) — WordPress jaisi websites PHP pe chalti hain |
+| **SQL** | alag category (Query Language, "programming" se thoda alag) | database se baat karne ke liye — data store/nikaalna, aur SQL Injection attack samajhne ke liye zaroori |
+| **Bash / Shell** | Interpreted | Linux/Termux/Kali ke andar commands chain/automate karna (jo tumne Chapter 4-6 mein khud use kiya) |
+| **Ruby** | Interpreted | kuch websites (backend), aur ek famous hacking tool **Metasploit** khud Ruby mein bana hai |
+| **Go (Golang)** | Compiled | naye zamane ke fast tools, kuch modern hacking/security tools isi mein bante hain |
+
+> is table mein diye gaye 8-10 names hi hain jo aage har chapter mein baar-baar dikhenge — kisi tool ka code dekhoge toh yeh pehchan paoge "yeh Python mein hai" ya "yeh Bash script hai" — bas itna hi target hai abhi.
+
+is stage pe koi bhi language seekhna zaroori nahi hai — sirf itna samajhna hai ki **har tool kisi na kisi language mein bana hota hai, aur upar wali table ke naam sabse zyada milenge.**
 
 ---
 
@@ -252,55 +308,91 @@ isse zyada abhi kuch nahi chahiye — bas itni samajh ke saath ab hum agle chapt
 
 ---
 
-**Q3.** Compiled aur Interpreted language mein kya farak hai?
+**Q3.** "Compiler" kaam kya karta hai?
 
-- A) compiled language pehle poora translate hoti hai, interpreted line-by-line chalti hai
-- B) dono ek hi cheez hain
-- C) interpreted language sirf mobile mein chalti hai
-- D) compiled language kabhi nahi chal sakti
+- A) poore code ko ek hi baar mein padhkar seedha machine language (binary) mein convert kar deta hai
+- B) code ko line-by-line chalate waqt hi translate karta hai
+- C) sirf error dhundta hai, translate nahi karta
+- D) internet se code download karta hai
 
 ✅ **Sahi Jawab: A**
-> compiled languages (C, C++) pehle poora compile hoti hain, interpreted languages (Python, JavaScript) line-by-line chalti hain.
+> Compiler poora code ek baar mein padhta hai aur pehle hi poora translate kar deta hai — jaisa poori kitaab pehle translate karwa lena.
 
 ---
 
-**Q4.** Low-level aur High-level language mein kya farak hai?
+**Q4.** "Interpreter" kaam kya karta hai?
 
-- A) low-level hardware ke paas hoti hai (jaise Assembly), high-level insaan ke likhne/samajhne ke liye aasan hoti hai (jaise Python)
-- B) low-level sirf games ke liye hoti hai
-- C) high-level language computer samajh hi nahi sakta
-- D) dono mein koi farak nahi hai
+- A) code ko line-by-line padhta hai aur turant, chalte waqt hi translate karke run karta hai
+- B) poore code ko pehle ek file mein compile kar deta hai
+- C) sirf hardware manage karta hai
+- D) sirf website design karta hai
 
 ✅ **Sahi Jawab: A**
-> low-level language machine ke bahut paas hoti hai aur samajhna mushkil hota hai, high-level language insaan-friendly hoti hai.
+> Interpreter live translator jaisa kaam karta hai — ek line padho, turant translate karo aur chalao, phir agli line.
 
 ---
 
-**Q5.** hacking tools mein sabse zyada kis language ka use hota hai (jaisa is topic mein bataya gaya)?
+**Q5.** Compiled language ka bada **fayda** kya hai?
 
-- A) sirf Hindi
-- B) Python
-- C) sirf HTML
-- D) koi language use nahi hoti
+- A) likhna bahut aasan hota hai
+- B) ek baar compile hone ke baad program bahut fast chalta hai
+- C) usmein kabhi error nahi aata
+- D) usko internet ki zaroorat nahi padti
 
 ✅ **Sahi Jawab: B**
-> zyada tar hacking scripts/tools Python mein bante hain, kyunki likhna aasan hai aur bahut powerful bhi hai.
+> translation ka kaam pehle hi ho jaata hai, isliye chalne ke waqt extra kaam nahi karna padta — isliye compiled languages fast chalti hain.
 
 ---
 
-**Q6.** SQL language kis type ke hacking se sabse zyada connect hai?
+**Q6.** Interpreted language ka bada **fayda** kya hai (jaisa is topic mein samjhaya gaya)?
 
-- A) database se related attacks jaise SQL Injection
-- B) sirf wifi hacking
-- C) sirf phone hacking
-- D) koi connection nahi hai
+- A) likhna aur test karna fast/aasan hota hai — likho aur seedha run kar do
+- B) yeh compiled language se hamesha fast chalti hai
+- C) isme kabhi error nahi aata
+- D) yeh sirf games banane ke liye use hoti hai
 
 ✅ **Sahi Jawab: A**
-> SQL database ke saath kaam karne ki language hai, isliye SQL Injection jaise attacks samajhne ke liye zaroori hai.
+> ek line change karni ho toh poora dobara compile nahi karna — seedha phir se run kar do, isliye likhna/testing fast hota hai.
 
 ---
 
-**Q7.** yeh chapter mein programming languages ke baare mein itna kyun bataya gaya, agar abhi coding seekhni nahi hai?
+**Q7.** duniya mein programming languages kitni hain, aur roz-marra (daily) kaam aane wali kitni hain (jaisa is topic mein bataya gaya)?
+
+- A) total sirf 2 languages hain
+- B) sainkdo (hundreds) languages hain duniya mein, lekin daily/har jagah milne wali sirf 8-10 hi hain
+- C) sirf hacking ke liye alag se koi language nahi hoti
+- D) sirf 1 hi language hoti hai, baaki sab usi ka naam hai
+
+✅ **Sahi Jawab: B**
+> languages sainkdo hain, lekin Python, JavaScript, C, C++, Java, PHP, SQL, Bash, Ruby, Go jaisi 8-10 languages hi sabse zyada common/popular hain.
+
+---
+
+**Q8.** famous hacking tool **Metasploit** kis programming language mein bana hai (jaisa table mein bataya gaya)?
+
+- A) Ruby
+- B) HTML
+- C) sirf Hindi commands mein
+- D) koi language nahi, sirf app hai
+
+✅ **Sahi Jawab: A**
+> Metasploit Ruby language mein bana hai — is course mein aage jab Metasploit seekhoge, tab yeh naam yaad rakhna kaam aayega.
+
+---
+
+**Q9.** Java ko "thoda special case" kyun bataya gaya hai compiled/interpreted ki baat mein?
+
+- A) Java na compiled hai na interpreted, koi category nahi hai iski
+- B) Java code pehle "bytecode" mein compile hota hai, phir usko JVM naam ka interpreter chalata hai — matlab dono tarike ka mix hai
+- C) Java sirf website design ke liye hoti hai
+- D) Java sirf mobile mein hi likha ja sakta hai
+
+✅ **Sahi Jawab: B**
+> Java pehle bytecode mein compile hoti hai, phir JVM (Java Virtual Machine) us bytecode ko interpret karke chalata hai — isliye yeh dono concepts ka mix hai.
+
+---
+
+**Q10.** yeh chapter mein programming languages ke baare mein itna kyun bataya gaya, agar abhi coding seekhni nahi hai?
 
 - A) taaki aage ke tools ka code/error dekhkar confuse na ho, aur samajh aaye kis language mein tool bana hai
 - B) sirf exam pass karne ke liye
