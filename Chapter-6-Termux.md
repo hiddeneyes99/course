@@ -2675,7 +2675,15 @@ agle topic mein hum `nano` aur `vim` editors se files edit karna seekhenge.
 
 ### `cat` se sirf padh sakte ho, likh nahi sakte
 
-Topic 6.8 mein `cat notes.txt` se file ka content dekha tha — lekin agar us file ko **edit karna ho** (kuch add/change karna), `cat` uske liye nahi hai. iske liye chahiye **text editor.**
+pehle yaad karte hain `cat` karta kya hai. **`cat`** (poora naam "con**cat**enate", lekin bas naam hai, tension mat lo) ek command hai jo kisi bhi text file ka **poora content uthaake seedha terminal screen pe print kar deta hai** — jaise koi file kholo aur usme jo likha hai sab ek saath dikh jaaye.
+
+```bash
+cat notes.txt
+```
+
+isse `notes.txt` ke andar jo bhi text hai — chahe ek line ho ya sau lines — sab terminal pe dikh jaayega. Topic 6.8 mein isi command se file ka content dekha tha.
+
+lekin ek **important limit** hai — `cat` sirf **dikhata** hai, **edit nahi karne deta.** matlab agar file mein kuch add karna ho, kuch change karna ho, ya galti sudharni ho — `cat` se woh nahi ho sakta, woh sirf "read-only" tarah kaam karta hai. edit karne ke liye chahiye **text editor.**
 
 ---
 
