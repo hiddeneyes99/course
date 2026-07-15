@@ -1659,11 +1659,23 @@ pkg install nano
 
 **syntax:** `pkg install <package-ka-naam>`
 
-ek saath multiple packages bhi install kar sakte ho:
+ek saath multiple packages bhi install kar sakte ho — bas naam ke beech ek **space** daal do:
 
 ```bash
 pkg install nano git curl
 ```
+
+isme teen alag-alag packages ek hi command mein install ho rahe hain:
+
+- **`nano`** — text editor (files khol ke edit karne ke liye)
+- **`git`** — code/projects ko track aur manage karne ka tool
+- **`curl`** — internet se files download karne ya kisi website se data mangwane ka tool
+
+Termux is command ko andar se **teen alag commands ki tarah** treat karta hai — pehle `nano` dhundh ke download-install karega, phir `git`, phir `curl` — ek ke baad ek, sequence mein. terminal mein har package ke liye alag se "Downloading...", "Installing...", "Setting up..." jaisi lines dikhengi, aur end mein sab teen install ho chuke honge.
+
+**faayda kya hai iska?** agar teen alag commands chalate (`pkg install nano`, phir `pkg install git`, phir `pkg install curl`) toh teen baar Enter dabana padta aur teen baar wait karna padta. ek line mein sab de dene se Termux khud sab ek ke baad ek nikaal leta hai — tumhe sirf ek baar Enter dabana padta hai aur phir wait karna hota hai jab tak teeno complete na ho jaayein.
+
+agar beech mein koi ek package na mile (naam galat type ho gaya ho), Termux us specific package ke liye error dega lekin baaki packages ko install karne ki koshish karta rahega.
 
 ---
 
