@@ -1646,7 +1646,7 @@ yeh tumhare Termux mein **already installed** saare packages ki list dikhata hai
 pkg uninstall nano
 ```
 
-agar koi package ab zaroorat ka nahi, ise uninstall kar sakte ho — jaisa chapter 5 mein `rm` se files delete karte the, waisa hi yeh packages delete karta hai.
+agar koi package ab zaroorat ka nahi, ise uninstall kar sakte ho — bilkul waise hi jaise `rm` command se koi file delete karte hain (yeh `rm` command Topic 6.8 mein detail se aayega), `pkg uninstall` bhi bas installed package ko system se hata deta hai.
 
 ---
 
@@ -1952,7 +1952,17 @@ file delete. folder delete karna ho (agar andar files hon):
 rm -r projects
 ```
 
-⚠️ jaise chapter 5 mein seekha tha — `rm` permanent hai, koi Recycle Bin nahi. aur agar `*` wildcard (jo Topic 5.9 mein seekha) yahan bhi use karoge, wahi rules apply hote hain — dhyaan se.
+⚠️ **`rm` permanent hai** — koi Recycle Bin, koi "Undo" nahi hota. jo delete hua, seedha gaya, wapas nahi aata.
+
+aur ek cheez jisse aur bhi zyada dhyaan rakhna hai — `*` (star) naam ka **wildcard**. wildcard ka matlab hai — "yahan kuch bhi ho sakta hai, koi bhi text match kar lo." jaise:
+
+```bash
+rm *.txt
+```
+
+iska matlab — `.txt` pe khatam hone waali **jitni bhi files** current folder mein hain, sab ek saath delete ho jaayengi — chahe unka naam kuch bhi ho. isliye `rm` ke saath `*` use karne se pehle **pehle `ls` se dekh lo** ki exactly kaunsi files match hongi, warna galti se zaroori file bhi delete ho sakti hai.
+
+(agar tumne chapter 5 kiya hai, yeh `*` wildcard aur `rm` ka combo Topic 5.9 mein already detail se cover hua tha — wahi concept hai.)
 
 ---
 
@@ -3072,14 +3082,16 @@ is poore chapter ka final goal yehi hai — jab tum yahan tak pahunch jao, Termu
 bash: ./script.sh: Permission denied
 ```
 
-**wajah:** us file ko "execute" karne ki permission nahi di gayi (chapter 5 ke permissions topic wali baat yaad karo).
+**wajah:** Linux mein har file ke saath teen permissions attach hoti hain — **read** (padhna), **write** (likhna/badalna), aur **execute** (usse ek program/script ki tarah run karna). ek naya script file banate ho toh usmein by default "execute" permission nahi hoti — isliye jab tum use `./script.sh` se chalane ki koshish karte ho, Termux keh deta hai "Permission denied", kyunki us file ko **run karne ki ijazat hi nahi hai**, chahe usme sahi code likha ho.
 
 **solution:**
 ```bash
 chmod +x script.sh
 ./script.sh
 ```
-`chmod +x` = file ko execute karne layak bana do.
+`chmod` = **ch**ange **mod**e (permissions badalna). `+x` = execute permission **add** kar do. yeh command chalane ke baad file ko "run karne layak" bana diya jaata hai, aur ab `./script.sh` kaam karega.
+
+(agar tumne chapter 5 kiya hai — wahan Topic 5.7 mein `chmod`, permissions, aur `rwx` ka poora system detail se cover hua tha. yahan bas isi ka ek practical use-case hai.)
 
 ---
 
@@ -3159,11 +3171,11 @@ yeh command batata hai kitni storage khaali hai.
 
 **kab hota hai:** `rm` ya `rm -r` chala diya aur baad mein realize hua ki zaroori tha.
 
-**wajah:** chapter 5 aur is chapter mein baar-baar bataya gaya — `rm` **permanent** hai, koi Recycle Bin nahi.
+**wajah:** `rm` **permanent** hai — koi Recycle Bin, koi Undo nahi. is baat ka zikr is chapter mein bhi baar-baar hua hai (Topic 6.8) — khaaskar jab `*` wildcard ("kuch bhi match karo") ke saath `rm` use kiya jaaye, tab galti hone ke chances aur bhi zyada hote hain, kyunki ek hi command se ek saath bahut saari files match ho ke delete ho sakti hain.
 
 **solution:** agar file Termux ke apne sandbox mein thi — waapas nahi aa sakti, dobara banani padegi. agar `storage/` (shared storage) ki file thi, phone ke **Recycle Bin/Trash app** (agar Android version support karta ho) mein check karo — kabhi kabhi wahan se recover ho sakti hai.
 
-**prevention:** `rm` ya `*` wildcard use karne se pehle hamesha `ls` se confirm karo (Topic 5.9 mein yeh rule seekha tha).
+**prevention:** `rm` ya `*` wildcard use karne se pehle hamesha `ls` se confirm karo ki exactly kaunsi files match ho rahi hain — matlab jo command chalane wale ho, usse pehle sirf `ls` us pattern ke saath chalao, dekh lo list sahi hai, phir hi `rm` chalao.
 
 ---
 
