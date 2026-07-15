@@ -884,11 +884,25 @@ yeh command tumhare **already installed packages** ko unke naye version se repla
 
 ### dono ko saath mein chalana — `&&` ka use
 
-chapter 5 mein `&&` (chaining) ka concept seekha tha — do commands ko ek ke baad ek, pehli successful hone pe hi chalana. yehi yahan bhi use hota hai:
+abhi tak humne `pkg update` aur `pkg upgrade` alag-alag, do baar Enter dabake chalaye. lekin roz-roz do commands alag type karna time-waste hai — inhe **ek hi line mein, ek ke baad ek** chalane ka tareeka hai.
+
+iske liye `&&` (do "and" symbol, isko "double ampersand" kehte hain) use hota hai. `&&` ka seedha matlab hai:
+
+> **"pehli command chalao — aur agar woh successfully complete ho jaaye (koi error na aaye), tabhi doosri command chalao."**
 
 ```bash
 pkg update && pkg upgrade
 ```
+
+yahan ho kya raha hai, step by step:
+
+1. pehle `pkg update` chalta hai (naya catalog refresh hota hai)
+2. agar yeh **bina error** poora ho jaaye, tabhi `&&` doosri command ko permission deta hai chalne ki
+3. `pkg upgrade` chalta hai (installed packages update hote hain)
+
+**agar pehli command fail ho jaaye** (jaise internet na ho aur `pkg update` error de) — toh `&&` ke baad wali command **bilkul nahi chalegi**. yeh ek safety feature hai: agar catalog refresh hi fail hua, toh purane/adhoore catalog se upgrade karna faayda ki jagah nuksaan de sakta hai, isliye `&&` use karke hum yeh ensure karte hain ki agla step tabhi ho jab pehla theek se poora hua ho.
+
+(agar tumne `&&` yeh concept chapter 5 mein bhi dekha hoga, wahi concept hai — do commands "chain" karna, pehli safal hone pe hi doosri chalana.)
 
 yeh sabse common, roz kaam aane wala command hai — pehle catalog refresh, phir usi catalog se sab kuch update.
 
