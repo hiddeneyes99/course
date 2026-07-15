@@ -1624,6 +1624,25 @@ chalao aur dekho catalog fresh hota hai ya nahi. agar pehle se sab sahi chal rah
 
 ---
 
+### package (software) hota kya hai — Termux mein
+
+age badhne se pehle ek basic cheez clear karte hain: **"package" ka matlab kya hai?**
+
+package bas ek **ready-made software / tool** hota hai jo kisi ne pehle se bana ke rakha hai — tumhe khud code likhne ki zaroorat nahi, seedha download karo aur use karo. jaise tumhare phone mein Play Store se app install karte ho (WhatsApp, Instagram) — waise hi Termux mein `pkg install` se "package" install karte ho, sirf yeh apps ki jagah **command-line tools** hote hain.
+
+kuch examples:
+
+- **`nano`** — ek text editor (jaise phone mein Notes app, lekin Termux ke andar files edit karne ke liye)
+- **`git`** — code ko save/track/share karne ka tool (developers isse project manage karte hain)
+- **`curl`** — internet se files download karne ya websites se data mangwane ka tool
+- **`python`** — Python programming language chalane ka pura setup
+
+har package ek chhoti si file hoti hai (ya files ka set) jo Termux ke repository (Topic 6.4 mein seekha — ek online "warehouse") mein pehle se rakhi hoti hai. jab tum `pkg install <naam>` chalate ho, Termux us warehouse se woh package download karke tumhare Termux ke andar set kar deta hai — bas iske baad tum woh tool seedha use kar sakte ho.
+
+toh short mein: **package = ek chhota, ready-made program jo `pkg install` se le aake use kar sakte ho — bina khud banaye.**
+
+---
+
 ### ab tak sirf update/upgrade dekha
 
 Topic 6.4 mein `pkg update` aur `pkg upgrade` seekha — woh sirf **already installed cheezein taaza rakhne** ke liye tha. ab dekhte hain — naya software **install kaise karte hain**, dhundhte kaise hain, aur hataate kaise hain.
