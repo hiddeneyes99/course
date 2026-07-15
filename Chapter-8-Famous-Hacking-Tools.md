@@ -238,10 +238,132 @@ install hone ke baad, jab tum `zphisher` (Termux) ya `bash zphisher.sh` (Kali) c
 
 ---
 
+**Q9.** Zphisher tool kis programming language (script) mein likha gaya hai?
+
+- A) Python
+- B) Java
+- C) Bash
+- D) C++
+
+✅ **Sahi Jawab: C**
+> Zphisher ek Bash script hai — isiliye Termux aur Kali dono mein bina extra setup ke chal jaata hai, kyunki dono jagah Bash already available hoti hai.
+
+---
+
+**Q10.** phishing attack mein sabse pehle kaunsi cheez victim ko dhoka dene ka kaam karti hai?
+
+- A) victim ka phone hack ho jaata hai seedha
+- B) ek nakli login page jo bilkul asli website jaisi dikhti hai
+- C) virus send kiya jaata hai email ke zariye
+- D) victim ka internet band kar diya jaata hai
+
+✅ **Sahi Jawab: B**
+> phishing ki puri taakat uski visual similarity mein hai — nakli page itna asli dikhta hai ki victim bina sooche apna password daal deta hai.
+
+---
+
+**Q11.** Zphisher mein "Cloudflared" tunneling option ka kya kaam hota hai?
+
+- A) tool ki speed badhata hai
+- B) tool uninstall karta hai
+- C) ek public link banata hai jo internet pe kahin se bhi access kiya ja sake
+- D) sirf local Wi-Fi ke andar kaam karta hai
+
+✅ **Sahi Jawab: C**
+> Cloudflared ek public accessible link generate karta hai — taaki fake page sirf tumhare network tak limited na rahe.
+
+---
+
+**Q12.** "phishing" naam kahan se aaya hai?
+
+- A) ek hacker ke naam se
+- B) "fishing" (machli pakadna) se — jaise machhliwala chaara daalke machhli phasata hai, hacker fake link se victim ko phasata hai
+- C) ek virus ke naam se
+- D) "phone hacking" ke short form se
+
+✅ **Sahi Jawab: B**
+> naam bilkul fishing se inspired hai — bait (chaara) daalo, victim khud aa ke phas jaaye.
+
+---
+
+**Q13.** agar koi keh raha ho ki "main sirf apne dost ka account test ke liye phish karunga, usse bata bhi dunga baad mein" — yeh sahi hai ya galat?
+
+- A) bilkul sahi — dost hai toh koi baat nahi
+- B) galat — permission pehle leni hoti hai, baad mein batana legal nahi hota
+- C) sahi — agar baad mein bata do toh crime nahi
+- D) sahi — sirf strangers pe use karna galat hota hai
+
+✅ **Sahi Jawab: B**
+> permission likhit mein pehle chahiye — "baad mein bataunga" wali baat legally koi value nahi rakhti, yeh crime hi hai.
+
+---
+
+**Q14.** Zphisher use karte waqt website choose karne ke baad kaunsa step aata hai?
+
+- A) seedha link generate ho jaata hai
+- B) tool band ho jaata hai
+- C) login page ka type/style choose karna padta hai
+- D) phone restart karna padta hai
+
+✅ **Sahi Jawab: C**
+> website choose karne ke baad, tool poochta hai kaunsa page style chahiye (jaise "normal login" ya koi special variant) — phir tunneling choose hoti hai, phir link generate hota hai.
+
+---
+
+**Q15.** phishing attacks itne common kyun hain — technical hacking ki jagah?
+
+- A) kyunki yeh free hai
+- B) kyunki ismein koi coding nahi chahiye aur insaan ki psychology exploit hoti hai — yeh sabse aasaan aur effective attack vector hai
+- C) kyunki police track nahi kar sakti
+- D) kyunki yeh sirf mobile pe kaam karta hai
+
+✅ **Sahi Jawab: B**
+> system hack karna mushkil hota hai — insaan ko dhoka dena zyada aasaan. isiliye duniya ki most hacking incidents phishing se hi shuru hoti hain.
+
+---
+
+## 🛠️ Hands-On Task — Topic 8.1
+
+**Task: Apne Khud Ke Liye Ek Phishing Demo Setup Karo — Aur Khud Hi Usse "Bachna" Seekho**
+
+Yeh task do histon mein hai — pehle attacker ki taraf se dekho (apne test pe), phir defender ki taraf se.
+
+---
+
+**Hissa 1 — Phishing Demo Karo (sirf apne test account pe)**
+
+1. **Termux ya Kali mein Zphisher install karo** — upar wale steps follow karo.
+2. Tool chalao: `bash zphisher.sh`
+3. Koi bhi ek platform choose karo (Instagram ya Google recommend karte hain demo ke liye).
+4. Tunneling option mein **Localhost** choose karo — iska matlab link sirf tumhare apne device pe hi kaam karega, koi bahar nahi jaayega.
+5. Jo link generate hua, woh apne phone ke browser mein kholo.
+6. **Apna koi test account banao (real account mat use karna)** — us test account ki fake details (test@test.com / testpass123) us fake page pe daalo.
+7. Turant terminal pe dekho — woh details wahan aa gayi hain.
+
+> **Yahi phishing hoti hai.** Tumne khud apna ek "attack" dekha — bina koi real account use kiye, bina kisi aur ko involve kiye.
+
+---
+
+**Hissa 2 — Ab Defender Bano (yahi asli lesson hai)**
+
+Woh same fake page kholo jo tune abhi banaya — aur dhyaan se dekho:
+
+1. **URL check karo** — kya woh sach mein instagram.com hai? ya kuch aur hai (jaise 127.0.0.1:8080 ya koi random domain)?
+2. **HTTPS lock icon dekho** — kya hai? genuine sites pe hota hai.
+3. **Page ka source dekho** — browser mein Ctrl+U — dikhaai dega yeh local file hai ya server se aa raha hai.
+
+**Yeh 3 cheezein real life mein kisi bhi link pe check karo — phishing se kabhi nahi fasoge.**
+
+---
+
+> 💡 **Tip:** Duniya ke 90% phishing attacks tab kaam karte hain jab victim jaldi mein hota hai ya daraya gaya hota hai ("account delete ho jaayega!"). Jab bhi aisa koi message aaye — **ruko, URL dekho, tab decide karo.** Hacker ki sabse badi dushman tumhari **slow, deliberate reaction** hai.
+
+---
+
 ```
 ════════════════════════════════════════════════════════
    ✅  TOPIC 8.1 COMPLETE — PHISHING AUR ZPHISHER
-   ⬇️  Agla Topic Aane Wala Hai
+   ⬇️  Neeche hai Topic 8.2
 ════════════════════════════════════════════════════════
 ```
 
