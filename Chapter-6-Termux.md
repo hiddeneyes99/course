@@ -908,6 +908,27 @@ yeh sabse common, roz kaam aane wala command hai — pehle catalog refresh, phir
 
 ---
 
+### `;` (semicolon) — `&&` se ek chhota sa farak
+
+`&&` ke jaisa hi dikhne wala ek aur symbol hai — `;` (semicolon). yeh bhi do commands ko ek line mein chalane deta hai, lekin **condition alag hai:**
+
+```bash
+pkg update ; pkg upgrade -y
+```
+
+`;` ka matlab hai — **"pehli command chalao, chahe woh successful ho ya fail ho, doosri command chalao waise bhi."** `&&` ki tarah yeh check nahi karta ki pehli command sahi se poori hui ya nahi — bas seedha ek ke baad ek chala deta hai.
+
+**farak yaad rakhne ka simple tareeka:**
+
+| Symbol | Kab doosri command chalegi |
+|---|---|
+| `&&` | sirf tab jab pehli **safal** ho (koi error na aaye) |
+| `;` | **hamesha** — chahe pehli safal ho ya fail |
+
+isi wajah se `pkg update && pkg upgrade` mein `&&` use karna zyada safe hai — agar `update` fail ho gaya (jaise internet na ho), tumhe `upgrade` bhi nahi chalana chahiye, aur `&&` yehi ensure karta hai. `;` yahan use karte toh `update` fail hone ke baad bhi `upgrade` chal jaata — jo purane/adhoore catalog se galat result de sakta tha.
+
+---
+
 ### `-y` flag — baar baar "yes" na poochhe
 
 `pkg upgrade` chalate waqt beech mein confirm karne ke liye poochh sakta hai "Do you want to continue? [Y/n]". agar chaho ki yeh khud hi "yes" maan le, `-y` flag lagao:
@@ -1103,6 +1124,18 @@ isliye ek simple habit bana lo: **Termux khola → sabse pehle `pkg update && pk
 
 ✅ **Sahi Jawab: A**
 > yehi analogy is topic mein use hui — `update` naya catalog dikhata hai, `upgrade` existing saaman ko naye version se replace karta hai.
+
+---
+
+**Q14.** `pkg update ; pkg upgrade -y` mein `;` (semicolon) ka `&&` se kya farak hai?
+
+- A) `;` sirf error dikhata hai, kuch chalata nahi
+- B) `;` doosri command hamesha chalata hai, chahe pehli fail ho ya safal — `&&` sirf pehli safal hone pe chalata hai
+- C) dono ka bilkul same kaam hai, koi farak nahi
+- D) `;` commands ko parallel mein chalata hai
+
+✅ **Sahi Jawab: B**
+> `&&` condition check karta hai (pehli safal ho tabhi doosri chale), `;` bina condition ke seedha ek ke baad ek chala deta hai.
 
 ---
 
@@ -2101,6 +2134,42 @@ current Termux session ko **band** kar deta hai — jaise session tab close karn
 
 ---
 
+### `history` — pichhli commands dekhna
+
+```bash
+history
+```
+
+tumne is session (aur pichle sessions) mein ab tak jo bhi commands type ki hain, unki **numbered list** dikha deta hai. kaam aata hai jab yaad na aaye ki koi specific command exactly kaise type ki thi — `history` mein dhoond lo. isse jaldi kisi purani command tak pahunchne ka ek chhota tareeka bhi hai — `↑` (up-arrow key) baar-baar dabao, terminal ek-ek karke purani commands wapas laata rehta hai (yeh `clear` chalane se bhi nahi jaata, sirf screen saaf hoti hai).
+
+---
+
+### `zip` aur `unzip` — files ko compress/extract karna
+
+kabhi kabhi ek se zyada files ko **ek single file** mein dabaana (compress karna) hota hai — bhejne mein aasani ho ya space bache. iske liye:
+
+```bash
+zip -r backup.zip projects
+```
+
+`projects` folder (aur uske andar ki sab files) ko `backup.zip` naam ki ek compressed file mein badal deta hai. `-r` flag matlab **recursive** — andar ke sub-folders bhi shaamil karo.
+
+**extract (unzip) karne ke liye** — matlab kisi `.zip` file ke andar ki files wapas nikaalne ke liye:
+
+```bash
+unzip backup.zip
+```
+
+is se `backup.zip` ke andar ki saari files current folder mein nikal ke aa jaayengi.
+
+⚠️ **note:** `zip` aur `unzip` Termux mein by default nahi hote — sabse pehle install karna padta hai:
+
+```bash
+pkg install zip unzip
+```
+
+---
+
 ### ek chhota farak — Termux ka "root user" jaisa kuch nahi
 
 chapter 5 mein Kali mein `sudo` command dekhi thi — matlab "temporarily root/admin bano." Termux mein `sudo` **by default kaam nahi karta** — kyunki Termux ek non-root, sandboxed environment hai (Topic 6.1 mein seekha). isliye Termux mein zyada tar commands bina `sudo` ke hi chalti hain — kyunki tum already apne sandbox ke "malik" ho.
@@ -2109,7 +2178,7 @@ chapter 5 mein Kali mein `sudo` command dekhi thi — matlab "temporarily root/a
 
 ### ek line mein
 
-> **`pwd` = kahan hoon. `ls` = kya hai yahan. `cd` = jagah badlo. `mkdir` = naya folder. `touch` = naya file. `cat` = padho. `cp` = copy karo. `mv` = move/rename karo. `rm` = hatao. `clear` = screen saaf karo. `exit` = session band karo. sab wahi commands jo chapter 5 mein the — Termux mein bina `sudo` ke chalte hain, kyunki yahan koi root/non-root divide nahi hai jaisa Kali mein tha.**
+> **`pwd` = kahan hoon. `ls` = kya hai yahan. `cd` = jagah badlo. `mkdir` = naya folder. `touch` = naya file. `cat` = padho. `cp` = copy karo. `mv` = move/rename karo. `rm` = hatao. `clear` = screen saaf karo. `exit` = session band karo. `history` = purani commands dekho. `zip`/`unzip` = files compress/extract karo. sab wahi commands jo chapter 5 mein the — Termux mein bina `sudo` ke chalte hain, kyunki yahan koi root/non-root divide nahi hai jaisa Kali mein tha.**
 
 ---
 
@@ -2234,6 +2303,30 @@ chapter 5 mein Kali mein `sudo` command dekhi thi — matlab "temporarily root/a
 
 ✅ **Sahi Jawab: B**
 > `cd` (change directory) hi kisi folder ke andar jaane ke liye use hota hai.
+
+---
+
+**Q11.** `history` command kya dikhata hai?
+
+- A) Termux ki company ki kahani
+- B) tumne ab tak jo bhi commands type ki hain, unki numbered list
+- C) installed packages ki list
+- D) phone ke storage ka status
+
+✅ **Sahi Jawab: B**
+> `history` session (aur pichle sessions) mein type ki gayi commands ki list dikhata hai.
+
+---
+
+**Q12.** kisi folder ko compressed `.zip` file banane ke liye kaunsa command aur flag use hota hai?
+
+- A) `unzip -r`
+- B) `zip -r <naam.zip> <folder>`
+- C) `cp -r`
+- D) `mv -r`
+
+✅ **Sahi Jawab: B**
+> `zip -r` folder aur uske andar ki sab files (sub-folders included) ko ek compressed `.zip` file mein badal deta hai.
 
 ---
 
@@ -2373,6 +2466,15 @@ top
 
 yeh ek **live-updating list** dikhata hai — sabse zyada resource use karne wale programs upar honge. kaam aata hai jab lagta ho phone slow ho raha hai ya koi process bahut zyada resource kha raha hai. isse bahar niklane ke liye `Ctrl+C` (ya `q` key) dabao.
 
+**`htop`** — `top` ka hi ek **behtar-dikhne wala version** hai — color-coded, mouse/touch se scroll kar sakte ho, samajhna aasan hota hai. `top` Termux mein **by default** aata hai, `htop` ke liye pehle install karna padta hai:
+
+```bash
+pkg install htop
+htop
+```
+
+isse bahar niklane ke liye bhi `q` key dabao (ya `F10`).
+
 **`df -h`** — batata hai phone ki **storage kitni bhari hai, kitni khaali hai**:
 
 ```bash
@@ -2383,9 +2485,53 @@ df -h
 
 ---
 
+### files download aur inspect karna — wget, curl, file, stat
+
+ab kuch aise commands dekhte hain jo internet se files laane, aur kisi file ke baare mein detail jaanne ke liye kaam aate hain.
+
+**`wget`** — internet se seedha file download karke save karta hai:
+
+```bash
+wget https://example.com/file.zip
+```
+
+diya gaya URL se file download hoke current folder mein save ho jaati hai — jaise browser mein "Download" button dabana, bas terminal se.
+
+**`curl`** — bhi internet se data laata hai, lekin thoda zyada flexible hai — sirf download nahi, kisi website/API se **response dekhna** ya **data bhejna** bhi kar sakta hai:
+
+```bash
+curl https://example.com
+```
+
+yeh us URL ka response seedha terminal pe print kar dega (screen pe dikhega, file save nahi hogi — jab tak `-o` flag na do). file save karna ho:
+
+```bash
+curl -o file.zip https://example.com/file.zip
+```
+
+**`wget` vs `curl` mein farak (short mein):** simple file download karna ho toh `wget` zyada seedha hai. agar website se data fetch karke usme kuch aur (jaise API se baat karna) karna ho, `curl` zyada flexible hai. dono `pkg install wget` / `pkg install curl` se milte hain.
+
+**`file`** — batata hai koi file **kis type** ki hai:
+
+```bash
+file report.pdf
+```
+
+output kuch aisa aayega — "PDF document" ya "ASCII text" ya "JPEG image" waghera. kaam aata hai jab file ka extension missing ho ya galat ho, aur pata na chal rahe ho ki asal mein file kya hai.
+
+**`stat`** — kisi file ke baare mein **detailed information** deta hai — size, permissions, last modified time, waghera:
+
+```bash
+stat notes.txt
+```
+
+`ls -l` se bhi kuch details milti hain, lekin `stat` sabse zyada **poori** detail deta hai ek hi jagah.
+
+---
+
 ### ek line mein
 
-> **`$HOME` = Termux ka private ghar (`/data/data/com.termux/files/home`). `$PREFIX` = Termux ka apna system folder jahan installed programs rehte hain. dono Android ke sandbox rule ki wajah se `/data/data/com.termux/` ke andar hi hote hain — isiliye baaki phone tak access ke liye alag se permission (storage setup) chahiye hoti hai. `whoami` = mera username kya hai. `uname -o` = konsa OS hai. `top` = kaun kitna resource use kar raha hai (live). `df -h` = storage kitni bhari/khaali hai.**
+> **`$HOME` = Termux ka private ghar (`/data/data/com.termux/files/home`). `$PREFIX` = Termux ka apna system folder jahan installed programs rehte hain. dono Android ke sandbox rule ki wajah se `/data/data/com.termux/` ke andar hi hote hain — isiliye baaki phone tak access ke liye alag se permission (storage setup) chahiye hoti hai. `whoami` = mera username kya hai. `uname -o` = konsa OS hai. `top`/`htop` = kaun kitna resource use kar raha hai (live). `df -h` = storage kitni bhari/khaali hai. `wget`/`curl` = internet se file/data laana. `file` = file ka type pata karna. `stat` = file ki poori detail dekhna.**
 
 ---
 
@@ -2510,6 +2656,42 @@ df -h
 
 ✅ **Sahi Jawab: B**
 > yehi is topic ka core idea hai — dono variables Termux ke sandboxed, private environment ko define karte hain.
+
+---
+
+**Q11.** simple file download karne ke liye `wget` aur `curl` mein se zyada seedha kaunsa hai?
+
+- A) `curl`, kyunki woh sirf download hi karta hai
+- B) `wget`, kyunki uska mool kaam hi seedha file download karna hai
+- C) dono hi files download nahi kar sakte
+- D) koi farak nahi, dono ek jaisa kaam karte hain, koi choice nahi hoti
+
+✅ **Sahi Jawab: B**
+> `wget` seedha download ke liye bana hai. `curl` zyada flexible hai (websites/APIs se data fetch karne ke liye bhi) lekin file save karne ke liye extra flag (`-o`) chahiye.
+
+---
+
+**Q12.** kisi file ka **type** pata karna ho (jaise "yeh PDF hai ya text file"), kaunsa command use karoge?
+
+- A) `stat`
+- B) `file`
+- C) `top`
+- D) `history`
+
+✅ **Sahi Jawab: B**
+> `file` command kisi bhi file ka type (PDF, text, image, etc.) batata hai.
+
+---
+
+**Q13.** `htop` aur `top` mein kya farak hai?
+
+- A) `htop` sirf photos dikhata hai
+- B) `htop` `top` ka hi behtar-dikhne wala (color-coded, scroll-able) version hai, jo alag se install karna padta hai
+- C) `top` deprecated ho gaya hai, ab kaam nahi karta
+- D) dono bilkul alag kaam karte hain, koi similarity nahi
+
+✅ **Sahi Jawab: B**
+> `top` Termux mein by default aata hai, `htop` usi ka improved version hai jo `pkg install htop` se alag se lena padta hai.
 
 ---
 
