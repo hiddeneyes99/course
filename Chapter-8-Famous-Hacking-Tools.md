@@ -65,27 +65,38 @@ yeh tool **Bash script** mein likha gaya hai (Topic 7.2 yaad hai? — yehi wajah
 
 ### Zphisher install karna — Termux mein
 
-Termux khol lo, aur yeh commands step-by-step chalao:
+sabse pehle, `git` install karna padega — kyunki isi ke through hum GitHub se Zphisher ka code copy (clone) karenge:
 
 ```bash
-pkg install tur-repo
-pkg install zphisher
+pkg install git
 ```
 
-- pehli command — `tur-repo` naam ka ek extra repository (Topic 6.6 yaad karo — repository matlab jahan se packages milte hain) add karti hai, kyunki Zphisher normal Termux repo mein nahi hota.
-- doosri command — usi repo se `zphisher` package install kar deti hai.
-
-install hone ke baad, tool chalane ke liye sirf yeh likho:
+`git` install hone ke baad, yeh commands step-by-step chalao:
 
 ```bash
-zphisher
+git clone --depth=1 https://github.com/htr-tech/zphisher.git
+cd zphisher
+bash zphisher.sh
 ```
+
+- pehli command (`pkg install git`) — `git` naam ka tool install karti hai, jiske bina GitHub se code clone nahi kar sakte.
+- doosri command (`git clone ...`) — Zphisher ka poora code GitHub se tumhare Termux mein copy kar leti hai.
+- teesri command (`cd zphisher`) — usi folder ke andar jaati hai jo clone hua.
+- chauthi command (`bash zphisher.sh`) — tool ko chalati hai. **pehli baar chalate waqt** yeh khud-ba-khud zaroori dependencies (`curl`, `php`) install kar lega.
 
 ---
 
 ### Zphisher install karna — Kali Linux mein
 
-Kali Linux (ya kisi bhi normal Linux) mein install karne ka tarika thoda alag hai — yahan hum tool ko **GitHub se clone** karte hain (matlab uska code seedha download karna):
+Kali Linux mein bhi bilkul wahi tarika follow karenge — pehle check/install `git`, phir GitHub se clone:
+
+```bash
+sudo apt install git
+```
+
+(zyada tar Kali Linux mein `git` **already pre-installed** aata hai, lekin upar wali command chala kar confirm/install kar lo — agar already hoga toh yeh "already the newest version" bol dega.)
+
+uske baad wahi commands:
 
 ```bash
 git clone --depth=1 https://github.com/htr-tech/zphisher.git
@@ -95,7 +106,9 @@ bash zphisher.sh
 
 - pehli command — Zphisher ka poora code GitHub se tumhare Kali mein copy kar leti hai.
 - doosri command — usi folder ke andar jaati hai jo clone hua.
-- teesri command — tool ko chalati hai. **pehli baar chalate waqt** yeh khud-ba-khud zaroori dependencies (`git`, `curl`, `php`) install kar lega.
+- teesri command — tool ko chalati hai. **pehli baar chalate waqt** yeh khud-ba-khud zaroori dependencies (`curl`, `php`) install kar lega.
+
+> **dhyaan do** — Termux aur Kali dono mein install karne ka tarika ab **bilkul same** hai — `git install karo → git clone karo → cd zphisher → bash zphisher.sh`. bas pehli command (git install karne ka tarika) alag hai (`pkg install git` vs `sudo apt install git`), baaki sab identical hai.
 
 ---
 
@@ -167,25 +180,25 @@ install hone ke baad, jab tum `zphisher` (Termux) ya `bash zphisher.sh` (Kali) c
 
 **Q4.** Zphisher Termux mein kaise install hota hai?
 
-- A) `pkg install tur-repo` phir `pkg install zphisher`
-- B) `pkg install nano`
-- C) GitHub clone karke, Termux mein clone hi nahi hota
-- D) Play Store se download karke
+- A) sirf `pkg install zphisher` se, seedha
+- B) pehle `pkg install git` se git install karo, phir `git clone` se code download karke `bash zphisher.sh` chalao
+- C) Play Store se download karke
+- D) Termux mein yeh tool chal hi nahi sakta
 
-✅ **Sahi Jawab: A**
-> Zphisher normal Termux repo mein nahi hota, isliye pehle `tur-repo` add karke phir `zphisher` install karte hain.
+✅ **Sahi Jawab: B**
+> Termux mein pehle `git` install karna padta hai, uske baad GitHub se `git clone` karke, folder ke andar jaakar `bash zphisher.sh` se chalate hain.
 
 ---
 
-**Q5.** Kali Linux mein Zphisher install karne ka tarika kya hai?
+**Q5.** Kali Linux mein Zphisher install karne ka tarika, Termux ke tarike se kaisa hai?
 
-- A) `pkg install zphisher`
-- B) GitHub se `git clone` karke, folder ke andar jaakar `bash zphisher.sh` chalana
-- C) sirf `apt install zphisher` se
+- A) bilkul alag hai, koi similarity nahi
+- B) bilkul same hai — git install karo, git clone karo, `cd zphisher`, phir `bash zphisher.sh` — bas git install karne ki command (`pkg` vs `apt`) alag hai
+- C) Kali mein sirf `apt install zphisher` se ho jaata hai
 - D) Kali mein yeh tool chal hi nahi sakta
 
 ✅ **Sahi Jawab: B**
-> Kali mein Zphisher GitHub se clone karke, uski script (`zphisher.sh`) directly run karke install/chalaya jaata hai.
+> dono jagah process same hai — git install → git clone → cd zphisher → bash zphisher.sh. sirf git install karne ki command Termux (`pkg`) aur Kali (`apt`) mein alag hai.
 
 ---
 
