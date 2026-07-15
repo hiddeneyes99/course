@@ -2488,7 +2488,7 @@ Topic 6.11 mein `nano` editor poora seekhenge, abhi seedha ek quick tarika dekht
 echo 'alias update="pkg update && pkg upgrade -y"' >> ~/.bashrc
 ```
 
-yaad karo — `>>` (chapter 5 ke piping topic se) matlab **file ke end mein add karo** (overwrite nahi). isse yeh line `.bashrc` file ke andar permanently likhi jaayegi.
+yahan `>>` use ho raha hai — jinhone **chapter 5** complete kiya hai unhe yeh piping topic se yaad hoga: `>>` matlab **file ke end mein add karo** (overwrite nahi). agar chapter 5 nahi kiya hai, koi tension nahi — dobara samjha deta hun: seedha yeh command run karo, aage samajh jaaoge. abhi bas itna samjho ki yeh command `.bashrc` file ke end mein woh `alias` wali line **add (save)** kar deta hai — file ka pehle se jo content hai woh delete nahi hota, bas naya add hota hai. isse yeh line `.bashrc` file ke andar permanently likhi jaayegi.
 
 ab is change ko turant apply karne ke liye:
 
