@@ -1711,6 +1711,26 @@ agar koi package ab zaroorat ka nahi, ise uninstall kar sakte ho — bilkul wais
 
 ---
 
+### `pkg reinstall` — kharab install theek karna
+
+```bash
+pkg reinstall nano
+```
+
+kabhi kabhi koi package install toh ho jaata hai lekin theek se kaam nahi karta — beech mein download ruk gaya ho, ya koi file corrupt ho gayi ho. aise mein use **uninstall karke phir install** karne ki zaroorat nahi — `pkg reinstall` ek hi command mein us package ko **poora hata ke fresh se dobara** install kar deta hai. **jab bhi koi installed package "broken" jaisa behave kare, sabse pehle yehi try karo.**
+
+---
+
+### `pkg files` — package ne kaunsi files banayi, dekhna
+
+```bash
+pkg files nano
+```
+
+jab koi package install hota hai, woh apne saath kayi files leke aata hai (asal program, config files, waghera). `pkg files` batata hai ki us package ne **exactly kaunsi files kahan install ki** — kaam aata hai jab samajhna ho ki koi tool system mein kahan baitha hai, ya troubleshooting ke waqt.
+
+---
+
 ### `pkg list-all` — repository mein sab kuch dekhna
 
 ```bash
@@ -1741,6 +1761,8 @@ install karne se pehle uski **details** dekhni ho — version, size, description
 | `pkg search <keyword>` | keyword se package dhundho |
 | `pkg list-installed` | kya-kya already installed hai dekho |
 | `pkg uninstall <naam>` | package hatao |
+| `pkg reinstall <naam>` | kharab/broken install ko fresh se theek karo |
+| `pkg files <naam>` | package ne kaunsi files install ki, dekho |
 | `pkg show <naam>` | package ki detail dekho |
 
 ---
@@ -2027,6 +2049,58 @@ iska matlab — `.txt` pe khatam hone waali **jitni bhi files** current folder m
 
 ---
 
+### `cp` — copy karna
+
+```bash
+cp notes.txt notes-backup.txt
+```
+
+`notes.txt` ki ek **copy** banake `notes-backup.txt` naam se save kar deta hai — original file wahin ki wahin rehti hai, dono ab alag-alag exist karte hain. **syntax:** `cp <source> <destination>`. poora folder copy karna ho (andar files ke saath), `-r` flag lagao:
+
+```bash
+cp -r projects projects-backup
+```
+
+---
+
+### `mv` — move karna ya naam badalna
+
+```bash
+mv notes.txt storage/downloads/
+```
+
+`notes.txt` ko current folder se `storage/downloads/` folder mein **move** kar deta hai — `cp` jaisa nahi, yahan original jagah se file **hat jaati hai**, sirf nayi jagah reh jaati hai.
+
+`mv` ka ek aur bada use hai — **file ka naam badalna.** Linux mein "rename" ka koi alag command nahi hai, `mv` hi is kaam ke liye use hota hai:
+
+```bash
+mv notes.txt important-notes.txt
+```
+
+yeh dikhne mein "move" jaisa lagta hai lekin asal mein sirf naam change ho raha hai (same folder mein) — Linux ismein farak nahi karta, dono ek hi operation hai.
+
+---
+
+### `clear` — screen saaf karna
+
+```bash
+clear
+```
+
+terminal pe ab tak jitna bhi output/history dikh rahi hai, sab **saaf** kar deta hai — ek fresh, khaali screen mil jaati hai. isse koi file delete nahi hoti, sirf **screen** clean hoti hai, tumhare commands ka history (`↑` arrow se dobara nikaalne wala) abhi bhi rehta hai.
+
+---
+
+### `exit` — session band karna
+
+```bash
+exit
+```
+
+current Termux session ko **band** kar deta hai — jaise session tab close karna. agar sirf ek hi session khula hai, poori Termux app hi close ho jaayegi. agar multiple sessions khule hain (drawer se naya session bana ke), toh sirf woh ek session band hoga, baaki chalte rahenge.
+
+---
+
 ### ek chhota farak — Termux ka "root user" jaisa kuch nahi
 
 chapter 5 mein Kali mein `sudo` command dekhi thi — matlab "temporarily root/admin bano." Termux mein `sudo` **by default kaam nahi karta** — kyunki Termux ek non-root, sandboxed environment hai (Topic 6.1 mein seekha). isliye Termux mein zyada tar commands bina `sudo` ke hi chalti hain — kyunki tum already apne sandbox ke "malik" ho.
@@ -2035,7 +2109,7 @@ chapter 5 mein Kali mein `sudo` command dekhi thi — matlab "temporarily root/a
 
 ### ek line mein
 
-> **`pwd` = kahan hoon. `ls` = kya hai yahan. `cd` = jagah badlo. `mkdir` = naya folder. `touch` = naya file. `cat` = padho. `rm` = hatao. sab wahi commands jo chapter 5 mein the — Termux mein bina `sudo` ke chalte hain, kyunki yahan koi root/non-root divide nahi hai jaisa Kali mein tha.**
+> **`pwd` = kahan hoon. `ls` = kya hai yahan. `cd` = jagah badlo. `mkdir` = naya folder. `touch` = naya file. `cat` = padho. `cp` = copy karo. `mv` = move/rename karo. `rm` = hatao. `clear` = screen saaf karo. `exit` = session band karo. sab wahi commands jo chapter 5 mein the — Termux mein bina `sudo` ke chalte hain, kyunki yahan koi root/non-root divide nahi hai jaisa Kali mein tha.**
 
 ---
 
@@ -2271,9 +2345,47 @@ yani `/data/data/com.termux/files/usr/bin/python`. agar yeh farak na pata ho, to
 
 ---
 
+### apne system ke baare mein jaankari — whoami, uname, top, df
+
+ab jab environment samajh gaye, chalo kuch aur useful commands dekhte hain jo tumhare Termux/phone ke system ke baare mein batate hain:
+
+**`whoami`** — batata hai tum konse **username** se login ho:
+
+```bash
+whoami
+```
+
+output kuch aisa aayega — `u0_a123` jaisa (Android apps ko diye gaye internal username jaisa, normal Linux ke "root" ya "your-name" jaisa nahi). yeh isliye alag dikhta hai kyunki Termux ek Android app hai, aur Android har app ko ek unique internal ID deta hai.
+
+**`uname -o`** — batata hai tum kaunse **operating system** pe ho:
+
+```bash
+uname -o
+```
+
+output aayega `Android` — confirm karta hai ki underlying OS Android hi hai (Linux kernel ke upar), bhale hi Termux ke andar sab kuch Linux jaisa lage.
+
+**`top`** — batata hai is waqt kaunse programs **CPU aur memory** use kar rahe hain, live:
+
+```bash
+top
+```
+
+yeh ek **live-updating list** dikhata hai — sabse zyada resource use karne wale programs upar honge. kaam aata hai jab lagta ho phone slow ho raha hai ya koi process bahut zyada resource kha raha hai. isse bahar niklane ke liye `Ctrl+C` (ya `q` key) dabao.
+
+**`df -h`** — batata hai phone ki **storage kitni bhari hai, kitni khaali hai**:
+
+```bash
+df -h
+```
+
+`df` = "disk free". `-h` flag matlab **human-readable** — size ko GB/MB mein dikhayega, seedha raw numbers ki jagah, taaki padhna aasan ho. jab bhi lage storage kam pad rahi hai (jaise package install karte waqt "No space left" error aaye — Topic 6.13 mein iska poora scenario dekhoge), sabse pehle yehi command chalao.
+
+---
+
 ### ek line mein
 
-> **`$HOME` = Termux ka private ghar (`/data/data/com.termux/files/home`). `$PREFIX` = Termux ka apna system folder jahan installed programs rehte hain. dono Android ke sandbox rule ki wajah se `/data/data/com.termux/` ke andar hi hote hain — isiliye baaki phone tak access ke liye alag se permission (storage setup) chahiye hoti hai.**
+> **`$HOME` = Termux ka private ghar (`/data/data/com.termux/files/home`). `$PREFIX` = Termux ka apna system folder jahan installed programs rehte hain. dono Android ke sandbox rule ki wajah se `/data/data/com.termux/` ke andar hi hote hain — isiliye baaki phone tak access ke liye alag se permission (storage setup) chahiye hoti hai. `whoami` = mera username kya hai. `uname -o` = konsa OS hai. `top` = kaun kitna resource use kar raha hai (live). `df -h` = storage kitni bhari/khaali hai.**
 
 ---
 
