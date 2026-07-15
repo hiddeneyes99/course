@@ -1136,6 +1136,8 @@ socho tumhare phone ke **Downloads** folder mein ek file hai — `report.pdf`. a
 
 Termux mein `ls` chalao — woh file **kahin nahi dikhegi.** kyun?
 
+> 📝 **Note:** is topic mein `ls`, `cd` jaise commands use honge. abhi inka tension mat lo — bas jo likha hai woh type karke Enter dabao aur result dekho. **inka poora explanation, matlab, aur use aage ke topic mein detail se milega.** abhi sirf yeh samjho ki Termux phone ki files tak kaise pahunchta hai — commands ki depth baad mein aayegi.
+
 ---
 
 ### yaad karo — Termux ek "kiraye ka kamra" hai
