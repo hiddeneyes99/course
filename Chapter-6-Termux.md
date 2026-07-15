@@ -926,6 +926,20 @@ fresh installed Termux mein pehli baar `pkg update && pkg upgrade -y` chalane pe
 
 ---
 
+### ⚠️ Important: sirf pehli baar nahi — HAR baar chalao
+
+yeh galti bahut log karte hain — sochte hain `pkg update && pkg upgrade` sirf Termux install karne ke turant baad **ek hi baar** chalana hai, aur phir bhool jaate hain. **galat hai.** yeh command tumhe **har naya Termux session shuru karte waqt** chalani chahiye — matlab jab bhi tum Termux khologe aur kaam shuru karoge, sabse pehle yehi command.
+
+isko itna zaroori kyun bataya ja raha hai, teen reasons:
+
+1. **naye packages roz aate hain.** Termux ke maintainers aur Linux tools ke developers packages ko regularly update karte rehte hain — bug fixes, security patches, naye features. agar tum update nahi karoge, tumhara catalog purana rahega aur tumhe pata bhi nahi chalega ki naya version available hai.
+2. **security patches miss ho sakte hain.** ethical hacking tools (jo aage ke chapters mein install karoge) mein kabhi kabhi security bugs milte hain jo fix hote rehte hain. purana version chalana matlab apne hi phone ko risk mein daalna.
+3. **install errors se bachna.** agar tum kisi purane catalog ke saath naya tool install karne ki koshish karo (jo abhi update nahi hua), toh kabhi kabhi "package not found" ya version-mismatch jaisi errors aati hain. pehle update karne se yeh mostly avoid ho jaata hai.
+
+isliye ek simple habit bana lo: **Termux khola → sabse pehle `pkg update && pkg upgrade -y` → phir jo bhi kaam karna hai woh karo.** agla topic (6.5) mein jo tools install karenge, unse pehle bhi yehi step dobara karna hai.
+
+---
+
 ### ek line mein
 
 > **`pkg update` = naya catalog dekho. `pkg upgrade` = already installed cheezein naye version se badlo. `pkg update && pkg upgrade -y` = dono ek saath, bina baar-baar poochhe — yeh sabse pehli command honi chahiye har fresh Termux install ke baad.**
