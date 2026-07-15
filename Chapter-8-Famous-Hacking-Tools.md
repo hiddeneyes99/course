@@ -84,6 +84,14 @@ bash zphisher.sh
 - teesri command (`cd zphisher`) — usi folder ke andar jaati hai jo clone hua.
 - chauthi command (`bash zphisher.sh`) — tool ko chalati hai. **pehli baar chalate waqt** yeh khud-ba-khud zaroori dependencies (`curl`, `php`) install kar lega.
 
+yahan dekho — `bash zphisher.sh` chalane ke baad terminal kuch aisa dikhta hai:
+
+<img src="assets/zphisher-01-command.png" width="260" alt="zphisher command in terminal">
+
+aur pehli baar chalane pe yeh khud-ba-khud packages install karna shuru kar deta hai:
+
+<img src="assets/zphisher-02-installing.png" width="260" alt="zphisher installing packages">
+
 ---
 
 ### Zphisher install karna — Kali Linux mein
@@ -116,13 +124,42 @@ bash zphisher.sh
 
 install hone ke baad, jab tum `zphisher` (Termux) ya `bash zphisher.sh` (Kali) chalaoge, ek **menu screen** khulegi:
 
-1. **website choose karo** — menu mein numbers ke saath list dikhegi (jaise 1 = Instagram, 2 = Facebook, 3 = Google, etc.). jis website ka fake page banana hai, uska number type karo.
-2. **login page ka type choose karo** — kuch websites ke liye multiple page-styles milte hain (jaise "Instagram — normal login" ya "Instagram — followers dekhne wala trick"). koi ek number choose karo.
-3. **tunneling option choose karo** — yeh sabse important step hai. tumhara fake page abhi tumhare hi phone/laptop pe chal raha hai (localhost pe) — usko **internet pe kisi aur ko bhejne wala link** banane ke liye "tunnel" chahiye. options milte hain jaise:
-   - **Localhost** — sirf tumhare khud ke device/network tak kaam karega (demo/testing ke liye best)
-   - **Cloudflared** — ek public link banata hai jo kahin se bhi khul sakta hai
-4. tool ek **link generate karega** — yehi woh link hai jo phishing message mein bheja jaata hai.
-5. jab koi (tumhara khud ka test account) us link ko khol ke apna username/password daalega — woh details **turant tumhari terminal screen pe** dikh jaayengi.
+**Step 1 — website choose karo**
+
+menu mein numbers ke saath list dikhegi — Facebook, Instagram, Google se lekar 34 platforms tak. jis website ka fake page banana hai, uska number type karo.
+
+<img src="assets/zphisher-03-main-menu.png" width="280" alt="zphisher main menu with 34 platforms">
+
+**Step 2 — login page ka type choose karo**
+
+kuch websites ke liye multiple page-styles milte hain. jaise Facebook choose kiya toh yeh options aate hain:
+
+<img src="assets/zphisher-04-page-types.png" width="280" alt="Facebook page type options">
+
+**Step 3 — tunneling option choose karo**
+
+yeh sabse important step hai. tumhara fake page abhi tumhare hi phone/laptop pe chal raha hai (localhost pe) — usko accessible banane ke liye tunneling option choose karna padta hai:
+
+<img src="assets/zphisher-05-port-forward.png" width="280" alt="port forwarding options: Localhost, Ngrok, Cloudflared, LocalXpose">
+
+   - **[01] Localhost** — sirf tumhare khud ke device pe kaam karega (demo/testing ke liye best — koi bahar nahi jaata)
+   - **[02] Ngrok.io** — public link banata hai, lekin account chahiye
+   - **[03] Cloudflared** — public link banata hai, auto detect karta hai
+   - **[04] LocalXpose** — naya option, max 15 min ka link deta hai
+
+Localhost choose karne ke baad yeh custom port ke baare mein poochta hai — bas **N** press karo (default port theek hai):
+
+<img src="assets/zphisher-06-localhost-port.png" width="280" alt="custom port question after selecting localhost">
+
+**Step 4 — link generate hoga**
+
+sab set hone ke baad terminal kuch aisa dikhta hai — tool hosted ho jaata hai aur login info ka wait karta hai:
+
+<img src="assets/zphisher-07-hosted.png" width="280" alt="successfully hosted, waiting for login info">
+
+**Step 5 — credentials capture**
+
+jab koi (tumhara khud ka test account) us link ko khol ke apna username/password daalega — woh details **turant tumhari terminal screen pe** dikh jaayengi.
 
 ---
 
@@ -334,11 +371,21 @@ Yeh task do histon mein hai — pehle attacker ki taraf se dekho (apne test pe),
 
 1. **Termux ya Kali mein Zphisher install karo** — upar wale steps follow karo.
 2. Tool chalao: `bash zphisher.sh`
-3. Koi bhi ek platform choose karo (Instagram ya Google recommend karte hain demo ke liye).
-4. Tunneling option mein **Localhost** choose karo — iska matlab link sirf tumhare apne device pe hi kaam karega, koi bahar nahi jaayega.
-5. Jo link generate hua, woh apne phone ke browser mein kholo.
-6. **Apna koi test account banao (real account mat use karna)** — us test account ki fake details (test@test.com / testpass123) us fake page pe daalo.
-7. Turant terminal pe dekho — woh details wahan aa gayi hain.
+3. Facebook choose karo (option **01**), phir **Traditional Login Page** (option **01**).
+4. Tunneling option mein **Localhost** (option **01**) choose karo — link sirf tumhare apne device pe hi kaam karega, koi bahar nahi jaayega. Custom port ke liye **N** press karo.
+5. Jo link generate hua (`http://127.0.0.1:8080`), woh apne phone ke browser mein kholo — kuch aisa dikhega:
+
+<img src="assets/zphisher-08-fake-page.png" width="260" alt="fake Facebook login page in browser">
+
+dekho — bilkul asli Facebook jaisa lag raha hai, lekin **URL bar** mein `127.0.0.1:8080` likha hai — facebook.com nahi!
+
+6. **Real account bilkul mat use karna** — koi bhi fake details daalo jaise `demo` / `Pass@123`:
+
+<img src="assets/zphisher-09-credentials-entered.png" width="260" alt="entering demo credentials on fake page">
+
+7. Ab terminal pe wapas jao — details turant wahan capture ho gayi hain:
+
+<img src="assets/zphisher-10-credentials-captured.png" width="260" alt="captured credentials shown in terminal">
 
 > **Yahi phishing hoti hai.** Tumne khud apna ek "attack" dekha — bina koi real account use kiye, bina kisi aur ko involve kiye.
 
