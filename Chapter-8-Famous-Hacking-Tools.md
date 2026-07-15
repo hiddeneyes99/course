@@ -157,9 +157,23 @@ sab set hone ke baad terminal kuch aisa dikhta hai — tool hosted ho jaata hai 
 
 ![Successfully hosted, waiting for login info](assets/chapter-8-famous-hacking-tools/8.1-07-hosted.png)
 
-**Step 5 — credentials capture**
+**Step 5 — victim ka page kholna aur credentials capture hona**
 
-jab koi (tumhara khud ka test account) us link ko khol ke apna username/password daalega — woh details **turant tumhari terminal screen pe** dikh jaayengi.
+ab jo link generate hua woh browser mein kholo — aisa dikhega:
+
+![Fake Facebook login page](assets/chapter-8-famous-hacking-tools/8.1-08-fake-page.png)
+
+> dhyaan se dekho upar — browser ke **address bar** mein `127.0.0.1:8080/mobile` likha hai — `facebook.com` nahi. page ke andar bilkul asli Facebook jaisa dikhta hai — logo, colors, fields sab same. **yahi phishing ka poora kaam hai** — bahar se pakadna mushkil, andar se ek dum khali.
+
+ab us page pe koi bhi details daalo (test ke liye sirf fake details — jaise `demo` aur `Pass@123`):
+
+![Credentials type hote hue](assets/chapter-8-famous-hacking-tools/8.1-09-creds-entered.png)
+
+**Log In** button dabate hi — woh details seedha terminal pe aa jaati hain:
+
+![Terminal pe captured credentials](assets/chapter-8-famous-hacking-tools/8.1-10-captured.png)
+
+> terminal mein dekho — `[-] Login info Found !!` aaya, phir neeche `Account : demo` aur `Password : Pass@123` clearly dikh raha hai. victim ne abhi abhi apna password diya — aur usse pata bhi nahi chala. asli Facebook pe kuch hua hi nahi.
 
 ---
 
