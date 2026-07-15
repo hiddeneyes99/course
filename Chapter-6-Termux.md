@@ -840,6 +840,10 @@ pehle ek zaroori cheez samajh lo, kyunki aage sab isi pe based hai.
 
 Termux mein hum jo bhi tool/software use karna chahte hain — jaise `nano` (text editor), `python`, `git` waghera — unhe apne aap khud download karke, install karke, settings karna bahut mushkil hota. isliye ek **package manager** hota hai — ek aisa tool jo yeh sab kaam khud-ba-khud kar deta hai. tum bas ek command doge, aur woh internet se sahi software dhoond ke, download karke, install kar dega.
 
+**example se samjho:** apne phone ka **Play Store** yaad karo. jab tumhe koi naya app chahiye hota hai (jaise Instagram), toh tum khud kahin se internet pe dhoond ke, apk file download karke, manually install nahi karte — tum bas Play Store kholte ho, app search karte ho, aur "Install" dabate ho. baaki sab — download, install, future mein update — Play Store khud sambhal leta hai.
+
+**`pkg` bhi Termux ke liye bilkul yehi kaam karta hai — bas Play Store jaisa graphical app ke bajaye, ek command-line tool hai.** jaise Play Store pe "Install" button dabate ho, waise hi yahan `pkg install <naam>` type karte ho — aur jaise Play Store apps ko "Update" karta hai, waise hi `pkg upgrade` purane software ko naye version se badalta hai.
+
 Termux mein iss package manager ka naam hai — **`pkg`**
 
 `pkg` andar se ek aur tool `apt` ko hi use karta hai (Debian/Ubuntu/Kali family ka standard package manager) — bas Termux ke liye ek chhota, aasan naam de diya gaya hai. agar tumne **Chapter 5 (Kali Linux)** kiya hai, toh tumne wahan `apt update`, `apt upgrade` already use kiya hoga — yahan bas naam badal gaya hai, kaam wahi hai.
@@ -851,6 +855,8 @@ agar tumne Chapter 5 nahi kiya, koi baat nahi — bas itna yaad rakho: **`pkg` =
 ### repository kya hoti hai
 
 `pkg` ko pata kaise chalta hai ki kaunsa software kahan se download karna hai? iske liye ek **repository (ya "repo")** hoti hai — yeh internet pe ek jagah (server) hai jahan hazaaron software ready rakhe hote hain, apne latest version ke saath.
+
+**wahi Play Store wali example aage badhao:** Play Store ke peeche bhi ek bahut bada server hota hai jahan lakhon apps store hote hain — tum jab search karte ho, Play Store usi server se check karta hai. **repository bhi Termux ke liye wahi server hai** — bas apps ke bajaye yahan command-line tools/software rakhe hote hain.
 
 isko ek **online dukaan ka catalog** samjho — jab tum `pkg` se koi software maangte ho, woh iss "dukaan" (repository) mein dekhta hai ki available hai ya nahi, phir wahan se download karke tumhare Termux mein install kar deta hai. is topic mein hum default repository use karenge — repository ko manually badalna kab aur kyun zaroori hota hai, yeh hum **Topic 6.6** mein detail se seekhenge.
 
@@ -928,7 +934,19 @@ fresh installed Termux mein pehli baar `pkg update && pkg upgrade -y` chalane pe
 
 ---
 
-**Q2.** repository (repo) kya hoti hai?
+**Q2.** `pkg` ko phone ke kis cheez se sabse acchi tarah compare kiya ja sakta hai?
+
+- A) phone ke camera se
+- B) Play Store se — bas graphical app ke bajaye command-line tool hai
+- C) phone ke calculator se
+- D) inme se koi nahi, `pkg` ka koi real-life example nahi hai
+
+✅ **Sahi Jawab: B**
+> jaise Play Store se apps search/install/update karte hain, waise hi `pkg` se Termux mein software search/install/update kiya jaata hai — dono ka kaam same hai, bas ek graphical hai aur doosra command-line.
+
+---
+
+**Q3.** repository (repo) kya hoti hai?
 
 - A) Termux ki ek settings file
 - B) internet pe woh jagah (server) jahan software ready rakhe hote hain, jahan se `pkg` download karta hai
@@ -940,7 +958,7 @@ fresh installed Termux mein pehli baar `pkg update && pkg upgrade -y` chalane pe
 
 ---
 
-**Q3.** Termux mein package manager ka naam kya hai?
+**Q4.** Termux mein package manager ka naam kya hai?
 
 - A) `apt` hi seedha, `pkg` naam ki koi cheez nahi
 - B) `pkg` — jo andar se `apt` ka hi simplified wrapper hai
@@ -952,7 +970,7 @@ fresh installed Termux mein pehli baar `pkg update && pkg upgrade -y` chalane pe
 
 ---
 
-**Q4.** `pkg update` command kya karti hai?
+**Q5.** `pkg update` command kya karti hai?
 
 - A) sab packages khud install kar deti hai
 - B) repository ka catalog refresh karti hai — naya kya aaya hai, yeh dekhti hai
@@ -964,7 +982,7 @@ fresh installed Termux mein pehli baar `pkg update && pkg upgrade -y` chalane pe
 
 ---
 
-**Q5.** `pkg upgrade` command kya karti hai?
+**Q6.** `pkg upgrade` command kya karti hai?
 
 - A) naya package install karti hai jo pehle kabhi nahi tha
 - B) already installed packages ko unke naye version se replace karti hai
@@ -976,7 +994,7 @@ fresh installed Termux mein pehli baar `pkg update && pkg upgrade -y` chalane pe
 
 ---
 
-**Q6.** `pkg update && pkg upgrade` mein `&&` ka kya matlab hai?
+**Q7.** `pkg update && pkg upgrade` mein `&&` ka kya matlab hai?
 
 - A) dono commands ek saath, parallel mein chalengi
 - B) pehli command successful hone ke baad hi doosri chalegi
@@ -988,7 +1006,7 @@ fresh installed Termux mein pehli baar `pkg update && pkg upgrade -y` chalane pe
 
 ---
 
-**Q7.** `-y` flag kis liye use hota hai?
+**Q8.** `-y` flag kis liye use hota hai?
 
 - A) sirf yes/no jaisi files banane ke liye
 - B) command ko khud hi "yes" confirm maan lene ke liye, bina baar-baar poochhe
@@ -1000,7 +1018,7 @@ fresh installed Termux mein pehli baar `pkg update && pkg upgrade -y` chalane pe
 
 ---
 
-**Q8.** ek fresh installed Termux mein sabse pehli command kaunsi chalani chahiye?
+**Q9.** ek fresh installed Termux mein sabse pehli command kaunsi chalani chahiye?
 
 - A) `pkg install nano`
 - B) `pkg update && pkg upgrade -y`
@@ -1012,7 +1030,7 @@ fresh installed Termux mein pehli baar `pkg update && pkg upgrade -y` chalane pe
 
 ---
 
-**Q9.** agar `pkg upgrade` chalate waqt "Do you want to continue? [Y/n]" jaisa message aaye aur `-y` flag na diya ho, toh kya karoge?
+**Q10.** agar `pkg upgrade` chalate waqt "Do you want to continue? [Y/n]" jaisa message aaye aur `-y` flag na diya ho, toh kya karoge?
 
 - A) turant Termux band kar dena
 - B) `y` type karke Enter dabana
@@ -1024,7 +1042,7 @@ fresh installed Termux mein pehli baar `pkg update && pkg upgrade -y` chalane pe
 
 ---
 
-**Q10.** `pkg update` aur `pkg upgrade` mein sabse bada farak kya hai?
+**Q11.** `pkg update` aur `pkg upgrade` mein sabse bada farak kya hai?
 
 - A) dono ek hi kaam karte hain
 - B) `update` sirf list refresh karta hai, `upgrade` actual packages ko naye version se badalta hai
@@ -1036,7 +1054,7 @@ fresh installed Termux mein pehli baar `pkg update && pkg upgrade -y` chalane pe
 
 ---
 
-**Q11.** `pkg` command asal mein andar se kaunsa tool use karta hai?
+**Q12.** `pkg` command asal mein andar se kaunsa tool use karta hai?
 
 - A) `pip`
 - B) `apt`
@@ -1048,7 +1066,7 @@ fresh installed Termux mein pehli baar `pkg update && pkg upgrade -y` chalane pe
 
 ---
 
-**Q12.** dukaan wali analogy mein `pkg update` aur `pkg upgrade` ko kaise samjha gaya?
+**Q13.** dukaan wali analogy mein `pkg update` aur `pkg upgrade` ko kaise samjha gaya?
 
 - A) `update` = naya catalog mangwana, `upgrade` = purana khareeda saaman naye stock se badalna
 - B) `update` = dukaan band karna, `upgrade` = dukaan khareedna
