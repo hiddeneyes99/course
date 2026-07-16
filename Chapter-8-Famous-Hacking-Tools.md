@@ -1510,8 +1510,10 @@ Kali mein desktop environment hota hai (X server available) — isliye `pynput` 
 
 ```bash
 sudo apt install python3 python3-pip -y
-pip3 install pynput
+pip3 install pynput --break-system-packages
 ```
+
+> **"externally-managed-environment" error aa raha hai?** — Modern Kali (2024+) mein yeh normal hai. `--break-system-packages` flag lagate hi install ho jaayega. Koi risk nahi — sirf ek user-level library hai.
 
 **Step 2 — script banao**
 
