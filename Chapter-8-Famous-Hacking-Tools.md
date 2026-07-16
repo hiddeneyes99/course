@@ -7,7 +7,7 @@
 
 | # | Topic | Jump |
 |---|---|---|
-| 8.1 | Phishing Technique Aur Zphisher Tool — Termux + Kali | [➜ Jao](#-topic-81--phishing-technique-aur-zphisher-tool--termux--kali) |
+| 8.1 | Phishing | [➜ Jao](#-topic-81--phishing-technique-aur-zphisher-tool--termux--kali) |
 | 8.2 | Brute Force | [➜ Jao](#-topic-82--brute-force) |
 
 ---
