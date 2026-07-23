@@ -1636,8 +1636,33 @@ git --version
 ════════════════════════════════════════════════════════
    ✅  TOPIC 4.3 COMPLETE — PACKAGE MANAGER & UPDATE
    🎉  CHAPTER 4 COMPLETE — LINUX & COMMAND LINE
-   ⬇️  Agle Chapter mein milenge
 ════════════════════════════════════════════════════════
 ```
+
+---
+
+## 🔀 Ab Apna Rasta Chuno
+
+Chapter 4 yahan complete hota hai. Ab tum dono mein se kisi ek raste pe chale jao — jo tumhare setup ke hisaab se sahi ho:
+
+---
+
+### 📱 Mere paas sirf Android Phone hai
+
+Laptop ya PC nahi hai? Koi baat nahi — sirf phone se bhi hacking seekh sakte ho.
+
+**➜ Jao: Chapter 6 — Termux**
+Termux tumhara hacking environment banega. Wahan se apna setup shuru karo.
+
+---
+
+### 💻 Mere paas Laptop / PC hai
+
+**➜ Jao: Chapter 5 — Kali Linux**
+Kali Linux install karo aur apna proper hacking lab setup karo.
+
+---
+
+> **Note:** Chapter 5 aur Chapter 6 dono complete karne ke baad — **Chapter 7 aur Chapter 8 dono tracks ke students ke liye zaroori hain.** Chahe phone ho ya PC — woh chapters dono ko padhne hain.
 
 ---

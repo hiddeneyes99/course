@@ -3,6 +3,12 @@
 
 ---
 
+> ## 📱💻 DONO TRACKS — PHONE + PC
+> Yeh chapter **dono type ke students ke liye zaroori hai** — chahe Termux wale ho ya Kali Linux wale.
+> Chapter 5 ya Chapter 6 complete karne ke baad yahan aao.
+
+---
+
 ## 📚 Table of Contents
 
 | # | Topic | Jump |

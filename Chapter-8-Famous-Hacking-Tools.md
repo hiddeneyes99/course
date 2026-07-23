@@ -3,6 +3,12 @@
 
 ---
 
+> ## 📱💻 DONO TRACKS — PHONE + PC
+> Yeh chapter **dono type ke students ke liye zaroori hai** — chahe Termux wale ho ya Kali Linux wale.
+> Har topic ke andar 📱 Termux aur 💻 Kali Linux dono ke liye alag sections hain.
+
+---
+
 ## 📚 Table of Contents
 
 | # | Topic | Jump |

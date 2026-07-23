@@ -3,6 +3,13 @@
 
 ---
 
+> ## 📱 PHONE / ANDROID TRACK
+> Yeh chapter unke liye hai jinke paas **Android Phone** hai.
+> Agar laptop/PC hai → **Chapter 5 (Kali Linux)** jao.
+> Chapter 6 complete karne ke baad → **Chapter 7** pe milenge (dono tracks).
+
+---
+
 ## 📚 Table of Contents
 
 | # | Topic | Jump |
