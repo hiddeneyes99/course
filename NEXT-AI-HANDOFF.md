@@ -48,25 +48,32 @@ Format: **Markdown files** — koi app nahi, koi website nahi.
 ```
 ethical-hacking-course/
 │
-├── NEXT-AI-HANDOFF.md                        ← Yeh file (tumhare liye)
+├── NEXT-AI-HANDOFF.md
+├── assets/                                        ← Saari images yahan hain
+│   ├── chapter-6-termux/
+│   └── chapter-8-famous-hacking-tools/
 │
-├── Chapter-1-Startup.md                      ← ✅ COMPLETE (6 topics)
-├── Chapter-2-How-Computer-Works.md           ← ✅ COMPLETE (10 topics)
-├── Chapter-3-Networking.md                   ← ✅ COMPLETE
-├── Chapter-4-Linux-CommandLine.md            ← ✅ COMPLETE
+│── Chapter-1-Startup.md                      ← ✅ COMMON (dono ke liye)
+│── Chapter-2-How-Computer-Works.md           ← ✅ COMMON (dono ke liye)
+│── Chapter-3-Networking.md                   ← ✅ COMMON (dono ke liye)
+│── Chapter-4-Linux-CommandLine.md            ← ✅ COMMON (dono ke liye)
 │
-│   ══ CHAPTER 4 KE BAAD SPLIT HOTA HAI ══
+│   ══════ CHAPTER 4 KE BAAD SPLIT ══════
 │
-├── [PHONE TRACK]  Chapter-6-Termux.md        ← ✅ COMPLETE
-├── [PC TRACK]     Chapter-5-Kali-Linux.md    ← ✅ COMPLETE
+├── termux/                                   ← 📱 PHONE TRACK
+│   ├── Chapter-6-Termux.md                   ← ✅ COMPLETE
+│   ├── Chapter-7-Tool-Aur-Programming-Language.md  ← ✅ COMPLETE
+│   └── Chapter-8-Famous-Hacking-Tools.md     ← ✅ COMPLETE
 │
-├── Chapter-7-Tool-Aur-Programming-Language.md ← ✅ COMPLETE
-├── Chapter-8-Famous-Hacking-Tools.md          ← ✅ COMPLETE
-│
-... aage ke chapters Afsar confirm karega
+└── kali-linux/                               ← 💻 PC / LAPTOP TRACK
+    ├── Chapter-5-Kali-Linux.md               ← ✅ COMPLETE
+    ├── Chapter-7-Tool-Aur-Programming-Language.md  ← ✅ COMPLETE
+    └── Chapter-8-Famous-Hacking-Tools.md     ← ✅ COMPLETE
 ```
 
-**Rule:** Har chapter ki apni alag `.md` file hogi.
+**Image paths:** Chapters jo `termux/` ya `kali-linux/` folder mein hain — woh `../assets/` se images lete hain.
+
+**Rule:** Har chapter ki apni alag `.md` file hogi. Naye chapters jo sirf ek track ke liye hain woh usi track ke folder mein jayenge. Jo dono ke liye hain woh **dono folders mein** jayenge.
 
 **⚠️ Chapter names aur plan abhi Afsar confirm kar raha hai — jo confirm ho wahi likho.**
 

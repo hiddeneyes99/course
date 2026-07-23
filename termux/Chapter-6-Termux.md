@@ -603,7 +603,7 @@ jab tum Termux **pehli baar** open karoge, toh screen pe ek aisa interface dikhe
 
 ### Screenshot 1 — Termux khulte hi kya dikhta hai
 
-![Termux welcome screen](assets/chapter-6-termux/6.3-welcome-screen-annotated.jpg)
+![Termux welcome screen](../assets/chapter-6-termux/6.3-welcome-screen-annotated.jpg)
 
 upar image mein numbers ke hisaab se dekho:
 
@@ -625,7 +625,7 @@ isi block mein neeche kuch **helpful hints** bhi likhe hote hain — jaise `pkg 
 
 screen ke **bilkul left edge** se right ki taraf swipe karo — ek **drawer (side menu)** khulega, jaisa neeche screenshot mein dikh raha hai:
 
-![Termux drawer with sessions](assets/chapter-6-termux/6.3-drawer-sessions-annotated.png)
+![Termux drawer with sessions](../assets/chapter-6-termux/6.3-drawer-sessions-annotated.png)
 
 **1. Settings (gear icon)** — drawer ke top-left mein ek gear/settings icon hota hai. yahan se Termux ki settings (Style, theme, preferences waghera) khulti hain.
 
@@ -639,7 +639,7 @@ screen ke **bilkul left edge** se right ki taraf swipe karo — ek **drawer (sid
 
 ### Screenshot 3 — KEYBOARD button dabane pe kya hota hai
 
-![Termux KEYBOARD button toggling terminal toolbar](assets/chapter-6-termux/6.3-drawer-toggle-toast-annotated.png)
+![Termux KEYBOARD button toggling terminal toolbar](../assets/chapter-6-termux/6.3-drawer-toggle-toast-annotated.png)
 
 **1. KEYBOARD button dabaya** — jab tum drawer ke "KEYBOARD" button pe tap karte ho...
 

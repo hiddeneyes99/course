@@ -99,11 +99,11 @@ bash zphisher.sh
 
 yahan dekho — `bash zphisher.sh` chalane ke baad terminal kuch aisa dikhta hai:
 
-![Zphisher command in terminal](assets/chapter-8-famous-hacking-tools/8.1-01-cmd.png)
+![Zphisher command in terminal](../assets/chapter-8-famous-hacking-tools/8.1-01-cmd.png)
 
 aur pehli baar chalane pe yeh khud-ba-khud packages install karna shuru kar deta hai:
 
-![Zphisher installing packages](assets/chapter-8-famous-hacking-tools/8.1-02-installing.png)
+![Zphisher installing packages](../assets/chapter-8-famous-hacking-tools/8.1-02-installing.png)
 
 ---
 
@@ -141,19 +141,19 @@ install hone ke baad, jab tum `zphisher` (Termux) ya `bash zphisher.sh` (Kali) c
 
 menu mein numbers ke saath list dikhegi — Facebook, Instagram, Google se lekar 34 platforms tak. jis website ka fake page banana hai, uska number type karo.
 
-![Zphisher main menu with 34 platforms](assets/chapter-8-famous-hacking-tools/8.1-03-main-menu.png)
+![Zphisher main menu with 34 platforms](../assets/chapter-8-famous-hacking-tools/8.1-03-main-menu.png)
 
 **Step 2 — login page ka type choose karo**
 
 kuch websites ke liye multiple page-styles milte hain. jaise Facebook choose kiya toh yeh options aate hain:
 
-![Facebook page type options](assets/chapter-8-famous-hacking-tools/8.1-04-page-types.png)
+![Facebook page type options](../assets/chapter-8-famous-hacking-tools/8.1-04-page-types.png)
 
 **Step 3 — tunneling option choose karo**
 
 yeh sabse important step hai. tumhara fake page abhi tumhare hi phone/laptop pe chal raha hai (localhost pe) — usko accessible banane ke liye tunneling option choose karna padta hai:
 
-![Port forwarding options: Localhost, Ngrok, Cloudflared, LocalXpose](assets/chapter-8-famous-hacking-tools/8.1-05-port-forward.png)
+![Port forwarding options: Localhost, Ngrok, Cloudflared, LocalXpose](../assets/chapter-8-famous-hacking-tools/8.1-05-port-forward.png)
 
    - **[01] Localhost** — sirf tumhare khud ke device pe kaam karega (demo/testing ke liye best — koi bahar nahi jaata)
    - **[02] Ngrok.io** — public link banata hai, lekin account chahiye
@@ -162,29 +162,29 @@ yeh sabse important step hai. tumhara fake page abhi tumhare hi phone/laptop pe 
 
 Localhost choose karne ke baad yeh custom port ke baare mein poochta hai — bas **N** press karo (default port theek hai):
 
-![Custom port question after selecting Localhost](assets/chapter-8-famous-hacking-tools/8.1-06-localhost.png)
+![Custom port question after selecting Localhost](../assets/chapter-8-famous-hacking-tools/8.1-06-localhost.png)
 
 **Step 4 — link generate hoga**
 
 sab set hone ke baad terminal kuch aisa dikhta hai — tool hosted ho jaata hai aur login info ka wait karta hai:
 
-![Successfully hosted, waiting for login info](assets/chapter-8-famous-hacking-tools/8.1-07-hosted.png)
+![Successfully hosted, waiting for login info](../assets/chapter-8-famous-hacking-tools/8.1-07-hosted.png)
 
 **Step 5 — victim ka page kholna aur credentials capture hona**
 
 ab jo link generate hua woh browser mein kholo — aisa dikhega:
 
-![Fake Facebook login page](assets/chapter-8-famous-hacking-tools/8.1-08-fake-page.png)
+![Fake Facebook login page](../assets/chapter-8-famous-hacking-tools/8.1-08-fake-page.png)
 
 > dhyaan se dekho upar — browser ke **address bar** mein `127.0.0.1:8080/mobile` likha hai — `facebook.com` nahi. page ke andar bilkul asli Facebook jaisa dikhta hai — logo, colors, fields sab same. **yahi phishing ka poora kaam hai** — bahar se pakadna mushkil, andar se ek dum khali.
 
 ab us page pe koi bhi details daalo (test ke liye sirf fake details — jaise `demo` aur `Pass@123`):
 
-![Credentials type hote hue](assets/chapter-8-famous-hacking-tools/8.1-09-creds-entered.png)
+![Credentials type hote hue](../assets/chapter-8-famous-hacking-tools/8.1-09-creds-entered.png)
 
 **Log In** button dabate hi — woh details seedha terminal pe aa jaati hain:
 
-![Terminal pe captured credentials](assets/chapter-8-famous-hacking-tools/8.1-10-captured.png)
+![Terminal pe captured credentials](../assets/chapter-8-famous-hacking-tools/8.1-10-captured.png)
 
 > terminal mein dekho — `[-] Login info Found !!` aaya, phir neeche `Account : demo` aur `Password : Pass@123` clearly dikh raha hai. victim ne abhi abhi apna password diya — aur usse pata bhi nahi chala. asli Facebook pe kuch hua hi nahi.
 
@@ -402,17 +402,17 @@ Yeh task do histon mein hai — pehle attacker ki taraf se dekho (apne test pe),
 4. Tunneling option mein **Localhost** (option **01**) choose karo — link sirf tumhare apne device pe hi kaam karega, koi bahar nahi jaayega. Custom port ke liye **N** press karo.
 5. Jo link generate hua (`http://127.0.0.1:8080`), woh apne phone ke browser mein kholo — kuch aisa dikhega:
 
-![Fake Facebook login page in browser](assets/chapter-8-famous-hacking-tools/8.1-08-fake-page.png)
+![Fake Facebook login page in browser](../assets/chapter-8-famous-hacking-tools/8.1-08-fake-page.png)
 
 dekho — bilkul asli Facebook jaisa lag raha hai, lekin **URL bar** mein `127.0.0.1:8080` likha hai — facebook.com nahi! Yahi sabse bada clue hai phishing pakadne ka.
 
 6. **Real account bilkul mat use karna** — koi bhi fake details daalo jaise `demo` / `Pass@123`:
 
-![Entering demo credentials on fake page](assets/chapter-8-famous-hacking-tools/8.1-09-creds-entered.png)
+![Entering demo credentials on fake page](../assets/chapter-8-famous-hacking-tools/8.1-09-creds-entered.png)
 
 7. Ab terminal pe wapas jao — details turant wahan capture ho gayi hain:
 
-![Captured credentials shown in terminal](assets/chapter-8-famous-hacking-tools/8.1-10-captured.png)
+![Captured credentials shown in terminal](../assets/chapter-8-famous-hacking-tools/8.1-10-captured.png)
 
 > **Yahi phishing hoti hai.** Tumne khud apna ek "attack" dekha — bina koi real account use kiye, bina kisi aur ko involve kiye.
 
