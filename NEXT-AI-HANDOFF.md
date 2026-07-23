@@ -48,11 +48,22 @@ Format: **Markdown files** — koi app nahi, koi website nahi.
 ```
 ethical-hacking-course/
 │
-├── NEXT-AI-HANDOFF.md         ← Yeh file (tumhare liye)
-├── Chapter-1-Startup.md       ← ✅ COMPLETE (6 topics)
-├── Chapter-2-*.md             ← Abhi confirm nahi hua
-├── Chapter-3-*.md             ← Abhi confirm nahi hua
-... chapters aage confirm honge
+├── NEXT-AI-HANDOFF.md                        ← Yeh file (tumhare liye)
+│
+├── Chapter-1-Startup.md                      ← ✅ COMPLETE (6 topics)
+├── Chapter-2-How-Computer-Works.md           ← ✅ COMPLETE (10 topics)
+├── Chapter-3-Networking.md                   ← ✅ COMPLETE
+├── Chapter-4-Linux-CommandLine.md            ← ✅ COMPLETE
+│
+│   ══ CHAPTER 4 KE BAAD SPLIT HOTA HAI ══
+│
+├── [PHONE TRACK]  Chapter-6-Termux.md        ← ✅ COMPLETE
+├── [PC TRACK]     Chapter-5-Kali-Linux.md    ← ✅ COMPLETE
+│
+├── Chapter-7-Tool-Aur-Programming-Language.md ← ✅ COMPLETE
+├── Chapter-8-Famous-Hacking-Tools.md          ← ✅ COMPLETE
+│
+... aage ke chapters Afsar confirm karega
 ```
 
 **Rule:** Har chapter ki apni alag `.md` file hogi.
@@ -177,6 +188,62 @@ BAAD MEIN → Topic content likho
 - Special chars (`#`, `?`, `!`) hata do
 - Emojis hata do
 - Example: `Topic 1.6 — Ethical Hacking Kya Hai?` → `#-topic-16--ethical-hacking-kya-hai--aur-hacker-ko-galat-kyun-samjha-jaata-hai`
+
+---
+
+## 🔀 COURSE SPLIT STRUCTURE — BAHUT ZAROORI PADHO
+
+**Yeh decision Afsar ne confirm kiya hai — isko follow karna zaroori hai.**
+
+### Split Kahan Hota Hai?
+
+**Chapter 4 ke baad course do tracks mein split ho jaata hai:**
+
+```
+Chapter 1  ──────────────────────── COMMON (dono ke liye)
+Chapter 2  ──────────────────────── COMMON (dono ke liye)
+Chapter 3  ──────────────────────── COMMON (dono ke liye)
+Chapter 4  ──────────────────────── COMMON (dono ke liye)
+                    │
+          ┌─────────┴──────────┐
+    📱 PHONE TRACK        💻 PC TRACK
+    (Termux wale)      (Kali Linux wale)
+          │                    │
+    Chapter 6              Chapter 5
+  (Termux setup)        (Kali Linux setup)
+          │                    │
+          └─────────┬──────────┘
+                    │
+    Chapter 7  ─────────────────── COMMON (dono ke liye)
+               (har topic mein 📱 aur 💻 dono sections)
+                    │
+    Chapter 8  ─────────────────── COMMON (dono ke liye)
+               (har topic mein 📱 aur 💻 dono sections)
+```
+
+### Kyun Split Kiya?
+
+Phone pe kuch cheezein hoti hain jo PC pe nahi hoti aur ulta bhi. Dono ko ek saath target karne se beginner confuse hota hai. Chapter 4 tak sab theory aur common setup hai — uske baad environment alag ho jaata hai.
+
+### Chapter 4 Ke Andar Kya Hai — Mat Chhedo
+
+Chapter 4 mein pehle se **Topic 4.2 (Termux overview)** aur **Topic 4.3 (dono ke liye alag sections)** hain. Afsar ne confirm kiya hai ki **Chapter 4 ko waise hi rehne do** — usme koi changes nahi karni. Split sirf Chapter 4 ke BAAD se shuru hoti hai.
+
+### Student Ko Kaise Pata Chalega Apna Track?
+
+Chapter 4 ke end mein — ya ek dedicated page/section mein — student ko choose karna hoga:
+- 📱 **Mere paas Android phone hai** → Chapter 6 (Termux) jao
+- 💻 **Mere paas Laptop/PC hai** → Chapter 5 (Kali Linux) jao
+
+### Chapter 7 aur 8 Ka Kya?
+
+**Chapter 7 aur 8 dono tracks ke students ke liye zaroori hain — yeh COMMON chapters hain.** Phone wala student bhi padhega, PC wala bhi. Dono chapters important hain dono ke liye.
+
+Fark sirf itna hai ki **har topic ke andar platform-specific sections hote hain** — jaise Chapter 8 mein already kiya gaya hai:
+- 📱 **Termux mein** → phone wale yeh karein
+- 💻 **Kali Linux mein** → PC wale yeh karein
+
+Jo bhi naya content Chapter 7 ya 8 mein likho — **dono ke liye alag 📱 aur 💻 sections zaroori hain.** Ek platform ka section mat chhodo.
 
 ---
 
