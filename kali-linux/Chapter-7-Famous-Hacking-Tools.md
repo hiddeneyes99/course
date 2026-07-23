@@ -1,4 +1,4 @@
-# Chapter 8 — Famous Hacking Techniques Aur Tools
+# Chapter 7 — Famous Hacking Techniques Aur Tools
 ### By TWH (Afsar Ali) | Technical White Hat
 
 ---

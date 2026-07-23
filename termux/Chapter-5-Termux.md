@@ -1,12 +1,12 @@
-# Chapter 6 — Termux — Mobile Hacker Ka Setup
+# Chapter 5 — Termux — Mobile Hacker Ka Setup
 ### By TWH (Afsar Ali) | Technical White Hat
 
 ---
 
 > ## 📱 PHONE / ANDROID TRACK
 > Yeh chapter unke liye hai jinke paas **Android Phone** hai.
-> Agar laptop/PC hai → **Chapter 5 (Kali Linux)** jao.
-> Chapter 6 complete karne ke baad → **Chapter 7** pe milenge (dono tracks).
+> Agar laptop/PC hai → **Chapter 5 (Kali Linux)** wala track jao.
+> Chapter 5 complete karne ke baad → **Chapter 6** pe jao (Tools).
 
 ---
 

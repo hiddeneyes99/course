@@ -1,11 +1,11 @@
-# Chapter 7 — Tool Aur Programming Language — Hacking Ki ABC
+# Chapter 6 — Tool Aur Programming Language — Hacking Ki ABC
 ### By TWH (Afsar Ali) | Technical White Hat
 
 ---
 
 > ## 📱💻 DONO TRACKS — PHONE + PC
 > Yeh chapter **dono type ke students ke liye zaroori hai** — chahe Termux wale ho ya Kali Linux wale.
-> Chapter 5 ya Chapter 6 complete karne ke baad yahan aao.
+> Chapter 5 complete karne ke baad yahan aao.
 
 ---
 

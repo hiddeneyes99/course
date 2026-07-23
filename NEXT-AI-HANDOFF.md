@@ -198,59 +198,27 @@ BAAD MEIN → Topic content likho
 
 ---
 
-## 🔀 COURSE SPLIT STRUCTURE — BAHUT ZAROORI PADHO
+## 🔀 COURSE SPLIT — CHAPTER 4 KE BAAD
 
-**Yeh decision Afsar ne confirm kiya hai — isko follow karna zaroori hai.**
-
-### Split Kahan Hota Hai?
-
-**Chapter 4 ke baad course do tracks mein split ho jaata hai:**
+Chapter 1–4 sab students ke liye common hain. Chapter 4 ke baad **do alag tracks** hain — dono ko alag alag treat karna hai, ek doosre se koi lena dena nahi.
 
 ```
-Chapter 1  ──────────────────────── COMMON (dono ke liye)
-Chapter 2  ──────────────────────── COMMON (dono ke liye)
-Chapter 3  ──────────────────────── COMMON (dono ke liye)
-Chapter 4  ──────────────────────── COMMON (dono ke liye)
-                    │
-          ┌─────────┴──────────┐
-    📱 PHONE TRACK        💻 PC TRACK
-    (Termux wale)      (Kali Linux wale)
-          │                    │
-    Chapter 6              Chapter 5
-  (Termux setup)        (Kali Linux setup)
-          │                    │
-          └─────────┬──────────┘
-                    │
-    Chapter 7  ─────────────────── COMMON (dono ke liye)
-               (har topic mein 📱 aur 💻 dono sections)
-                    │
-    Chapter 8  ─────────────────── COMMON (dono ke liye)
-               (har topic mein 📱 aur 💻 dono sections)
+Ch 1–4 (Root)   ──── COMMON — dono ke liye
+                          │
+             ┌────────────┴────────────┐
+       termux/                    kali-linux/
+   📱 PHONE TRACK              💻 PC TRACK
+   Ch 5 — Termux               Ch 5 — Kali Linux
+   Ch 6 — Tools                Ch 6 — Tools
+   Ch 7 — Hacking Tools        Ch 7 — Hacking Tools
 ```
 
-### Kyun Split Kiya?
-
-Phone pe kuch cheezein hoti hain jo PC pe nahi hoti aur ulta bhi. Dono ko ek saath target karne se beginner confuse hota hai. Chapter 4 tak sab theory aur common setup hai — uske baad environment alag ho jaata hai.
-
-### Chapter 4 Ke Andar Kya Hai — Mat Chhedo
-
-Chapter 4 mein pehle se **Topic 4.2 (Termux overview)** aur **Topic 4.3 (dono ke liye alag sections)** hain. Afsar ne confirm kiya hai ki **Chapter 4 ko waise hi rehne do** — usme koi changes nahi karni. Split sirf Chapter 4 ke BAAD se shuru hoti hai.
-
-### Student Ko Kaise Pata Chalega Apna Track?
-
-Chapter 4 ke end mein — ya ek dedicated page/section mein — student ko choose karna hoga:
-- 📱 **Mere paas Android phone hai** → Chapter 6 (Termux) jao
-- 💻 **Mere paas Laptop/PC hai** → Chapter 5 (Kali Linux) jao
-
-### Chapter 7 aur 8 Ka Kya?
-
-**Chapter 7 aur 8 dono tracks ke students ke liye zaroori hain — yeh COMMON chapters hain.** Phone wala student bhi padhega, PC wala bhi. Dono chapters important hain dono ke liye.
-
-Fark sirf itna hai ki **har topic ke andar platform-specific sections hote hain** — jaise Chapter 8 mein already kiya gaya hai:
-- 📱 **Termux mein** → phone wale yeh karein
-- 💻 **Kali Linux mein** → PC wale yeh karein
-
-Jo bhi naya content Chapter 7 ya 8 mein likho — **dono ke liye alag 📱 aur 💻 sections zaroori hain.** Ek platform ka section mat chhodo.
+**Rules:**
+- `termux/` aur `kali-linux/` — **dono bilkul alag hain.** Ek ka content doosre se copy mat karo.
+- Dono tracks mein chapter numbering **5 se shuru hoti hai.**
+- Ch 6 (Tools) aur Ch 7 (Hacking Tools) **dono tracks mein hain** — alag alag files — because dono students ke liye zaroori hain. Ch 7 ke andar har topic mein 📱 aur 💻 dono ke sections hain.
+- Naya chapter likhte waqt — pehle decide karo: sirf ek track ka hai ya dono ka? Agar dono ka hai toh **dono folders mein** likho.
+- **Chapter 4 ko mat chhedo** — woh common hai, as-is rahega.
 
 ---
 

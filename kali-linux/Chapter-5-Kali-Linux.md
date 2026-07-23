@@ -5,8 +5,8 @@
 
 > ## 💻 PC / LAPTOP TRACK
 > Yeh chapter unke liye hai jinke paas **Laptop ya PC** hai.
-> Agar sirf phone hai → **Chapter 6 (Termux)** jao.
-> Chapter 5 complete karne ke baad → **Chapter 7** pe milenge (dono tracks).
+> Agar sirf phone hai → **Chapter 5 (Termux)** wala track jao.
+> Chapter 5 complete karne ke baad → **Chapter 6** pe jao (Tools).
 
 ---
 

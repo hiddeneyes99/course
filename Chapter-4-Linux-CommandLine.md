@@ -1643,26 +1643,20 @@ git --version
 
 ## 🔀 Ab Apna Rasta Chuno
 
-Chapter 4 yahan complete hota hai. Ab tum dono mein se kisi ek raste pe chale jao — jo tumhare setup ke hisaab se sahi ho:
+Chapter 4 yahan complete hota hai. Ab apna track choose karo:
 
 ---
 
 ### 📱 Mere paas sirf Android Phone hai
 
-Laptop ya PC nahi hai? Koi baat nahi — sirf phone se bhi hacking seekh sakte ho.
-
-**➜ Jao: Chapter 6 — Termux**
-Termux tumhara hacking environment banega. Wahan se apna setup shuru karo.
+**➜ Jao: `termux/` folder → Chapter 5 — Termux**
+Yahan se tumhara poora safar hai: Ch 5 (Termux setup) → Ch 6 (Tools) → Ch 7 (Hacking Techniques)
 
 ---
 
 ### 💻 Mere paas Laptop / PC hai
 
-**➜ Jao: Chapter 5 — Kali Linux**
-Kali Linux install karo aur apna proper hacking lab setup karo.
-
----
-
-> **Note:** Chapter 5 aur Chapter 6 dono complete karne ke baad — **Chapter 7 aur Chapter 8 dono tracks ke students ke liye zaroori hain.** Chahe phone ho ya PC — woh chapters dono ko padhne hain.
+**➜ Jao: `kali-linux/` folder → Chapter 5 — Kali Linux**
+Yahan se tumhara poora safar hai: Ch 5 (Kali setup) → Ch 6 (Tools) → Ch 7 (Hacking Techniques)
 
 ---
