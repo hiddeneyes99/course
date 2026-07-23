@@ -60,15 +60,15 @@ ethical-hacking-course/
 │
 │   ══════ CHAPTER 4 KE BAAD SPLIT ══════
 │
-├── termux/                         ← 📱 PHONE TRACK
-│   ├── Chapter-5-Termux.md         ← ✅ COMPLETE
-│   ├── Chapter-6-Termux-Tools.md   ← ✅ COMPLETE
-│   └── Chapter-7-Termux-Hacking.md ← ✅ COMPLETE
+├── termux/                              ← 📱 PHONE TRACK
+│   ├── Chapter-5-Mobile-Setup.md        ← ✅ Termux install, storage, pkg mgmt
+│   ├── Chapter-6-Tools-And-Languages.md ← ✅ Tools aur programming languages
+│   └── Chapter-7-Hacking-Techniques.md  ← ✅ Hacking attacks aur techniques
 │
-└── kali-linux/                     ← 💻 PC / LAPTOP TRACK
-    ├── Chapter-5-Kali-Linux.md     ← ✅ COMPLETE
-    ├── Chapter-6-Kali-Tools.md     ← ✅ COMPLETE
-    └── Chapter-7-Kali-Hacking.md   ← ✅ COMPLETE
+└── kali-linux/                          ← 💻 PC / LAPTOP TRACK
+    ├── Chapter-5-Lab-Setup.md           ← ✅ Kali install, VirtualBox, terminal
+    ├── Chapter-6-Tools-And-Languages.md ← ✅ Tools aur programming languages
+    └── Chapter-7-Hacking-Techniques.md  ← ✅ Hacking attacks aur techniques
 ```
 
 **Image paths:** Chapters jo `termux/` ya `kali-linux/` folder mein hain — woh `../assets/` se images lete hain.
